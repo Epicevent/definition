@@ -1,0 +1,1883 @@
+{
+  "stages": [
+    "완전열·복합체·de Rham",
+    "준층·층·줄기와 fine",
+    "아벨범주·분해·층 코호몰로지",
+    "Čech 코호몰로지와 비교 조건",
+    "Singular·simplicial 이론",
+    "Taylor 직관의 최소 언어"
+  ],
+  "definitions": [
+    {
+      "id": "N01",
+      "source": "추가 정의 N01",
+      "title": "가군",
+      "english": "Module",
+      "answer": "R을 단위원을 가진 가환환 (commutative ring)이라 하자. R-가군은 아벨군 (abelian group) M과 스칼라 곱 \\(R\\times M\\to M,(r,m)\\mapsto rm\\)으로, 모든 \\(r,s\\in R\\), \\(m,n\\in M\\)에 대해 \\[r(m+n)=rm+rn,\\quad(r+s)m=rm+sm,\\quad(rs)m=r(sm),\\quad1_Rm=m\\]을 만족하는 자료다. R-가군 준동형 (homomorphism)은 덧셈과 R의 스칼라 곱을 보존하는 함수다.",
+      "condition": "환 R을 고정하며, \\(1_R\\)이 항등적으로 작용해야 한다.",
+      "refs": [
+        "02",
+        "26"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N02",
+      "source": "추가 정의 N02",
+      "title": "환의 국소화",
+      "english": "Localization of a ring",
+      "answer": "R을 단위원을 가진 가환환 (commutative ring), S를 \\(1\\in S\\), \\(s,t\\in S\\Rightarrow st\\in S\\)를 만족하는 부분집합이라 하자. \\(S^{-1}R\\)의 원소는 \\((a,s)\\in R\\times S\\)의 동치류 (equivalence class) \\(a/s\\)이며 \\[(a,s)\\sim(b,t)\\iff\\exists u\\in S:\\ u(at-bs)=0.\\]연산은 \\(a/s+b/t=(at+bs)/(st)\\), \\((a/s)(b/t)=ab/(st)\\)다. 표준 환준동형은 \\(R\\to S^{-1}R,a\\mapsto a/1\\)이다. 소아이디얼 \\(\\mathfrak p\\)에 대해 \\(R_{\\mathfrak p}:=(R\\setminus\\mathfrak p)^{-1}R\\)라 쓴다. 소아이디얼은 \\(\\mathfrak p\\ne R\\)이고 \\(ab\\in\\mathfrak p\\Rightarrow a\\in\\mathfrak p\\) 또는 \\(b\\in\\mathfrak p\\)인 아이디얼 (ideal)이다.",
+      "condition": "영인수가 있을 수 있으므로 동치관계 (equivalence relation)를 단순히 at=bs로 줄이지 않는다. 0∈S이면 국소화는 영환이다.",
+      "refs": [
+        "26",
+        "28"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N03",
+      "source": "추가 정의 N03",
+      "title": "환 달린 공간",
+      "english": "Ringed space",
+      "answer": "환 달린 공간은 위상공간 (topological space) X와 X 위 단위원을 가진 가환환 (commutative ring)의 층 \\(\\mathcal O_X\\)의 쌍 \\((X,\\mathcal O_X)\\)이다. 각 열린집합 (open set) U의 \\(\\mathcal O_X(U)\\)는 환이고 제한사상 (restriction map)은 단위원을 보존한다. 이 층을 구조층 (structure sheaf)이라 한다. 모든 점 x의 줄기 (stalk) \\(\\mathcal O_{X,x}\\)가 국소환 (local ring)이면 국소환 달린 공간 (locally ringed space)이라 한다.",
+      "condition": "구조층 (structure sheaf)이라는 명칭만으로 그 단면 (section)이 매끄러운 함수인지 정칙함수 (holomorphic function)인지 정해지지 않는다.",
+      "refs": [
+        "01",
+        "08",
+        "09",
+        "26",
+        "28"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N04",
+      "source": "추가 정의 N04",
+      "title": "복소다양체의 정칙 구조층",
+      "english": "Holomorphic structure sheaf",
+      "answer": "복소 n차원 다양체 X는 Hausdorff 제2가산 위상공간 (topological space)에 \\(\\mathbb C^n\\)의 열린집합 (open set)으로 가는 좌표계들을 주되, 그 좌표계들이 X를 덮고 겹침에서 좌표변환이 정칙인 자료다. 그 정칙 구조층 (structure sheaf)은 \\[\\mathcal O_X(U)=\\{f:U\\to\\mathbb C:\\text{각 복소좌표에서 }f\\text{가 정칙}\\}\\]이며 연산은 점별 덧셈·곱셈, 제한은 함수의 제한이다. 서로 호환되는 최대 복소 atlas를 같은 복소구조로 본다.",
+      "condition": "정칙 구조층 (structure sheaf)과 매끄러운 함수층은 서로 다르다. 여기의 함수는 복소수값이다.",
+      "refs": [
+        "06",
+        "08",
+        "27",
+        "N03"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N05",
+      "source": "추가 정의 N05",
+      "title": "구조층의 가군층",
+      "english": "Sheaf of modules",
+      "answer": "\\((X,\\mathcal O_X)\\)를 환 달린 공간이라 하자. \\(\\mathcal O_X\\)-가군층 (sheaf of modules) \\(\\mathcal E\\)는 X 위 아벨군 층 (sheaf of abelian groups)이며, 모든 열린 U에 \\(\\mathcal O_X(U)\\)-가군 구조가 주어져 모든 열린 \\(V\\subseteq U\\), \\(a\\in\\mathcal O_X(U),s\\in\\mathcal E(U)\\)에 대해 \\[(as)|_V=(a|_V)(s|_V)\\]를 만족한다. 가군층 사상은 각 U에서 \\(\\mathcal O_X(U)\\)-선형인 층사상 (sheaf morphism)이다.",
+      "condition": "스칼라도 단면 (section)과 함께 제한해야 한다.",
+      "refs": [
+        "07",
+        "08",
+        "10",
+        "N01",
+        "N03"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N06",
+      "source": "추가 정의 N06",
+      "title": "국소자유층",
+      "english": "Locally free sheaf",
+      "answer": "\\((X,\\mathcal O_X)\\)를 환 달린 공간, r을 0 이상의 정수라 하자. \\(\\mathcal O_X\\)-가군층 (sheaf of modules) \\(\\mathcal E\\)가 rank r의 국소자유층 (locally free sheaf)이라는 것은 모든 \\(x\\in X\\)에 대해 열린 근방 (open neighborhood) U와 \\(\\mathcal O_X|_U\\)-가군층 동형 \\[\\mathcal E|_U\\cong(\\mathcal O_X|_U)^{\\oplus r}\\]이 존재한다는 뜻이다. 동형은 U의 모든 열린 부분집합의 단면 (section)과 제한에 호환된다.",
+      "condition": "한 점의 줄기 (stalk)가 자유라는 진술만으로 정의를 대체하지 않는다.",
+      "refs": [
+        "10",
+        "N05"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N07",
+      "source": "추가 정의 N07",
+      "title": "가역층",
+      "english": "Invertible sheaf",
+      "answer": "\\((X,\\mathcal O_X)\\)를 국소환 (local ring) 달린 공간이라 하자. 이 공간 위 가역층 (invertible sheaf)은 rank 1의 국소자유 \\(\\mathcal O_X\\)-가군층 (sheaf of modules) \\(\\mathcal L\\)이다. 즉 모든 \\(x\\in X\\)에 열린 근방 (open neighborhood) U가 존재하여 \\(\\mathcal L|_U\\cong\\mathcal O_X|_U\\)인 가군층 동형이 있다. 국소 생성원 e를 고르면 모든 열린 \\(V\\subseteq U\\)의 단면 (section)은 \\(ae|_V\\), \\(a\\in\\mathcal O_X(V)\\)로 유일하게 표현된다.",
+      "condition": "국소적으로 자유인 것과 전역적으로 \\(\\mathcal O_X\\)와 동형인 것은 다른 조건이다. 여기서는 구조층 (structure sheaf)의 모든 줄기 (stalk)가 국소환 (local ring)이라고 가정한다.",
+      "refs": [
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N08",
+      "source": "추가 정의 N08",
+      "title": "정칙 선다발과 국소자명화",
+      "english": "Holomorphic line bundle and local trivialization",
+      "answer": "X를 복소다양체 (complex manifold)라 하자. 정칙 선다발 (holomorphic line bundle)은 복소다양체 L, 정칙사상 \\(\\pi:L\\to X\\), 각 fiber \\(L_x=\\pi^{-1}(x)\\)의 1차원 복소벡터공간 구조와 다음 국소자명화 (local trivialization)로 이루어진다. X의 열린덮개 (open cover) \\((U_i)\\)에 대해 쌍정칙사상 \\(\\tau_i:\\pi^{-1}(U_i)\\to U_i\\times\\mathbb C\\)가 존재하고 \\(\\operatorname{pr}_1\\tau_i=\\pi\\)이며 각 fiber에서 선형이다. 자명 선다발 (line bundle)은 사영 \\(X\\times\\mathbb C\\to X\\)이다.",
+      "condition": "fiber마다 C와 동형이라는 것만으로는 부족하다. 열린 근방 (open neighborhood) 전체에서 정칙인 자명화가 필요하다.",
+      "refs": [
+        "06",
+        "N04"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N09",
+      "source": "추가 정의 N09",
+      "title": "다발의 단면과 국소 틀",
+      "english": "Section and local frame",
+      "answer": "\\(\\pi:L\\to X\\)를 정칙 선다발 (holomorphic line bundle), U를 열린집합 (open set)이라 하자. U 위 정칙 단면 (section)은 정칙사상 \\(s:U\\to L\\)로 \\(\\pi\\circ s=\\operatorname{id}_U\\)를 만족하는 것이다. 모든 x∈U에서 \\(e(x)\\ne0\\in L_x\\)인 정칙 단면 e를 국소 틀 (local frame)이라 한다. 이때 정칙 단면 s는 \\(s=fe\\), \\(f\\in\\mathcal O_X(U)\\)로 유일하게 표현된다. U마다 정칙 단면들을 모아 제한과 점별 연산을 주면 \\(\\mathcal O_X\\)-가군층 (sheaf of modules)을 얻는다.",
+      "condition": "s(x)는 X의 점 x가 아니라 그 위 fiber의 벡터다.",
+      "refs": [
+        "07",
+        "N05",
+        "N08"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N10",
+      "source": "추가 정의 N10",
+      "title": "전이함수와 성분의 변환",
+      "english": "Transition function",
+      "answer": "X 위 정칙 선다발 (holomorphic line bundle) L의 국소 틀 (local frame) \\(e_i\\)를 열린덮개 (open cover) \\((U_i)\\) 위에서 잡는다. 전이함수 (transition function)의 관례를 \\[e_j=g_{ij}e_i,\\qquad g_{ij}\\in\\mathcal O_X^*(U_i\\cap U_j)\\]로 정한다. \\(\\mathcal O_X^*(U)\\)는 U에서 영점이 없는 정칙함수 (holomorphic function)들의 곱셈군이다. 삼중 교집합에서 \\(g_{ik}=g_{ij}g_{jk}\\), \\(g_{ii}=1\\)이다. 단면 (section)을 \\(s=f_ie_i=f_je_j\\)로 쓰면 \\(f_i=g_{ij}f_j\\)이다.",
+      "condition": "틀의 전이와 성분의 전이는 역방향이다. 관례 eⱼ=gᵢⱼeᵢ를 고정한다.",
+      "refs": [
+        "N08",
+        "N09"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N11",
+      "source": "추가 정의 N11",
+      "title": "선다발의 동형",
+      "english": "Isomorphism of line bundles",
+      "answer": "\\(\\pi_L:L\\to X\\), \\(\\pi_E:E\\to X\\)를 정칙 선다발 (holomorphic line bundle)이라 하자. 그 동형은 쌍정칙사상 \\(\\Phi:L\\to E\\)로 \\(\\pi_E\\Phi=\\pi_L\\)이며 모든 x∈X에서 \\(\\Phi|_{L_x}:L_x\\to E_x\\)가 복소선형 동형인 것이다. L이 자명하다는 것은 자명 선다발 (line bundle) \\(X\\times\\mathbb C\\)와 이런 동형이 존재한다는 뜻이다.",
+      "condition": "같은 기저공간 X 위에서 fiber별 선형성과 정칙성을 모두 요구한다.",
+      "refs": [
+        "13",
+        "N08"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N12",
+      "source": "추가 정의 N12",
+      "title": "쌍대 선다발",
+      "english": "Dual line bundle",
+      "answer": "X 위 정칙 선다발 (holomorphic line bundle) L의 쌍대는 각 x의 fiber가 \\(L_x^*=\\operatorname{Hom}_{\\mathbb C}(L_x,\\mathbb C)\\)인 선다발 (line bundle) \\(L^*\\)이다. 국소 틀 (local frame) eᵢ에 대해 \\(e_i^*(e_i)=1\\)인 쌍대 틀을 잡아 정칙구조를 정한다. \\(e_j=g_{ij}e_i\\)이면 \\(e_j^*=g_{ij}^{-1}e_i^*\\)로 붙인다.",
+      "condition": "복소선형 쌍대이며, 복소켤레 선형 함수들의 공간과 구별한다.",
+      "refs": [
+        "N08",
+        "N10"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N13",
+      "source": "추가 정의 N13",
+      "title": "유리형 함수의 위수",
+      "english": "Order of a meromorphic function",
+      "answer": "X를 연결 리만곡면 (Riemann surface)이라 하자. 유리형 함수 (meromorphic function)는 각 점 근방에서 정칙함수 (holomorphic function)의 몫으로 표현되며, 분모는 그 근방에서 항등적으로 0이 아니어야 한다. 항등적으로 0이 아닌 유리형 함수 f와 점 p에서 \\(t(p)=0\\)인 국소좌표를 잡으면 \\(f=t^m u\\), \\(m\\in\\mathbb Z\\), u는 p 근방의 정칙함수이고 \\(u(p)\\ne0\\)로 유일한 m을 갖게 쓸 수 있다. \\(\\operatorname{ord}_p(f):=m\\)으로 정의한다. m>0은 영점, m<0은 극점, m=0은 정칙이고 0이 아닌 경우다.",
+      "condition": "0함수는 여기의 위수 정의에서 제외한다. 극점의 위수는 음수다.",
+      "refs": [
+        "27",
+        "28"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N14",
+      "source": "추가 정의 N14",
+      "title": "곡선 위의 인자",
+      "english": "Divisor on a compact Riemann surface",
+      "answer": "X를 연결 compact 리만곡면 (Riemann surface)이라 하자. X 위 divisor는 유한 형식합 \\[D=\\sum_{p\\in X}n_p[p],\\qquad n_p\\in\\mathbb Z,\\quad n_p=0\\text{ except finitely many }p\\]이다. 덧셈은 계수별이다. 모든 p에서 nₚ≥0이면 유효 인자 (effective divisor)라 한다. \\(D\\ge E\\)는 모든 p에서 D의 계수가 E의 계수 이상이라는 뜻이다.",
+      "condition": "이 항목은 매끄러운 compact 복소곡선에 한정한다. 일반 고차원 공간의 divisor와 같은 정의로 취급하지 않는다.",
+      "refs": [
+        "27"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N15",
+      "source": "추가 정의 N15",
+      "title": "주인자",
+      "english": "Principal divisor",
+      "answer": "X를 연결 compact 리만곡면 (Riemann surface), f를 항등적으로 0이 아닌 전역 유리형 함수 (meromorphic function)라 하자. \\[\\operatorname{div}(f):=\\sum_{p\\in X}\\operatorname{ord}_p(f)[p]\\]를 f의 주인자 (principal divisor)라 한다. 이 합은 유한하며 영점의 차수는 양수, 극점의 차수는 음수로 들어간다. 이런 형태의 divisor들을 주인자라고 한다.",
+      "condition": "국소 함수 하나의 영점·극점 기록이 아니라 전역 유리형 함수 (meromorphic function)의 divisor다.",
+      "refs": [
+        "N13",
+        "N14"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N16",
+      "source": "추가 정의 N16",
+      "title": "인자의 선형동치",
+      "english": "Linear equivalence of divisors",
+      "answer": "연결 compact 리만곡면 (Riemann surface) X의 두 divisor D,E가 선형동치 (linear equivalence)라는 것은 항등적으로 0이 아닌 전역 유리형 함수 (meromorphic function) f가 존재하여 \\[D-E=\\operatorname{div}(f)\\]인 것이다. \\(D\\sim E\\)로 쓴다. Divisor들의 군을 주인자 (principal divisor)들의 부분군 (subgroup)으로 나눈 몫군 (quotient group)이 divisor class group이다.",
+      "condition": "같은 degree라는 것만으로 선형동치 (linear equivalence)가 되는 것은 일반적으로 아니다.",
+      "refs": [
+        "02",
+        "N14",
+        "N15"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N17",
+      "source": "추가 정의 N17",
+      "title": "인자의 차수",
+      "english": "Degree of a divisor",
+      "answer": "연결 compact 리만곡면 (Riemann surface) X 위 \\(D=\\sum_p n_p[p]\\)의 차수는 \\[\\deg D:=\\sum_p n_p\\in\\mathbb Z\\]이다. 여기서는 모든 점의 잉여체가 C이므로 잉여체 확장차수의 가중치는 1이다.",
+      "condition": "degree는 하나의 정수로 정보를 합친 것이다. divisor 자체나 그 동치류 (equivalence class)와 구별한다.",
+      "refs": [
+        "N14"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N18",
+      "source": "추가 정의 N18",
+      "title": "인자에 대응하는 가역층",
+      "english": "The invertible sheaf O(D)",
+      "answer": "연결 compact 리만곡면 (Riemann surface) X와 divisor \\(D=\\sum_p n_p[p]\\)를 잡는다. \\(\\mathcal O_X(D)(U)\\)는 U 위 유리형 함수 (meromorphic function) f 중 모든 p∈U에서 \\(\\operatorname{ord}_p(f)+n_p\\ge0\\)인 것들의 집합이며 0도 포함한다. U의 어떤 연결성분에서 f가 0이면 그 성분에서는 조건을 자동으로 만족한 것으로 정한다. 덧셈·정칙함수 (holomorphic function) 곱·제한은 함수의 연산이다. p만 D의 지지에 들어오는 작은 좌표근방에서 \\(t(p)=0\\)이면 이 층은 \\(t^{-n_p}\\mathcal O_X\\)로 표현된다.",
+      "condition": "양의 계수 nₚ는 f에 차수 nₚ까지의 극점을 허용한다. \\(\\mathcal O(D)\\)와 \\(\\mathcal O(-D)\\)의 부호를 구별한다.",
+      "refs": [
+        "N05",
+        "N07",
+        "N13",
+        "N14"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N19",
+      "source": "추가 정의 N19",
+      "title": "표준다발과 표준층",
+      "english": "Canonical bundle and canonical sheaf",
+      "answer": "X를 복소 n차원 다양체라 하자. 표준선다발 (canonical line bundle)은 \\(K_X:=\\bigwedge^n(T^{1,0}X)^*\\)이고, 그 정칙 단면층을 표준층 (canonical sheaf)이라 한다. 국소 정칙좌표 z¹,…,zⁿ에서 틀은 \\(dz^1\\wedge\\cdots\\wedge dz^n\\)이며 모든 정칙 단면 (section)은 그 틀에 정칙함수 (holomorphic function)를 곱한 것이다. 좌표변환 w=w(z)에서 \\[dw^1\\wedge\\cdots\\wedge dw^n=\\det\\!\\left(\\frac{\\partial w^i}{\\partial z^j}\\right)dz^1\\wedge\\cdots\\wedge dz^n.\\]여기서 \\(T^{1,0}X\\)는 정칙좌표의 \\(\\partial/\\partial z^j\\)를 틀로 갖는 정칙 접다발이다.",
+      "condition": "곡선에서는 Kₓ가 정칙 1-형식의 다발이다. 접다발 자체와 구별한다.",
+      "refs": [
+        "06",
+        "N08",
+        "N10"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N20",
+      "source": "추가 정의 N20",
+      "title": "유리형 단면의 인자와 표준인자",
+      "english": "Divisor of a meromorphic section",
+      "answer": "X를 연결 compact 리만곡면 (Riemann surface), L을 정칙 선다발 (holomorphic line bundle)이라 하자. L의 유리형 단면 (section) s는 국소 정칙 틀 eᵢ에서 \\(s=f_ie_i\\)이며 fᵢ가 유리형이고 겹침에서 \\(f_i=g_{ij}f_j\\)인 자료다. s가 항등적으로 0이 아니면 \\(\\operatorname{ord}_p(s):=\\operatorname{ord}_p(f_i)\\)와 \\(\\operatorname{div}(s)=\\sum_p\\operatorname{ord}_p(s)[p]\\)로 정의한다. 전이함수 (transition function) gᵢⱼ가 정칙이고 영점이 없으므로 위수는 틀의 선택에 무관하다. L=Kₓ일 때 이런 divisor를 표준인자 (canonical divisor)라 한다.",
+      "condition": "표준인자 (canonical divisor)는 선택한 유리형 단면 (section)에 따라 달라진다. 그 선형동치 (linear equivalence)류가 표준적으로 정해진다.",
+      "refs": [
+        "N10",
+        "N13",
+        "N14",
+        "N19"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N21",
+      "source": "추가 정의 N21",
+      "title": "사영직선의 O(n) 선다발",
+      "english": "The line bundle O(n) on the projective line",
+      "answer": "\\(\\mathbf{CP}^1\\)의 열린집합 (open set) \\(U_0=\\{Z_0\\ne0\\}\\), \\(U_\\infty=\\{Z_1\\ne0\\}\\)에 좌표 \\(z=Z_1/Z_0\\), \\(w=Z_0/Z_1=1/z\\)를 둔다. 정수 n에 대해 \\(\\mathcal O(n)\\)은 두 자명 선다발 (line bundle)의 틀을 겹침에서 \\[e_\\infty=z^n e_0\\]로 붙여 얻는 정칙 선다발 (holomorphic line bundle)이다. 동명 기호로 그 정칙 단면층도 쓴다. 전역 단면 (section)의 성분은 \\(f_0(z)=z^n f_\\infty(1/z)\\)를 만족한다.",
+      "condition": "여기의 전이 관례를 고정해야 n의 부호를 정확히 읽을 수 있다.",
+      "refs": [
+        "N08",
+        "N10",
+        "N23"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N22",
+      "source": "추가 정의 N22",
+      "title": "층 코호몰로지의 차원과 Euler characteristic",
+      "english": "Cohomology dimension and Euler characteristic",
+      "answer": "X를 복소다양체 (complex manifold), E를 \\(\\mathcal O_X\\)-가군층 (sheaf of modules)이라 하자. \\(H^q(X,E)\\)가 유한차원 복소벡터공간일 때 \\(h^q(X,E):=\\dim_{\\mathbb C}H^q(X,E)\\)라 쓴다. 모든 q≥0에서 이 차원이 유한하고 충분히 큰 q에서 0이면 \\[\\chi(X,E):=\\sum_{q\\ge0}(-1)^q h^q(X,E)\\]로 정의한다.",
+      "condition": "위상적 Betti 수와 층 코호몰로지 (sheaf cohomology) 차원 hᑫ를 구별한다. 이 합은 주어진 E에 의존한다.",
+      "refs": [
+        "18",
+        "19"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N23",
+      "source": "추가 정의 N23",
+      "title": "복소사영공간",
+      "english": "Complex projective space",
+      "answer": "n≥0에 대해 \\(\\mathbf{CP}^n\\)은 \\(\\mathbb C^{n+1}\\setminus\\{0\\}\\)에서 \\(Z\\sim W\\iff W=\\lambda Z\\)인 \\(\\lambda\\in\\mathbb C^*\\)가 존재한다는 동치관계 (equivalence relation)의 몫이다. 원소를 \\([Z_0:\\cdots:Z_n]\\)으로 쓴다. Uᵢ={Zᵢ≠0}의 좌표는 \\((Z_0/Z_i,\\ldots,\\widehat{Z_i/Z_i},\\ldots,Z_n/Z_i)\\in\\mathbb C^n\\)이며 이 좌표계로 복소다양체 (complex manifold) 구조를 준다.",
+      "condition": "동차좌표는 하나의 비영 벡터가 아니라 비영 복소수 배까지의 동치류 (equivalence class)다.",
+      "refs": [
+        "N04"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N24",
+      "source": "추가 정의 N24",
+      "title": "사영 초곡면",
+      "english": "Projective hypersurface",
+      "answer": "n≥1이고 F가 \\(\\mathbb C[Z_0,\\ldots,Z_n]\\)의 양의 차수 동차다항식이라 하자. \\(V(F):=\\{[Z]\\in\\mathbf{CP}^n:F(Z)=0\\}\\)를 그 사영 영점집합이라 한다. F가 square-free이면 이 reduced 초곡면의 차수는 deg F이다. 매끄럽다는 것은 V(F)의 모든 점에서 \\((\\partial F/\\partial Z_0,\\ldots,\\partial F/\\partial Z_n)\\)가 동시에 0이 되지 않는 것이다.",
+      "condition": "\\(V(F^2)=V(F)\\)이지만 F²의 중복도를 기록한 대상은 달라진다. 다항식을 제곱했다고 매끄러운 새 초곡면이 생기지는 않는다.",
+      "refs": [
+        "26",
+        "N23"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N25",
+      "source": "추가 정의 N25",
+      "title": "Segre 매장",
+      "english": "Segre embedding",
+      "answer": "m,n≥0에 대해 Segre 매장은 \\[\\sigma:\\mathbf{CP}^m\\times\\mathbf{CP}^n\\longrightarrow\\mathbf{CP}^{(m+1)(n+1)-1},\\qquad([a],[b])\\longmapsto[a_i b_j]_{0\\le i\\le m,\\ 0\\le j\\le n}\\]이다. a와 b의 대표를 비영 스칼라 배로 바꾸면 출력 전체에 비영 스칼라가 곱해져 같은 사영점을 준다. 그 상은 비영 행렬 \\((c_{ij})\\) 중 rank 1인 것들의 사영류이며 모든 2×2 소행렬식이 0이라는 조건으로 표현된다.",
+      "condition": "이 정의는 두 인자의 곱에 대한 것이다. 여러 인자는 tensor 성분의 곱으로 확장한다.",
+      "refs": [
+        "N23"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N26",
+      "source": "추가 정의 N26",
+      "title": "유한차원 순수 양자상태",
+      "english": "Pure quantum state",
+      "answer": "H를 유한차원 복소 Hilbert 공간이라 하자. 순수상태는 H의 1차원 복소 부분공간, 즉 \\(\\mathbf P(H)\\)의 원소다. 단위벡터 \\(\\psi\\in H\\)로 표현하면 \\(\\psi\\)와 \\(e^{i\\theta}\\psi\\), \\(\\theta\\in\\mathbb R\\)는 같은 상태다. 동등하게 직교사영 \\(\\rho_\\psi(v)=\\psi\\langle\\psi,v\\rangle\\)로 표현할 수 있다. 여기서는 내적이 첫 인자에 켤레선형, 둘째 인자에 선형이다.",
+      "condition": "순수상태와 모든 density operator를 포함하는 혼합상태 공간을 구별한다.",
+      "refs": [
+        "N23"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N27",
+      "source": "추가 정의 N27",
+      "title": "곱상태와 순수상태의 얽힘",
+      "english": "Product state and pure-state entanglement",
+      "answer": "두 유한차원 복소 Hilbert 공간 Hₐ,Hᵦ의 복합계는 \\(H_A\\otimes_{\\mathbb C}H_B\\)로 나타낸다. Tensor product는 쌍선형사상 \\((a,b)\\mapsto a\\otimes b\\)을 가지며, 임의의 복소벡터공간 V로 가는 모든 쌍선형사상이 이 사상을 통해 유일한 선형사상으로 인수분해되는 벡터공간이다. 순수상태 \\([\\psi]\\)가 곱상태라는 것은 비영 a,b가 존재하여 \\([\\psi]=[a\\otimes b]\\)인 것이다. 그렇지 않은 순수상태를 얽힌 상태라 한다.",
+      "condition": "이분 순수상태에서는 곱상태들이 Segre의 상이다. 혼합상태의 separability 조건으로 그대로 옮기지 않는다.",
+      "refs": [
+        "N25",
+        "N26"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N28",
+      "source": "추가 정의 N28",
+      "title": "선다발의 Hermitian 계량",
+      "english": "Hermitian metric on a line bundle",
+      "answer": "X 위 정칙 선다발 (holomorphic line bundle) L의 Hermitian 계량은 각 fiber Lₓ의 양의 정부호 Hermitian 형식 \\(h_x:L_x\\times L_x\\to\\mathbb C\\)의 족이다. 첫 인자에 선형, 둘째에 켤레선형인 관례를 쓴다. 매끄럽다는 것은 모든 국소 정칙 틀 e에서 \\(h_e(x):=h_x(e(x),e(x))\\)가 매끄러운 양의 실수함수라는 뜻이다. \\(e_j=g_{ij}e_i\\)이면 \\(h_{e_j}=|g_{ij}|^2h_{e_i}\\)여야 한다.",
+      "condition": "틀마다 임의의 양의 함수를 고르는 것만으로는 부족하다. 전이함수 (transition function)와의 호환조건이 필요하다.",
+      "refs": [
+        "N08",
+        "N10"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N29",
+      "source": "추가 정의 N29",
+      "title": "복소 connection",
+      "english": "Complex connection",
+      "answer": "복소다양체 (complex manifold) X 위 정칙 선다발 (holomorphic line bundle) L에서, 매끄러운 단면 (section)을 매끄러운 L값 복소 1-형식으로 보내는 복소선형 국소 연산 \\(\\nabla:\\mathcal A^0(L)\\to\\mathcal A^1(L)\\)이 connection이라는 것은 모든 열린 U, \\(f\\in C^\\infty(U,\\mathbb C)\\), 매끄러운 단면 s에 대해 \\[\\nabla(fs)=df\\otimes s+f\\nabla s\\]이며 열린 부분집합으로의 제한과 호환된다는 뜻이다. \\(\\mathcal A^k(L)(U)\\)는 \\(\\bigwedge^kT^*_{\\mathbb R}U\\otimes_{\\mathbb R}\\mathbb C\\otimes_{\\mathbb C}L|_U\\)의 매끄러운 단면이다. 국소 틀 (local frame) e에서 \\(\\nabla e=A_e\\otimes e\\)로 쓴다.",
+      "condition": "\\(\\nabla\\)는 매끄러운 함수에 대해 선형이 아니라 Leibniz 법칙을 만족한다.",
+      "refs": [
+        "06",
+        "N09"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "N30",
+      "source": "추가 정의 N30",
+      "title": "Chern connection과 곡률",
+      "english": "Chern connection and curvature",
+      "answer": "정칙 선다발 (holomorphic line bundle) L과 Hermitian 계량 h에서 Chern connection은 \\(\\nabla^{0,1}=\\bar\\partial_L\\)이고 계량과 호환되는 connection이다. 계량 호환은 모든 실수 벡터장 V와 매끄러운 단면 (section) s,t에 대해 \\[Vh(s,t)=h(\\nabla_Vs,t)+h(s,\\nabla_Vt)\\]인 것이다. \\(\\bar\\partial_L(fe)=(\\bar\\partial f)\\otimes e\\)는 정칙 틀 e로 정의한다. 여기서 \\(\\bar\\partial f=\\sum_j\\frac12(\\partial_{x_j}+i\\partial_{y_j})f\\,d\\bar z^j\\), \\(\\partial f=\\sum_j\\frac12(\\partial_{x_j}-i\\partial_{y_j})f\\,dz^j\\)이다. 정칙 틀에서는 \\(A_e=\\partial\\log h_e\\), 곡률은 \\(F_\\nabla=dA_e=-\\partial\\bar\\partial\\log h_e\\)로 주어진다.",
+      "condition": "곡률의 관례는 \\(\\nabla^2=F_\\nabla\\)이다. \\(\\frac{i}{2\\pi}F_\\nabla\\)를 실수 Chern 형식으로 사용하는 관례와 함께 고정한다.",
+      "refs": [
+        "N28",
+        "N29"
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "01-01",
+      "source": "01",
+      "stage": 1,
+      "title": "위상공간",
+      "question": "열린집합 (open set)들의 모임은 어떤 조건을 만족하는가?",
+      "answer": "집합 \\(X\\)와 부분집합들의 모임 \\(\\tau\\)의 쌍으로, \\(\\varnothing,X\\in\\tau\\)이고 \\(\\tau\\)는 임의 합집합과 유한 교집합에 닫혀 있다. \\(\\tau\\)의 원소를 열린집합 (open set)이라 한다.",
+      "condition": "교집합은 유한 개, 합집합은 임의 개다.",
+      "type": "definition",
+      "english": "Topological space"
+    },
+    {
+      "id": "01-02",
+      "source": "01",
+      "stage": 1,
+      "title": "열린 근방",
+      "question": "점의 열린 근방 (open neighborhood)이란?",
+      "answer": "X를 위상공간 (topological space)이라 하자. \\(x\\in X\\)의 열린 근방 (open neighborhood)은 \\(x\\in U\\)를 만족하는 열린집합 (open set) \\(U\\subset X\\)다.",
+      "condition": "점을 포함하고 열려 있어야 한다.",
+      "type": "definition",
+      "english": "Open neighborhood"
+    },
+    {
+      "id": "01-03",
+      "source": "01",
+      "stage": 1,
+      "title": "열린덮개",
+      "question": "무엇으로 공간 전체를 덮는가?",
+      "answer": "위상공간 (topological space) \\(X\\)의 열린덮개 (open cover)는 각 \\(U_i\\subset X\\)가 열려 있고 \\(X=\\bigcup_{i\\in I}U_i\\)인 집합족 \\(\\{U_i\\}_{i\\in I}\\)다.",
+      "condition": "합집합이 공간 전체여야 한다.",
+      "type": "definition",
+      "english": "Open cover"
+    },
+    {
+      "id": "01-04",
+      "source": "01",
+      "stage": 1,
+      "title": "닫힌집합",
+      "question": "어떤 집합을 닫혔다고 하는가?",
+      "answer": "X를 위상공간 (topological space)이라 하자. \\(A\\subset X\\)가 닫혔다는 것은 \\(X\\setminus A\\)가 열린집합 (open set)이라는 뜻이다.",
+      "condition": "여집합은 주어진 공간 X 안에서 취한다.",
+      "type": "definition",
+      "english": "Closed set"
+    },
+    {
+      "id": "01-05",
+      "source": "01",
+      "stage": 1,
+      "title": "폐포",
+      "question": "집합의 폐포 (closure)는 어떤 교집합인가?",
+      "answer": "X를 위상공간 (topological space)이라 하자. \\(A\\subset X\\)의 폐포 (closure) \\(\\overline A\\)는 \\(A\\)를 포함하는 모든 닫힌집합 (closed set)의 교집합이다.",
+      "condition": "A를 포함하는 모든 닫힌집합 (closed set)을 사용한다.",
+      "type": "definition",
+      "english": "Closure"
+    },
+    {
+      "id": "02-01",
+      "source": "02",
+      "stage": 1,
+      "title": "아벨군",
+      "question": "덧셈은 어떤 공리를 만족하는가?",
+      "answer": "집합 \\(A\\)에 닫힌 이항연산 \\(+\\)가 주어지고, 모든 \\(a,b,c\\in A\\)에 대해 \\((a+b)+c=a+(b+c)\\), \\(a+b=b+a\\)다. 영원소 \\(0\\)가 있어 \\(a+0=a\\)이고, 각 \\(a\\)에 대해 \\(a+(-a)=0\\)인 역원 \\(-a\\)가 존재한다.",
+      "condition": "가환성이 포함된다.",
+      "type": "definition",
+      "english": "Abelian group"
+    },
+    {
+      "id": "02-02",
+      "source": "02",
+      "stage": 1,
+      "title": "아벨군 준동형",
+      "question": "사상이 보존해야 하는 것은?",
+      "answer": "아벨군 (abelian group) 사이의 함수 \\(f:A\\to B\\)로, 모든 \\(a,a'\\in A\\)에 대해 \\(f(a+a')=f(a)+f(a')\\)를 만족한다.",
+      "condition": "모든 두 원소의 덧셈을 보존한다.",
+      "type": "definition",
+      "english": "Homomorphism of abelian groups"
+    },
+    {
+      "id": "02-03",
+      "source": "02",
+      "stage": 1,
+      "title": "핵 — 아벨군",
+      "question": "준동형 (homomorphism)의 핵은 어느 군의 어떤 원소들인가?",
+      "answer": "아벨군 (abelian group) 준동형 (homomorphism) \\(f:A\\to B\\)에 대해 \\(\\ker f=\\{a\\in A:f(a)=0_B\\}\\)다.",
+      "condition": "핵은 정의역 A의 부분군 (subgroup)이다.",
+      "type": "definition",
+      "english": "Kernel of a homomorphism"
+    },
+    {
+      "id": "02-04",
+      "source": "02",
+      "stage": 1,
+      "title": "상 — 아벨군",
+      "question": "준동형 (homomorphism)의 상은 어느 군 안에 있는가?",
+      "answer": "아벨군 (abelian group) 준동형 (homomorphism) \\(f:A\\to B\\)에 대해 \\(\\operatorname{im}f=\\{f(a):a\\in A\\}\\subset B\\)다.",
+      "condition": "상은 공역 B의 부분군 (subgroup)이다.",
+      "type": "definition",
+      "english": "Image of a homomorphism"
+    },
+    {
+      "id": "02-05",
+      "source": "02",
+      "stage": 1,
+      "title": "몫군",
+      "question": "두 원소를 언제 같은 것으로 보는가?",
+      "answer": "아벨군 (abelian group) \\(A\\)의 부분군 (subgroup) \\(K\\)에 대해 \\(A/K=\\{a+K:a\\in A\\}\\)이며, \\(a+K=b+K\\iff a-b\\in K\\)다. 덧셈은 \\((a+K)+(b+K)=(a+b)+K\\)다.",
+      "condition": "K는 A의 부분군 (subgroup)이어야 한다.",
+      "type": "definition",
+      "english": "Quotient group"
+    },
+    {
+      "id": "02-06",
+      "source": "02",
+      "stage": 1,
+      "title": "여핵 — 아벨군",
+      "question": "무엇을 무엇으로 나누는가?",
+      "answer": "아벨군 (abelian group) 준동형 (homomorphism) \\(f:A\\to B\\)의 여핵은 \\(\\operatorname{coker}f=B/\\operatorname{im}f\\)다.",
+      "condition": "정의역이 아니라 공역을 상으로 나눈다.",
+      "type": "definition",
+      "english": "Cokernel of a homomorphism"
+    },
+    {
+      "id": "03-01",
+      "source": "03",
+      "stage": 1,
+      "title": "한 자리에서의 완전성",
+      "question": "B에서 완전하다는 것은?",
+      "answer": "아벨군 (abelian group) 준동형 (homomorphism)의 수열 \\(A\\xrightarrow f B\\xrightarrow g C\\)가 \\(B\\)에서 완전하다는 것은 \\(\\operatorname{im}f=\\ker g\\)라는 뜻이다.",
+      "condition": "들어오는 사상의 상과 나가는 사상의 핵이 같다.",
+      "type": "definition",
+      "english": "Exactness at a term"
+    },
+    {
+      "id": "03-02",
+      "source": "03",
+      "stage": 1,
+      "title": "짧은 완전열",
+      "question": "양끝의 0을 포함해 어떤 수열인가?",
+      "answer": "A,B,C를 아벨군 (abelian group), f와 g를 아래에 표시한 정의역과 공역을 갖는 준동형 (homomorphism)이라 하자. 0은 영군을 뜻한다. \\(0\\to A\\xrightarrow f B\\xrightarrow g C\\to0\\)가 모든 자리에서 완전한 수열이다. 즉 \\(f\\)는 단사, \\(g\\)는 전사이며 \\(\\operatorname{im}f=\\ker g\\)다.",
+      "condition": "B에서의 조건만으로는 부족하다.",
+      "type": "definition",
+      "english": "Short exact sequence"
+    },
+    {
+      "id": "04-01",
+      "source": "04",
+      "stage": 1,
+      "title": "코사슬복합체",
+      "question": "각 차수의 자료와 미분의 합성 조건은?",
+      "answer": "아벨군 (abelian group)의 코사슬복합체 (cochain complex) \\((C^\\bullet,d)\\)는 각 정수 \\(q\\in\\mathbb Z\\)에 대한 아벨군 \\(C^q\\)와 준동형 (homomorphism) \\(d^q:C^q\\to C^{q+1}\\)의 족으로, 모든 \\(q\\in\\mathbb Z\\)에 대해 \\[d^{q+1}\\circ d^q=0:C^q\\longrightarrow C^{q+2}\\]을 만족한다. 우변의 0은 모든 원소를 영원소로 보내는 영준동형 (zero homomorphism)이다. 추가로 모든 \\(q<0\\)에 대해 \\(C^q=0\\)이면 비음수 차수에 집중된 코사슬복합체라 한다. 이때 0은 영군이며 \\(d^{-1}:0\\to C^0\\)도 영준동형이다.",
+      "condition": "음의 차수 항이 0이라는 조건은 일반 정의의 필수조건이 아니라 추가 조건이다.",
+      "type": "definition",
+      "english": "Cochain complex"
+    },
+    {
+      "id": "04-02",
+      "source": "04",
+      "stage": 1,
+      "title": "코사이클",
+      "question": "q-cocycle은 어느 핵의 원소인가?",
+      "answer": "아벨군 (abelian group)의 코사슬복합체 (cochain complex) \\((C^\\bullet,d)\\)와 정수 q에 대해, \\(Z^q(C^\\bullet):=\\ker(d^q:C^q\\to C^{q+1})\\)의 원소를 q-cocycle이라 한다. 즉 \\(c\\in C^q\\)가 \\(d^q(c)=0\\)을 만족하는 것이다.",
+      "condition": "차수 q의 원소이며 q차 미분의 핵에 속한다.",
+      "type": "definition",
+      "english": "Cocycle"
+    },
+    {
+      "id": "04-03",
+      "source": "04",
+      "stage": 1,
+      "title": "코경계",
+      "question": "q-coboundary는 어느 상의 원소인가?",
+      "answer": "아벨군 (abelian group)의 코사슬복합체 (cochain complex) \\((C^\\bullet,d)\\)와 정수 q에 대해, \\(B^q(C^\\bullet):=\\operatorname{im}(d^{q-1}:C^{q-1}\\to C^q)\\)의 원소를 q-coboundary라 한다. 즉 어떤 \\(b\\in C^{q-1}\\)에 대해 \\(c=d^{q-1}(b)\\)로 표현되는 \\(c\\in C^q\\)다.",
+      "condition": "비음수 차수에 집중된 복합체에서는 C⁻¹=0이므로 B⁰=0이다. 일반 복합체에서는 B⁰=0일 필요가 없다.",
+      "type": "definition",
+      "english": "Coboundary"
+    },
+    {
+      "id": "04-04",
+      "source": "04",
+      "stage": 1,
+      "title": "복합체의 코호몰로지",
+      "question": "q차 코호몰로지 (cohomology)는 어떤 몫인가?",
+      "answer": "아벨군 (abelian group)의 코사슬복합체 (cochain complex) \\((C^\\bullet,d)\\)와 정수 q에 대해 \\[H^q(C^\\bullet):=\\frac{\\ker(d^q:C^q\\to C^{q+1})}{\\operatorname{im}(d^{q-1}:C^{q-1}\\to C^q)}=Z^q/B^q.\\]\\(d^q\\circ d^{q-1}=0\\)이므로 분모는 분자의 부분군 (subgroup)이다. 두 cocycle의 차가 coboundary이면 같은 코호몰로지 (cohomology) 원소를 나타낸다.",
+      "condition": "분모는 q−1차 미분의 상이다. C⁻¹=0인 경우 H⁰=ker d⁰이다.",
+      "type": "definition",
+      "english": "Cohomology of a complex"
+    },
+    {
+      "id": "04-05",
+      "source": "04",
+      "stage": 1,
+      "title": "Acyclic 복합체",
+      "question": "어느 차수의 코호몰로지 (cohomology)가 사라지는가?",
+      "answer": "아벨군 (abelian group)의 코사슬복합체 (cochain complex) \\((C^\\bullet,d)\\)를 고정한다. 차수 q는 정수 전체를 돈다. 복합체 \\(C^\\bullet\\)가 acyclic이라는 것은 모든 차수 \\(q\\)에서 \\(H^q(C^\\bullet)=0\\)이라는 뜻이다.",
+      "condition": "0차도 포함한다. Acyclic 층의 정의와 구별한다.",
+      "type": "definition",
+      "english": "Acyclic complex"
+    },
+    {
+      "id": "05-01",
+      "source": "05",
+      "stage": 1,
+      "title": "복합체 사상",
+      "question": "차수별 사상이 미분과 어떻게 호환되는가?",
+      "answer": "\\((C^\\bullet,d_C)\\), \\((D^\\bullet,d_D)\\)를 아벨군 (abelian group)의 코사슬복합체 (cochain complex)라 하자. \\(d_C^q:C^q\\to C^{q+1}\\), \\(d_D^q:D^q\\to D^{q+1}\\)는 각 복합체의 미분이고 q는 정수다. 복합체 사상 (morphism of complexes) \\(f:C^\\bullet\\to D^\\bullet\\)는 각 \\(q\\)의 준동형 (homomorphism) \\(f^q:C^q\\to D^q\\)로 이루어지며 \\(d_D^q\\circ f^q=f^{q+1}\\circ d_C^q\\)를 모든 차수에서 만족한다.",
+      "condition": "양변 모두 C의 q차에서 D의 q+1차로 간다.",
+      "type": "definition",
+      "english": "Morphism of cochain complexes"
+    },
+    {
+      "id": "06-01",
+      "source": "06",
+      "stage": 1,
+      "title": "연속사상",
+      "question": "열린집합 (open set)의 무엇이 열려야 하는가?",
+      "answer": "위상공간 (topological space) 사이의 함수 \\(f:X\\to Y\\)가 연속이라는 것은 모든 열린 \\(V\\subset Y\\)에 대해 \\(f^{-1}(V)\\subset X\\)가 열린 것이라는 뜻이다.",
+      "condition": "상이 아니라 역상 조건이다.",
+      "type": "definition",
+      "english": "Continuous map"
+    },
+    {
+      "id": "06-02",
+      "source": "06",
+      "stage": 1,
+      "title": "Hausdorff 공간",
+      "question": "서로 다른 두 점을 어떻게 분리하는가?",
+      "answer": "모든 \\(x\\ne y\\)에 대해 \\(x\\in U\\), \\(y\\in V\\), \\(U\\cap V=\\varnothing\\)인 열린 근방 (open neighborhood) \\(U,V\\)가 존재하는 위상공간 (topological space)이다.",
+      "condition": "서로 다른 모든 두 점에 대해 요구한다.",
+      "type": "definition",
+      "english": "Hausdorff space"
+    },
+    {
+      "id": "06-03",
+      "source": "06",
+      "stage": 1,
+      "title": "열린 기저",
+      "question": "어떤 열린집합 (open set)들을 합집합으로 표현하는가?",
+      "answer": "위상공간 (topological space) X를 고정한다. 열린집합 (open set)들의 모임 \\(\\mathcal B\\)가 기저라는 것은 모든 열린집합이 \\(\\mathcal B\\) 원소들의 합집합으로 표현된다는 뜻이다. 가산 열린 기저는 이 모임을 가산으로 잡을 수 있다는 조건이다.",
+      "condition": "기저 원소 자체도 열려 있어야 한다.",
+      "type": "definition",
+      "english": "Basis for a topology"
+    },
+    {
+      "id": "06-04",
+      "source": "06",
+      "stage": 1,
+      "title": "매끄러운 다양체",
+      "question": "공간 조건과 좌표변환 조건은?",
+      "answer": "n≥0을 정수라 하자. 매끄러운 n-다양체는 Hausdorff이고 가산 열린 기저를 갖는 위상공간 (topological space) M과 다음 매끄러운 좌표계 모음으로 정해지는 매끄러운 구조의 쌍이다. 각 좌표 \\(\\varphi_\\alpha:U_\\alpha\\to V_\\alpha\\subset\\mathbb R^n\\)는 열린집합 (open set) 사이의 위상동형이고 \\(M=\\bigcup_\\alpha U_\\alpha\\)다. 모든 α,β에 대해 좌표변환 \\[\\varphi_\\beta\\circ\\varphi_\\alpha^{-1}:\\varphi_\\alpha(U_\\alpha\\cap U_\\beta)\\to\\varphi_\\beta(U_\\alpha\\cap U_\\beta)\\]은 C∞이어야 한다. 위상동형은 연속인 전단사로 역함수도 연속인 사상이다. 두 좌표계 모음의 합집합도 위 조건을 만족하면 같은 매끄러운 구조를 정하는 것으로 본다.",
+      "condition": "Hausdorff·가산 기저·좌표의 역함수 연속성을 함께 기억한다.",
+      "type": "definition",
+      "english": "Smooth manifold"
+    },
+    {
+      "id": "06-05",
+      "source": "06",
+      "stage": 1,
+      "title": "접벡터와 접공간",
+      "question": "한 점을 지나는 곡선을 언제 같은 속도로 보는가?",
+      "answer": "M을 매끄러운 n-다양체, x∈M을 고정한 점이라 하자. 어떤 ε>0에 대해 정의된 매끄러운 곡선 \\(\\gamma:(-\\varepsilon,\\varepsilon)\\to M\\), \\(\\gamma(0)=x\\)를 생각한다. x의 좌표 근방 \\(\\varphi:U\\to V\\subset\\mathbb R^n\\)에서 두 곡선 γ,η가 \\((\\varphi\\circ\\gamma)'(0)=(\\varphi\\circ\\eta)'(0)\\)을 만족하면 동치로 본다. 곡선은 0 근처로 제한하여 U 안에 있게 한다. 이 동치조건은 좌표 선택에 무관하다. 곡선의 동치류 (equivalence class)를 x에서의 접벡터 (tangent vector)라 하고 그 집합을 \\(T_xM\\)이라 쓴다. 전단사 \\(T_xM\\to\\mathbb R^n,\\ [\\gamma]\\mapsto(\\varphi\\circ\\gamma)'(0)\\)로 실수벡터공간의 덧셈과 스칼라곱을 옮긴 것이 접공간 (tangent space)의 벡터공간 구조다. 이 연산들도 좌표 선택에 무관하다.",
+      "condition": "곡선의 점도 같고 좌표 속도도 같아야 한다.",
+      "type": "definition",
+      "english": "Tangent vector and tangent space"
+    },
+    {
+      "id": "06-06",
+      "source": "06",
+      "stage": 1,
+      "title": "여접공간",
+      "question": "어느 벡터공간의 선형쌍대인가?",
+      "answer": "M을 매끄러운 다양체 (smooth manifold), \\(x\\in M\\)을 한 점, \\(T_xM\\)을 x에서의 실수 접공간 (tangent space)이라 하자. \\(T_x^*M=\\operatorname{Hom}_{\\mathbb R}(T_xM,\\mathbb R)\\)로, 접공간의 실수 선형쌍대다.",
+      "condition": "입력은 x에서의 접벡터 (tangent vector)다.",
+      "type": "definition",
+      "english": "Cotangent space"
+    },
+    {
+      "id": "06-07",
+      "source": "06",
+      "stage": 1,
+      "title": "미분 q-형식",
+      "question": "점별 자료는 무엇이며, 그 족의 매끄러움은 어떤 함수로 검사하는가?",
+      "answer": "M을 매끄러운 n-다양체, q를 양의 정수라 하자. 매끄러운 q-형식은 각 \\(p\\in M\\)에 실수 다중선형사상 \\(\\omega_p:(T_pM)^q\\to\\mathbb R\\)를 주는 족 \\(\\omega=(\\omega_p)_{p\\in M}\\)으로, 다음 두 조건을 만족한다. **① 교대성.** 각 \\(\\omega_p\\)는 두 입력을 교환하면 부호가 바뀐다. 다중선형성은 다른 입력들을 고정했을 때 각 입력에 대해 실수 선형이라는 뜻이다. **② 족의 매끄러움.** 임의의 매끄러운 좌표계 \\(\\varphi:U\\to V\\subset\\mathbb R^n\\)를 잡는다. 표준기저벡터 \\(e_i\\in\\mathbb R^n\\)에 대해 p에서의 좌표 접벡터 (tangent vector)를 \\[E_i(p):=\\left.\\frac{d}{dt}\\right|_{t=0}\\varphi^{-1}(\\varphi(p)+te_i)\\in T_pM\\]로 둔다. 이는 충분히 작은 t에 대해 정의되는 곡선의 속도다. 모든 지표 \\(i_1,\\ldots,i_q\\in\\{1,\\ldots,n\\}\\)에 대해 함수 \\[a_{i_1\\cdots i_q}:V\\longrightarrow\\mathbb R,\\]\\[y\\longmapsto\\omega_{\\varphi^{-1}(y)}\\bigl(E_{i_1}(\\varphi^{-1}(y)),\\ldots,E_{i_q}(\\varphi^{-1}(y))\\bigr)\\]가 \\(C^\\infty\\), 즉 모든 차수의 편도함수가 존재하고 연속이어야 한다. 이것을 모든 매끄러운 좌표계에 대해 요구한다. **0차.** 매끄러운 0-형식은 함수 \\(f:M\\to\\mathbb R\\)로, 모든 매끄러운 좌표계에서 \\(f\\circ\\varphi^{-1}:V\\to\\mathbb R\\)가 \\(C^\\infty\\)인 것이다. 매끄러운 q-형식들의 실수벡터공간을 \\(\\Omega^q(M)\\)라 쓴다.",
+      "condition": "점마다 교대 다중선형사상을 고르는 것만으로는 부족하다. 위에서 정의한 좌표 성분 함수들이 점에 따라 C∞으로 변해야 한다.",
+      "type": "definition",
+      "english": "Differential q-form"
+    },
+    {
+      "id": "06-08",
+      "source": "06",
+      "stage": 1,
+      "title": "좌표 1-형식",
+      "question": "dxⁱ는 접벡터 (tangent vector)를 무엇으로 보내는가?",
+      "answer": "M을 매끄러운 n-다양체, \\(\\varphi=(x^1,\\ldots,x^n):U\\to V\\subset\\mathbb R^n\\)를 매끄러운 좌표계라 하자. \\(p\\in U\\), \\(v=[\\gamma]\\in T_pM\\)에 대해 \\[dx^i_p:T_pM\\to\\mathbb R,\\qquad dx^i_p(v):=(x^i\\circ\\gamma)'(0)\\quad(1\\le i\\le n)\\]로 정의한다. 여기서 \\(\\gamma(0)=p\\)이고 γ는 0 근처에서 U 안에 있다. 접벡터 (tangent vector)의 동치관계 (equivalence relation)에 의해 이 값은 대표 곡선에 무관하다. 좌표 속도 \\((\\varphi\\circ\\gamma)'(0)=(v^1,\\ldots,v^n)\\)로 쓰면 \\(dx^i_p(v)=v^i\\)다. p∈U에 대한 이 선형함수들의 족이 U 위의 좌표 1-형식 \\(dx^i\\)다.",
+      "condition": "dxⁱ는 i번째 좌표 속도를 읽는 선형함수다.",
+      "type": "definition",
+      "english": "Coordinate one-form"
+    },
+    {
+      "id": "06-09",
+      "source": "06",
+      "stage": 1,
+      "title": "Wedge 곱",
+      "question": "좌표 기본 형식과 곱의 부호 규칙은?",
+      "answer": "M을 매끄러운 다양체 (smooth manifold), p,q≥0을 정수, \\(\\alpha\\in\\Omega^p(M)\\), \\(\\beta\\in\\Omega^q(M)\\)라 하자. 외적 \\(\\alpha\\wedge\\beta\\in\\Omega^{p+q}(M)\\)는 각 x∈M과 \\(v_1,\\ldots,v_{p+q}\\in T_xM\\)에서 \\[(\\alpha\\wedge\\beta)_x(v_1,\\ldots,v_{p+q})=\\frac{1}{p!q!}\\sum_{\\sigma\\in S_{p+q}}\\operatorname{sgn}(\\sigma)\\,\\alpha_x(v_{\\sigma(1)},\\ldots,v_{\\sigma(p)})\\,\\beta_x(v_{\\sigma(p+1)},\\ldots,v_{\\sigma(p+q)})\\]로 정의한다. \\(S_{p+q}\\)는 {1,…,p+q}의 순열들의 집합이고 \\(\\operatorname{sgn}(\\sigma)\\)는 순열의 부호다. 0-형식은 그 점에서의 함수값으로 취급하며 0!=1이다. 좌표계의 기본 형식은 \\[(dx^{i_1}\\wedge\\cdots\\wedge dx^{i_q})_x(v_1,\\ldots,v_q)=\\det\\bigl(dx^{i_a}_x(v_b)\\bigr)_{a,b=1}^q\\]를 만족한다.",
+      "condition": "행렬식의 행은 좌표 지표, 열은 입력 벡터에 대응한다.",
+      "type": "definition",
+      "english": "Wedge product / Exterior product"
+    },
+    {
+      "id": "06-10",
+      "source": "06",
+      "stage": 1,
+      "title": "외미분",
+      "question": "좌표 표현에서 d는 어떻게 정의되는가?",
+      "answer": "M을 매끄러운 n-다양체, q≥0을 정수라 하자. 외미분 (exterior derivative)은 실수 선형사상 \\(d:\\Omega^q(M)\\to\\Omega^{q+1}(M)\\)으로 다음 국소식으로 정의한다. 매끄러운 좌표계 \\(\\varphi=(x^1,\\ldots,x^n):U\\to V\\subset\\mathbb R^n\\)에서 \\[\\omega|_U=\\sum_{I}(a_I\\circ\\varphi)\\,dx^I,\\qquad a_I:V\\to\\mathbb R\\]로 쓴다. I는 \\(1\\le i_1<\\cdots<i_q\\le n\\)을 만족하는 지표이고 \\(dx^I=dx^{i_1}\\wedge\\cdots\\wedge dx^{i_q}\\), 각 aᵢ는 C∞ 함수다. V의 좌표를 \\(y=(y_1,\\ldots,y_n)\\)이라 쓰면 \\[(d\\omega)|_U:=\\sum_{j=1}^n\\sum_I\\left(\\frac{\\partial a_I}{\\partial y_j}\\circ\\varphi\\right)dx^j\\wedge dx^I.\\]q=0이면 빈 지표 I 하나를 사용하고 \\(dx^\\varnothing=1\\)로 둔다. 각 좌표에서의 식은 겹침에서 일치하여 하나의 전역 (q+1)-형식을 정한다.",
+      "condition": "새 dxʲ는 dxᴵ의 앞에 놓인다.",
+      "type": "definition",
+      "english": "Exterior derivative"
+    },
+    {
+      "id": "06-11",
+      "source": "06",
+      "stage": 1,
+      "title": "Closed 형식",
+      "question": "미분형식 (differential form)이 closed라는 조건은?",
+      "answer": "M을 매끄러운 다양체 (smooth manifold), \\(q\\ge0\\)을 정수라 하자. \\(\\Omega^q(M)\\)는 M 위 매끄러운 q-형식의 공간이며 \\(d:\\Omega^q(M)\\to\\Omega^{q+1}(M)\\)는 외미분 (exterior derivative)이다. \\(\\alpha\\in\\Omega^q(M)\\)가 closed라는 것은 \\(d\\alpha=0\\)이라는 뜻이다.",
+      "condition": "주어진 공간 위에서의 조건이다.",
+      "type": "definition",
+      "english": "Closed differential form"
+    },
+    {
+      "id": "06-12",
+      "source": "06",
+      "stage": 1,
+      "title": "Exact 형식",
+      "question": "어떤 차수의 형식이 존재해야 하는가?",
+      "answer": "매끄러운 다양체 (smooth manifold) M과 정수 \\(q\\ge1\\)에 대해, \\(\\alpha\\in\\Omega^q(M)\\)가 exact라는 것은 \\(d\\beta=\\alpha\\)인 \\(\\beta\\in\\Omega^{q-1}(M)\\)가 존재한다는 뜻이다. 0차에서는 de Rham 복합체를 \\(\\Omega^{-1}(M)=0\\), \\(d^{-1}:0\\to\\Omega^0(M)\\)으로 확장하는 관례에 따라, exact 0-형식을 \\(\\operatorname{im}d^{-1}=\\{0\\}\\)의 원소로 정의한다.",
+      "condition": "β는 같은 공간 M 전체에 정의되어야 한다. 0차에서는 영함수만 exact다.",
+      "type": "definition",
+      "english": "Exact differential form"
+    },
+    {
+      "id": "06-13",
+      "source": "06",
+      "stage": 1,
+      "title": "원시형식",
+      "question": "β가 α의 원시형식 (primitive)이라는 뜻은?",
+      "answer": "M을 매끄러운 다양체 (smooth manifold), \\(q\\ge1\\)을 정수라 하자. \\(\\Omega^r(M)\\)는 M 위 매끄러운 r-형식의 공간이고 d는 외미분 (exterior derivative)이다. \\(\\alpha\\in\\Omega^q(M)\\)에 대해 \\(d\\beta=\\alpha\\)를 만족하는 \\(\\beta\\in\\Omega^{q-1}(M)\\)를 α의 원시형식 (primitive)이라 한다.",
+      "condition": "β의 차수는 α보다 하나 낮다.",
+      "type": "definition",
+      "english": "Primitive of a differential form"
+    },
+    {
+      "id": "06-14",
+      "source": "06",
+      "stage": 1,
+      "title": "de Rham 코호몰로지",
+      "question": "어느 복합체의 코호몰로지 (cohomology)인가?",
+      "answer": "M을 매끄러운 다양체 (smooth manifold), q≥0을 정수라 하자. \\(\\Omega^r(M)\\)는 M 위 매끄러운 r-형식의 공간, \\(d^r:\\Omega^r(M)\\to\\Omega^{r+1}(M)\\)는 외미분 (exterior derivative)이다. 음의 차수 항은 영공간이고 \\(d^{-1}:0\\to\\Omega^0(M)\\)는 영사상 (zero morphism)으로 둔다. q차 de Rham 코호몰로지 (cohomology)는 \\[H^q_{\\mathrm{dR}}(M):=\\frac{\\ker(d^q:\\Omega^q(M)\\to\\Omega^{q+1}(M))}{\\operatorname{im}(d^{q-1}:\\Omega^{q-1}(M)\\to\\Omega^q(M))}\\]다. \\(d^q d^{q-1}=0\\)이므로 분모는 분자의 부분공간이다.",
+      "condition": "같은 M 위의 closed 형식을 exact 형식으로 나눈다.",
+      "type": "definition",
+      "english": "de Rham cohomology"
+    },
+    {
+      "id": "07-01",
+      "source": "07",
+      "stage": 2,
+      "title": "아벨군의 준층",
+      "question": "열린집합 (open set)과 포함에 어떤 자료를 주는가?",
+      "answer": "X를 위상공간 (topological space)이라 하자. 각 열린 \\(U\\subset X\\)에 아벨군 (abelian group) \\(\\mathcal F(U)\\), 각 열린 포함 \\(V\\subset U\\)에 준동형 (homomorphism) \\(\\rho_{UV}:\\mathcal F(U)\\to\\mathcal F(V)\\)를 주고 \\[\\rho_{UU}=\\mathrm{id},\\qquad\\rho_{UW}=\\rho_{VW}\\circ\\rho_{UV}\\quad(W\\subset V\\subset U)\\]를 만족시키는 자료다.",
+      "condition": "제한은 큰 열린집합 (open set)에서 작은 열린집합 방향이다.",
+      "type": "definition",
+      "english": "Presheaf of abelian groups"
+    },
+    {
+      "id": "07-02",
+      "source": "07",
+      "stage": 2,
+      "title": "단면",
+      "question": "U 위 단면 (section)과 그 제한은?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 준층 (presheaf of abelian groups), U를 X의 열린집합 (open set)이라 하자. \\(\\rho_{UV}:\\mathcal F(U)\\to\\mathcal F(V)\\)는 열린 포함 \\(V\\subset U\\)에 주어진 제한사상 (restriction map)이다. 준층 (presheaf) \\(\\mathcal F\\)에 대해 \\(s\\in\\mathcal F(U)\\)를 U 위 단면 (section)이라 하며, 열린 \\(V\\subset U\\)에 대한 제한은 \\(s|_V=\\rho_{UV}(s)\\)다.",
+      "condition": "단면 (section)에는 정의된 열린집합 (open set) U가 따라다닌다.",
+      "type": "definition",
+      "english": "Section"
+    },
+    {
+      "id": "07-03",
+      "source": "07",
+      "stage": 2,
+      "title": "전역단면",
+      "question": "Γ(X,F)는 무엇인가?",
+      "answer": "X는 위상공간 (topological space)이고 층의 계수는 아벨군 (abelian group)으로 한다. \\(X\\) 위 층 \\(\\mathcal F\\)의 전역단면군은 \\(\\Gamma(X,\\mathcal F)=\\mathcal F(X)\\)다.",
+      "condition": "공간 X 전체 위의 단면 (section)이다.",
+      "type": "definition",
+      "english": "Global section"
+    },
+    {
+      "id": "07-04",
+      "source": "07",
+      "stage": 2,
+      "title": "제한층",
+      "question": "열린 U에 제한한 층은 V에 무엇을 주는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups)이라 하자. 열린 \\(U\\subset X\\)에 대해 \\(\\mathcal F|_U\\)는 U 위 층으로, 각 열린 \\(V\\subset U\\)에서 \\((\\mathcal F|_U)(V)=\\mathcal F(V)\\)이며 제한사상 (restriction map)도 원래 것을 쓴다.",
+      "condition": "U는 X의 열린 부분집합이다.",
+      "type": "definition",
+      "english": "Restriction of a sheaf"
+    },
+    {
+      "id": "08-01",
+      "source": "08",
+      "stage": 2,
+      "title": "층",
+      "question": "어떤 덮개에 대해 무엇이 유일하게 붙는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 준층 (presheaf of abelian groups)이라 하자. \\(\\mathcal F\\)가 층이라는 것은 모든 열린 \\(U\\subset X\\), 모든 열린덮개 (open cover) \\(U=\\bigcup_{i\\in I}U_i\\), 모든 단면족 (family of sections) \\((s_i\\in\\mathcal F(U_i))_{i\\in I}\\)에 대해 다음 조건이 성립하는 것이다. 모든 i,j∈I에서 \\(s_i|_{U_i\\cap U_j}=s_j|_{U_i\\cap U_j}\\)이면, 모든 i∈I에서 \\(s|_{U_i}=s_i\\)인 \\(s\\in\\mathcal F(U)\\)가 유일하게 존재한다. \\(s|_V\\)는 준층 (presheaf)의 제한사상 (restriction map)에 의한 상이다. 빈 덮개도 포함하므로 \\(\\mathcal F(\\varnothing)=0\\)이다.",
+      "condition": "모든 열린 U의 모든 열린덮개 (open cover)에 대해 존재와 유일성을 요구한다.",
+      "type": "definition",
+      "english": "Sheaf"
+    },
+    {
+      "id": "09-01",
+      "source": "09",
+      "stage": 2,
+      "title": "Germ — 싹",
+      "question": "두 단면 (section)의 표현을 언제 같은 것으로 보는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 준층 (presheaf of abelian groups), \\(x\\in X\\)를 고정한 점이라 하자. 열린 근방 (open neighborhood) \\(U\\ni x\\)와 단면 (section) \\(s\\in\\mathcal F(U)\\)의 쌍 \\((U,s)\\)들을 생각한다. \\((U,s)\\sim_x(V,t)\\)는 어떤 열린 \\(W\\)가 존재하여 \\(x\\in W\\subset U\\cap V\\)이고 \\(s|_W=t|_W\\)라는 뜻이다. \\(s|_W\\)는 준층 (presheaf)의 제한사상 (restriction map) \\(\\mathcal F(U)\\to\\mathcal F(W)\\)에 의한 상이다. 이 동치관계 (equivalence relation)에 대한 \\((U,s)\\)의 동치류 (equivalence class) \\([U,s]_x\\)를 s의 x에서의 germ이라 하며 \\(s_x\\)로 쓴다.",
+      "condition": "어떤 공통 열린 근방 (open neighborhood)에서 제한 단면 (section)들이 같아야 한다.",
+      "type": "definition",
+      "english": "Germ"
+    },
+    {
+      "id": "09-02",
+      "source": "09",
+      "stage": 2,
+      "title": "Stalk — 줄기",
+      "question": "한 점의 줄기 (stalk)를 이루는 동치류 (equivalence class)와 덧셈은?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 준층 (presheaf of abelian groups), \\(x\\in X\\)라 하자. \\(\\mathcal F_x\\)는 모든 열린 근방 (open neighborhood) \\(U\\ni x\\)와 \\(s\\in\\mathcal F(U)\\)의 쌍 \\((U,s)\\)들을 다음 동치관계 (equivalence relation)로 나눈 집합이다. \\((U,s)\\sim_x(V,t)\\)는 어떤 열린 \\(W\\)가 존재하여 \\(x\\in W\\subset U\\cap V\\), \\(s|_W=t|_W\\)라는 뜻이다. 동치류 (equivalence class)를 \\([U,s]_x\\)라 쓰며 덧셈은 \\[[U,s]_x+[V,t]_x=[U\\cap V,\\ s|_{U\\cap V}+t|_{U\\cap V}]_x\\]로 정의한다. 영원소는 \\([X,0]_x\\), 덧셈 역원은 \\(-[U,s]_x=[U,-s]_x\\)다. 이 아벨군 (abelian group)을 x에서의 줄기 (stalk)라 하며 \\(\\mathcal F_x=\\varinjlim_{x\\in U}\\mathcal F(U)\\)로도 쓴다.",
+      "condition": "모든 x의 열린 근방 (open neighborhood)을 사용하고 더 작은 근방에서 같아지는 표현들을 식별한다.",
+      "type": "definition",
+      "english": "Stalk"
+    },
+    {
+      "id": "10-01",
+      "source": "10",
+      "stage": 2,
+      "title": "층사상",
+      "question": "제한과 호환된다는 식은?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F,\\mathcal G\\)를 X 위 아벨군 층 (sheaf of abelian groups)이라 하자. 층사상 (sheaf morphism) \\(f:\\mathcal F\\to\\mathcal G\\)는 각 열린 \\(U\\subset X\\)에 대한 준동형 (homomorphism) \\(f_U:\\mathcal F(U)\\to\\mathcal G(U)\\)의 족으로, 모든 열린 \\(V\\subset U\\)에 대해 \\[\\rho^{\\mathcal G}_{UV}\\circ f_U=f_V\\circ\\rho^{\\mathcal F}_{UV}\\]를 만족한다. \\(\\rho^{\\mathcal F}_{UV}:\\mathcal F(U)\\to\\mathcal F(V)\\), \\(\\rho^{\\mathcal G}_{UV}:\\mathcal G(U)\\to\\mathcal G(V)\\)는 각각의 층의 제한사상 (restriction map)이다.",
+      "condition": "같은 공간 X 위의 두 층 사이에서 모든 열린 포함에 대한 호환성을 요구한다.",
+      "type": "definition",
+      "english": "Morphism of sheaves"
+    },
+    {
+      "id": "10-02",
+      "source": "10",
+      "stage": 2,
+      "title": "줄기사상",
+      "question": "주어진 층사상 (sheaf morphism)은 한 점의 줄기 (stalk) 사이에 어떤 사상을 정하는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F,\\mathcal G\\)를 X 위 아벨군 층 (sheaf of abelian groups), \\(f:\\mathcal F\\to\\mathcal G\\)를 층사상 (sheaf morphism), \\(x\\in X\\)를 고정한 점이라 하자. 각 열린 \\(U\\subset X\\)에서 f의 성분은 준동형 (homomorphism) \\(f_U:\\mathcal F(U)\\to\\mathcal G(U)\\)이며, 모든 열린 \\(V\\subset U\\)와 \\(s\\in\\mathcal F(U)\\)에 대해 \\(f_V(s|_V)=f_U(s)|_V\\)를 만족한다. 줄기 (stalk) \\(\\mathcal F_x\\)의 원소는 \\(x\\in U\\), \\(s\\in\\mathcal F(U)\\)인 쌍 \\((U,s)\\)의 동치류 (equivalence class) \\([U,s]_x\\)다. 두 쌍 \\((U,s),(V,t)\\)는 어떤 열린 \\(W\\)가 존재하여 \\(x\\in W\\subset U\\cap V\\), \\(s|_W=t|_W\\)일 때 동치다. \\(\\mathcal G_x\\)도 같은 방식으로 정의한다. f가 x에서 유도하는 줄기사상 (induced map on stalks)은 준동형 \\[f_x:\\mathcal F_x\\longrightarrow\\mathcal G_x,\\qquad[U,s]_x\\longmapsto[U,f_U(s)]_x\\]이다. 제한과의 호환성에 의해 동치인 대표쌍 (representative pair)은 동치인 상을 주므로 이 대응은 대표쌍의 선택에 무관하다. \\(s_x:=[U,s]_x\\)로 줄여 쓰면 \\(f_x(s_x)=(f_U(s))_x\\)다.",
+      "condition": "U는 x의 열린 근방 (open neighborhood)이고 s는 F(U)의 원소다. 입력과 출력은 각각 Fₓ와 Gₓ의 동치류 (equivalence class)다.",
+      "type": "definition",
+      "english": "Induced map on stalks"
+    },
+    {
+      "id": "10-03",
+      "source": "10",
+      "stage": 2,
+      "title": "층의 완전열",
+      "question": "어디에서 완전성을 검사하는가?",
+      "answer": "X를 위상공간 (topological space)이라 하자. X 위 아벨군 층 (sheaf of abelian groups)들과 층사상 (sheaf morphism)으로 이루어진 수열 \\(\\cdots\\to\\mathcal F^{r-1}\\xrightarrow{a^{r-1}}\\mathcal F^r\\xrightarrow{a^r}\\mathcal F^{r+1}\\to\\cdots\\)이 \\(\\mathcal F^r\\)에서 완전하다는 것은 모든 x∈X에서 \\[\\operatorname{im}(a_x^{r-1}:\\mathcal F_x^{r-1}\\to\\mathcal F_x^r)=\\ker(a_x^r:\\mathcal F_x^r\\to\\mathcal F_x^{r+1})\\]가 성립한다는 뜻이다. \\(\\mathcal F_x^r\\)는 x에서의 줄기 (stalk)이고 \\(a_x^r\\)는 층사상으로부터 유도된 줄기 준동형 (homomorphism on stalks)이다. 수열이 완전하다는 것은 모든 항에서 완전하다는 뜻이다.",
+      "condition": "모든 열린집합 (open set)의 단면열 (sequence of sections) 완전성을 요구하는 것이 아니다.",
+      "type": "definition",
+      "english": "Exact sequence of sheaves"
+    },
+    {
+      "id": "10-04",
+      "source": "10",
+      "stage": 2,
+      "title": "층의 단사",
+      "question": "어떤 사상들이 모두 단사인가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F,\\mathcal G\\)를 X 위 아벨군 층 (sheaf of abelian groups), \\(f:\\mathcal F\\to\\mathcal G\\)를 층사상 (sheaf morphism)이라 하자. 각 x∈X에서 \\(\\mathcal F_x,\\mathcal G_x\\)는 줄기 (stalk)이고 \\(f_x:\\mathcal F_x\\to\\mathcal G_x\\)는 f가 유도하는 줄기 준동형 (homomorphism on stalks)이다. f가 단사라는 조건은 모든 x∈X와 모든 \\(a,b\\in\\mathcal F_x\\)에 대해 \\(f_x(a)=f_x(b)\\Rightarrow a=b\\)라는 것이다.",
+      "condition": "모든 점의 줄기 (stalk)에서 검사한다.",
+      "type": "definition",
+      "english": "Monomorphism of sheaves"
+    },
+    {
+      "id": "10-05",
+      "source": "10",
+      "stage": 2,
+      "title": "층의 전사",
+      "question": "어떤 사상들이 모두 전사인가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F,\\mathcal G\\)를 X 위 아벨군 층 (sheaf of abelian groups), \\(f:\\mathcal F\\to\\mathcal G\\)를 층사상 (sheaf morphism)이라 하자. 각 x∈X에서 \\(\\mathcal F_x,\\mathcal G_x\\)는 줄기 (stalk)이고 \\(f_x:\\mathcal F_x\\to\\mathcal G_x\\)는 f가 유도하는 줄기 준동형 (homomorphism on stalks)이다. f가 전사라는 조건은 모든 x∈X와 모든 \\(b\\in\\mathcal G_x\\)에 대해 어떤 \\(a\\in\\mathcal F_x\\)가 존재하여 \\(f_x(a)=b\\)라는 것이다.",
+      "condition": "각 열린 U의 단면사상 (map on sections) fᵤ가 전사라는 뜻이 아니다.",
+      "type": "definition",
+      "english": "Epimorphism of sheaves"
+    },
+    {
+      "id": "11-01",
+      "source": "11",
+      "stage": 2,
+      "title": "국소상수함수",
+      "question": "각 점 근처에서 어떤 조건인가?",
+      "answer": "U를 위상공간 (topological space), B를 집합이라 하자. 함수 \\(f:U\\to B\\)가 국소상수라는 것은 모든 \\(x\\in U\\)에 대해 \\(x\\in V\\subset U\\)인 열린 근방 (open neighborhood) V가 존재하여 \\(f|_V\\)가 상수라는 뜻이다.",
+      "condition": "U 전체에서 같은 상수일 필요는 없다.",
+      "type": "definition",
+      "english": "Locally constant function"
+    },
+    {
+      "id": "11-02",
+      "source": "11",
+      "stage": 2,
+      "title": "상수층",
+      "question": "열린 U에 어떤 함수들을 대응시키는가?",
+      "answer": "X를 위상공간 (topological space), B를 아벨군 (abelian group)이라 하자. 각 열린 U는 X의 열린집합 (open set)이다. 함수 \\(g:U\\to B\\)가 국소상수라는 것은 모든 x∈U가 g가 상수인 열린 근방 (open neighborhood)을 갖는다는 뜻이다. 아벨군 B의 상수층 (constant sheaf) \\(\\underline B\\)는 각 열린 U에 국소상수함수 (locally constant function) \\(U\\to B\\)들의 군을 주고, 함수의 제한을 제한사상 (restriction map)으로 쓰는 층이다. 덧셈은 점별 덧셈이다.",
+      "condition": "상수함수만이 아니라 국소상수함수 (locally constant function) 모두다.",
+      "type": "definition",
+      "english": "Constant sheaf"
+    },
+    {
+      "id": "11-03",
+      "source": "11",
+      "stage": 2,
+      "title": "미분형식층",
+      "question": "Aᑫ(U)는 무엇인가?",
+      "answer": "q는 0 이상의 정수이며 \\(\\Omega^q(U)\\)는 U 위 매끄러운 q-형식의 실수벡터공간이다. 매끄러운 다양체 (smooth manifold) M 위의 미분형식층 \\(\\mathcal A^q\\)는 열린 \\(U\\subset M\\)에 \\(\\mathcal A^q(U)=\\Omega^q(U)\\)를 주고 형식의 제한을 쓰는 층이다.",
+      "condition": "A⁰는 매끄러운 함수층이며 실수 상수층 (constant sheaf)과 다르다.",
+      "type": "definition",
+      "english": "Sheaf of differential forms"
+    },
+    {
+      "id": "12-01",
+      "source": "12",
+      "stage": 2,
+      "title": "국소유한 집합족",
+      "question": "각 점의 어떤 근방이 몇 개와 만나는가?",
+      "answer": "X를 위상공간 (topological space), \\((A_i)_{i\\in I}\\)를 X의 부분집합족이라 하자. 점과 근방은 X 안에서 취한다. 집합족 \\(\\{A_i\\}\\)가 국소유한 (locally finite)이라는 것은 모든 점 x에 대해 어떤 열린 근방 (open neighborhood) V가 존재하여 \\(\\{i:V\\cap A_i\\ne\\varnothing\\}\\)가 유한하다는 뜻이다.",
+      "condition": "집합족 전체가 유한할 필요는 없다.",
+      "type": "definition",
+      "english": "Locally finite family"
+    },
+    {
+      "id": "12-02",
+      "source": "12",
+      "stage": 2,
+      "title": "열린덮개의 세분",
+      "question": "새 덮개와 원래 덮개의 포함 관계는?",
+      "answer": "X를 위상공간 (topological space), \\((U_i)_{i\\in I}\\)와 \\((V_a)_{a\\in A}\\)를 X의 열린덮개 (open cover)라 하자. \\(\\{V_a\\}\\)가 \\(\\{U_i\\}\\)의 세분이라는 것은 새 열린집합족도 같은 공간을 덮고, 모든 a에 대해 어떤 i가 존재하여 \\(V_a\\subset U_i\\)인 것이다.",
+      "condition": "새 집합이 원래 집합 안에 들어간다.",
+      "type": "definition",
+      "english": "Refinement of an open cover"
+    },
+    {
+      "id": "12-03",
+      "source": "12",
+      "stage": 2,
+      "title": "Paracompact 공간",
+      "question": "모든 열린덮개 (open cover)가 어떤 세분을 갖는가?",
+      "answer": "모든 열린덮개 (open cover)가 국소유한 (locally finite) 열린 세분을 갖는 위상공간 (topological space)을 paracompact라 한다.",
+      "condition": "이 정의 자체에는 Hausdorff를 별도로 넣지 않는다.",
+      "type": "definition",
+      "english": "Paracompact space"
+    },
+    {
+      "id": "12-04",
+      "source": "12",
+      "stage": 2,
+      "title": "함수의 지지",
+      "question": "0이 아닌 점들의 집합에 무엇을 취하는가?",
+      "answer": "X를 위상공간 (topological space), \\(f:X\\to\\mathbb R\\)를 함수라 하자. f의 지지는 \\[\\operatorname{supp}f:=\\overline{\\{x\\in X:f(x)\\ne0\\}}^{\\,X}\\]다. 폐포 (closure)는 정의역 X의 위상에서 취한다. 복소수값 함수에도 같은 정의를 사용한다.",
+      "condition": "0이 아닌 점들의 집합 자체가 아니라 그 폐포 (closure)다.",
+      "type": "definition",
+      "english": "Support of a function"
+    },
+    {
+      "id": "12-05",
+      "source": "12",
+      "stage": 2,
+      "title": "매끄러운 단위분할",
+      "question": "덮개에 종속된 함수족의 조건은?",
+      "answer": "매끄러운 다양체 (smooth manifold) M의 열린덮개 (open cover) \\(\\{U_i\\}\\)에 대해, 매끄러운 함수 \\(\\rho_i:M\\to\\mathbb R\\)들이 \\[0\\le\\rho_i\\le1,\\quad\\operatorname{supp}\\rho_i\\subset U_i,\\quad\\sum_i\\rho_i=1\\]을 만족하고 지지들의 족이 국소유한 (locally finite)이면 이 덮개에 종속된 매끄러운 단위분할 (partition of unity)이다.",
+      "condition": "지지들의 국소유한 (locally finite)성이 합을 정의하게 한다.",
+      "type": "definition",
+      "english": "Smooth partition of unity"
+    },
+    {
+      "id": "12-06",
+      "source": "12",
+      "stage": 2,
+      "title": "층 자기 사상의 지지",
+      "question": "어느 줄기 (stalk)들이 0이 아닌지를 쓰는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups), \\(h:\\mathcal F\\to\\mathcal F\\)를 층사상 (sheaf morphism)이라 하자. 각 x∈X에서 \\(h_x:\\mathcal F_x\\to\\mathcal F_x\\)는 \\([U,s]_x\\mapsto[U,h_U(s)]_x\\)로 유도되는 줄기 준동형 (homomorphism on stalks)이다. h의 지지를 \\[\\operatorname{supp}h:=\\overline{\\{x\\in X:h_x\\ne0\\}}^{\\,X}\\]로 정의한다. 여기서 \\(h_x\\ne0\\)은 줄기 준동형이 영준동형 (zero homomorphism)이 아니라는 뜻이며, 폐포 (closure)는 X에서 취한다.",
+      "condition": "hₓ는 줄기사상 (induced map on stalks)이며 그 비영점 집합의 폐포 (closure)를 취한다.",
+      "type": "definition",
+      "english": "Support of a sheaf endomorphism"
+    },
+    {
+      "id": "12-07",
+      "source": "12",
+      "stage": 2,
+      "title": "Fine 층",
+      "question": "어떤 덮개마다 항등사상 (identity morphism)을 어떻게 분해하는가?",
+      "answer": "X를 paracompact Hausdorff 공간, \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups)이라 하자. \\(\\mathcal F\\)가 fine이라는 것은 X의 모든 국소유한 (locally finite) 열린덮개 (open cover) \\(\\{U_i\\}_{i\\in I}\\)에 대해 층사상족 \\((h_i:\\mathcal F\\to\\mathcal F)_{i\\in I}\\)이 존재하여 \\[\\operatorname{supp}h_i\\subset U_i\\quad(i\\in I),\\qquad\\sum_{i\\in I}h_i=\\mathrm{id}_{\\mathcal F}\\]를 만족한다는 뜻이다. 각 점 근방에서 유한 개의 hᵢ만 0이 아닐 수 있으므로 이 합이 정의된다.",
+      "condition": "주어진 모든 국소유한 (locally finite) 열린덮개 (open cover)에 대해 그 덮개에 종속된 층 자기 사상족의 존재를 요구한다.",
+      "type": "definition",
+      "english": "Fine sheaf"
+    },
+    {
+      "id": "13-01",
+      "source": "13",
+      "stage": 3,
+      "title": "범주",
+      "question": "대상·사상·합성은 어떤 자료인가?",
+      "answer": "대상들과 각 대상쌍의 사상 집합 \\(\\operatorname{Hom}(A,B)\\), 합성 \\(\\operatorname{Hom}(B,C)\\times\\operatorname{Hom}(A,B)\\to\\operatorname{Hom}(A,C)\\), 항등사상 (identity morphism) \\(\\mathrm{id}_A\\)로 이루어진다. 합성은 결합적이고 \\(\\mathrm{id}_Bf=f=f\\mathrm{id}_A\\)다.",
+      "condition": "합성 가능한 사상에 대해서만 합성한다.",
+      "type": "definition",
+      "english": "Category"
+    },
+    {
+      "id": "13-02",
+      "source": "13",
+      "stage": 3,
+      "title": "동형사상",
+      "question": "역사상은 어떤 두 식을 만족하는가?",
+      "answer": "범주 \\(\\mathcal C\\)의 대상 A,B와 사상 \\(f:A\\to B\\)를 고정한다. \\(\\mathrm{id}_A,\\mathrm{id}_B\\)는 각 대상의 항등사상 (identity morphism)이고 사상의 곱은 합성을 뜻한다. \\(f:A\\to B\\)에 대해 \\(g:B\\to A\\)가 존재하여 \\(gf=\\mathrm{id}_A\\), \\(fg=\\mathrm{id}_B\\)이면 f를 동형사상 (isomorphism)이라 한다.",
+      "condition": "양쪽 합성이 각각의 항등사상 (identity morphism)이어야 한다.",
+      "type": "definition",
+      "english": "Isomorphism"
+    },
+    {
+      "id": "13-03",
+      "source": "13",
+      "stage": 3,
+      "title": "공변함자",
+      "question": "사상의 방향과 합성을 어떻게 보존하는가?",
+      "answer": "\\(\\mathcal C,\\mathcal D\\)를 범주라 하자. 아래에서 A,B는 \\(\\mathcal C\\)의 대상이고 f,g는 \\(\\mathcal C\\)의 합성 가능한 사상이다. \\(T:\\mathcal C\\to\\mathcal D\\)는 대상 A를 T(A)로, 사상 \\(f:A\\to B\\)를 \\(T(f):T(A)\\to T(B)\\)로 보내며 \\(T(\\mathrm{id}_A)=\\mathrm{id}_{T(A)}\\), \\(T(gf)=T(g)T(f)\\)를 만족한다.",
+      "condition": "합성과 항등사상 (identity morphism)을 모두 보존한다.",
+      "type": "definition",
+      "english": "Covariant functor"
+    },
+    {
+      "id": "13-04",
+      "source": "13",
+      "stage": 3,
+      "title": "반변함자",
+      "question": "사상의 방향과 합성 순서는?",
+      "answer": "\\(\\mathcal C,\\mathcal D\\)를 범주라 하자. 반변함자 (contravariant functor) \\(T:\\mathcal C^{\\mathrm{op}}\\to\\mathcal D\\)는 다음 자료다. A,B는 \\(\\mathcal C\\)의 대상이고 f,g는 \\(\\mathcal C\\)의 합성 가능한 사상이다. \\(\\mathcal C^{\\mathrm{op}}\\)는 \\(\\mathcal C\\)의 모든 사상 방향을 뒤집은 범주다. 대상 A를 T(A)로, 사상 \\(f:A\\to B\\)를 \\(T(f):T(B)\\to T(A)\\)로 보내고, 항등사상 (identity morphism)을 보존하며 \\(T(gf)=T(f)T(g)\\)를 만족하는 자료다.",
+      "condition": "방향을 뒤집으면 합성 순서도 뒤집힌다.",
+      "type": "definition",
+      "english": "Contravariant functor"
+    },
+    {
+      "id": "14-01",
+      "source": "14",
+      "stage": 3,
+      "title": "영대상",
+      "question": "어떤 사상이 유일해야 하는가?",
+      "answer": "범주의 대상 0이 영대상 (zero object)이라는 것은 모든 대상 A에 대해 \\(0\\to A\\)와 \\(A\\to0\\)인 사상이 각각 정확히 하나 존재한다는 뜻이다.",
+      "condition": "나가는 사상과 들어오는 사상 모두 유일하다.",
+      "type": "definition",
+      "english": "Zero object"
+    },
+    {
+      "id": "14-02",
+      "source": "14",
+      "stage": 3,
+      "title": "유한 직합",
+      "question": "두 대상의 포함·사영이 만족하는 식은?",
+      "answer": "가법적 문맥에서 \\(A\\oplus B\\)는 포함 \\(i_A:A\\to A\\oplus B\\), \\(i_B:B\\to A\\oplus B\\)와 사영 \\(p_A:A\\oplus B\\to A\\), \\(p_B:A\\oplus B\\to B\\)를 가지며 \\[p_Ai_A=1_A,\\quad p_Bi_B=1_B,\\quad p_Ai_B=p_Bi_A=0,\\]\\[i_Ap_A+i_Bp_B=1_{A\\oplus B}\\]을 만족하는 대상이다. 유한 개 대상에 반복하고 빈 직합은 영대상 (zero object)이다.",
+      "condition": "마지막 항등사상 (identity morphism) 분해식도 필요하다.",
+      "type": "definition",
+      "english": "Finite direct sum / Biproduct"
+    },
+    {
+      "id": "14-03",
+      "source": "14",
+      "stage": 3,
+      "title": "범주론적 핵",
+      "question": "어떤 사상이 핵을 통해 유일하게 분해되는가?",
+      "answer": "사상 집합마다 아벨군 (abelian group) 구조가 있고 합성이 쌍선형인 범주에서 사상 \\(f:A\\to B\\)를 고정한다. 0은 해당 사상 집합의 영사상 (zero morphism)이다. \\(f:A\\to B\\)의 핵은 \\(k:K\\to A\\)로, \\(fk=0\\)이고 모든 대상 T와 모든 \\(g:T\\to A\\)에 대해 \\(fg=0\\)이면 유일한 \\(\\widetilde g:T\\to K\\)가 존재하여 \\(g=k\\widetilde g\\)가 되는 것이다.",
+      "condition": "핵으로 들어가는 분해 사상의 존재와 유일성이 필요하다.",
+      "type": "definition",
+      "english": "Categorical kernel"
+    },
+    {
+      "id": "14-04",
+      "source": "14",
+      "stage": 3,
+      "title": "범주론적 여핵",
+      "question": "어떤 사상이 여핵을 통해 유일하게 분해되는가?",
+      "answer": "사상 집합마다 아벨군 (abelian group) 구조가 있고 합성이 쌍선형인 범주에서 사상 \\(f:A\\to B\\)를 고정한다. 0은 해당 사상 집합의 영사상 (zero morphism)이다. \\(f:A\\to B\\)의 여핵은 \\(q:B\\to Q\\)로, \\(qf=0\\)이고 모든 대상 T와 모든 \\(g:B\\to T\\)에 대해 \\(gf=0\\)이면 유일한 \\(\\widetilde g:Q\\to T\\)가 존재하여 \\(g=\\widetilde gq\\)가 되는 것이다.",
+      "condition": "여핵에서 나가는 분해 사상이다.",
+      "type": "definition",
+      "english": "Categorical cokernel"
+    },
+    {
+      "id": "14-05",
+      "source": "14",
+      "stage": 3,
+      "title": "범주론적 상",
+      "question": "어느 여핵사상의 핵인가?",
+      "answer": "핵과 여핵이 있는 가법적 범주에서 \\(f:A\\to B\\)의 상은 \\(\\operatorname{im}f:=\\ker(B\\to\\operatorname{coker}f)\\)다.",
+      "condition": "공역 B에서 여핵으로 가는 사상의 핵이다.",
+      "type": "definition",
+      "english": "Categorical image"
+    },
+    {
+      "id": "14-06",
+      "source": "14",
+      "stage": 3,
+      "title": "범주론적 여상",
+      "question": "어느 핵사상의 여핵인가?",
+      "answer": "핵과 여핵이 있는 가법적 범주에서 \\(f:A\\to B\\)의 여상은 \\(\\operatorname{coim}f:=\\operatorname{coker}(\\ker f\\to A)\\)다.",
+      "condition": "핵에서 정의역 A로 가는 사상의 여핵이다.",
+      "type": "definition",
+      "english": "Coimage"
+    },
+    {
+      "id": "14-07",
+      "source": "14",
+      "stage": 3,
+      "title": "아벨범주",
+      "question": "가법적 구조에 어떤 핵·여핵 조건을 더하는가?",
+      "answer": "범주 \\(\\mathcal C\\)가 다음을 만족하면 아벨범주 (abelian category)라 한다. 모든 대상쌍 A,B의 \\(\\operatorname{Hom}_{\\mathcal C}(A,B)\\)가 아벨군 (abelian group)이고 합성은 각 변수에 대해 가법적이다. 영대상 (zero object)과 유한 직합이 존재한다. 또한 모든 사상 \\(f:A\\to B\\)에 핵 \\(k_f:K_f\\to A\\)와 여핵 \\(q_f:B\\to Q_f\\)가 존재한다. \\[p_f:A\\to\\operatorname{coim}f:=\\operatorname{coker}k_f,\\qquad i_f:\\operatorname{im}f:=\\ker q_f\\to B\\]를 각각 그 여핵사상과 핵사상이라 하자. 핵·여핵의 보편성으로 정해지는 사상 \\[\\overline f:\\operatorname{coim}f\\to\\operatorname{im}f,\\qquad f=i_f\\circ\\overline f\\circ p_f\\]이 모든 f에 대해 동형이어야 한다.",
+      "condition": "핵·여핵의 존재만으로는 부족하고 여상→상의 자연사상이 동형이어야 한다.",
+      "type": "definition",
+      "english": "Abelian category"
+    },
+    {
+      "id": "15-01",
+      "source": "15",
+      "stage": 3,
+      "title": "단사상 — 범주론",
+      "question": "어느 쪽 합성을 소거할 수 있는가?",
+      "answer": "범주 \\(\\mathcal C\\)에서 사상 \\(j:A\\to B\\)를 고정한다. T는 \\(\\mathcal C\\)의 임의의 대상이다. \\(j:A\\to B\\)가 단사상 (monomorphism)이라는 것은 모든 대상 T와 모든 \\(g,h:T\\to A\\)에 대해 \\(jg=jh\\Rightarrow g=h\\)라는 뜻이다.",
+      "condition": "g와 h의 출발 대상은 같고 도착 대상은 A다.",
+      "type": "definition",
+      "english": "Monomorphism"
+    },
+    {
+      "id": "15-02",
+      "source": "15",
+      "stage": 3,
+      "title": "Injective 대상",
+      "question": "어떤 사상을 어디까지 연장할 수 있어야 하는가?",
+      "answer": "범주 \\(\\mathcal C\\)와 그 대상 I를 고정한다. 아래의 대상과 사상은 모두 \\(\\mathcal C\\) 안에서 취한다. 대상 I가 injective라는 것은 모든 단사상 (monomorphism) \\(j:A\\to B\\)와 모든 사상 \\(u:A\\to I\\)에 대해 사상 \\(v:B\\to I\\)가 존재하여 \\(v\\circ j=u\\)가 되는 것이다.",
+      "condition": "연장의 존재를 요구하며 유일성은 요구하지 않는다.",
+      "type": "definition",
+      "english": "Injective object"
+    },
+    {
+      "id": "15-03",
+      "source": "15",
+      "stage": 3,
+      "title": "충분한 단사 대상",
+      "question": "모든 대상을 어디에 넣을 수 있어야 하는가?",
+      "answer": "범주 \\(\\mathcal C\\)를 고정한다. 아래의 대상과 사상은 모두 \\(\\mathcal C\\) 안에서 취한다. 모든 대상 F에 대해 어떤 injective 대상 I와 단사상 (monomorphism) \\(F\\hookrightarrow I\\)가 존재하면 그 범주가 enough injectives를 갖는다고 한다.",
+      "condition": "injective 대상 하나의 존재만을 뜻하지 않는다.",
+      "type": "definition",
+      "english": "Enough injectives"
+    },
+    {
+      "id": "16-01",
+      "source": "16",
+      "stage": 3,
+      "title": "분해",
+      "question": "맨 앞의 대상을 포함한 수열의 조건은?",
+      "answer": "아벨범주 (abelian category)에서 F의 resolution은 \\[0\\to F\\to L^0\\xrightarrow{d^0}L^1\\xrightarrow{d^1}L^2\\to\\cdots\\]라는 완전열 (exact sequence)이다.",
+      "condition": "F를 포함한 모든 자리에서 완전해야 한다.",
+      "type": "definition",
+      "english": "Resolution"
+    },
+    {
+      "id": "16-02",
+      "source": "16",
+      "stage": 3,
+      "title": "단사적 분해",
+      "question": "Resolution의 어떤 대상들이 injective인가?",
+      "answer": "아벨범주 (abelian category) \\(\\mathcal C\\)와 그 대상 F를 고정한다. 아래의 모든 항과 사상은 \\(\\mathcal C\\) 안에서 취하며 0은 영대상 (zero object)이다. \\(0\\to F\\to I^0\\to I^1\\to\\cdots\\)가 완전열 (exact sequence)이고 모든 \\(q\\ge0\\)에 대해 \\(I^q\\)가 injective인 resolution이다.",
+      "condition": "맨 앞의 F 자체는 injective일 필요가 없다.",
+      "type": "definition",
+      "english": "Injective resolution"
+    },
+    {
+      "id": "16-03",
+      "source": "16",
+      "stage": 3,
+      "title": "파인 분해",
+      "question": "층의 resolution에 어떤 항별 조건을 더하는가?",
+      "answer": "X를 paracompact Hausdorff 공간, \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups)이라 하자. 아래의 \\(\\mathcal L^q\\)와 사상은 X 위 아벨군 층의 범주에서 취한다. \\(0\\to\\mathcal F\\to\\mathcal L^0\\to\\mathcal L^1\\to\\cdots\\)가 층의 완전열 (exact sequence)이고 모든 \\(q\\ge0\\)의 \\(\\mathcal L^q\\)가 fine인 resolution이다. Fine의 공간 가정은 paracompact Hausdorff다.",
+      "condition": "해결되는 F 자체가 fine일 필요는 없다.",
+      "type": "definition",
+      "english": "Fine resolution"
+    },
+    {
+      "id": "17-01",
+      "source": "17",
+      "stage": 3,
+      "title": "가법함자",
+      "question": "각 Hom에서 무엇을 보존하는가?",
+      "answer": "가법적 범주 사이의 함자 T가 가법이라는 것은 각 대상쌍 A,B와 모든 \\(f,g\\in\\operatorname{Hom}(A,B)\\)에 대해 \\(T(f+g)=T(f)+T(g)\\)를 만족한다는 뜻이다.",
+      "condition": "같은 Hom 안의 사상 덧셈을 보존한다.",
+      "type": "definition",
+      "english": "Additive functor"
+    },
+    {
+      "id": "17-02",
+      "source": "17",
+      "stage": 3,
+      "title": "왼쪽 완전함자",
+      "question": "짧은 완전열 (short exact sequence)을 어느 자리까지 완전하게 보내는가?",
+      "answer": "아벨범주 (abelian category) 사이의 공변 가법함자 (additive functor) T가 모든 짧은 완전열 (short exact sequence) \\(0\\to A\\to B\\to C\\to0\\)를 완전한 수열 \\(0\\to T(A)\\to T(B)\\to T(C)\\)로 보내면 왼쪽 완전이라 한다.",
+      "condition": "T(C) 뒤의 0, 즉 마지막 전사는 요구하지 않는다.",
+      "type": "definition",
+      "english": "Left exact functor"
+    },
+    {
+      "id": "17-03",
+      "source": "17",
+      "stage": 3,
+      "title": "오른쪽 유도함자",
+      "question": "어떤 분해에 함자를 적용하여 코호몰로지 (cohomology)를 취하는가?",
+      "answer": "\\(\\mathcal A,\\mathcal B\\)를 아벨범주 (abelian category), \\(T:\\mathcal A\\to\\mathcal B\\)를 왼쪽 완전 공변 가법함자 (additive functor)라 하고, \\(\\mathcal A\\)가 enough injectives를 갖는다고 가정한다. 대상 F∈A의 injective resolution \\(0\\to F\\xrightarrow{\\epsilon_F}I^0\\xrightarrow{d^0}I^1\\to\\cdots\\)를 택한다. 각 정수 q≥0에 대해 \\[R^qT(F):=H^q\\bigl(T(I^\\bullet),T(d^\\bullet)\\bigr)\\]로 정의한다. 대상 G의 분해 \\(0\\to G\\xrightarrow{\\epsilon_G}J^0\\to\\cdots\\)와 사상 \\(u:F\\to G\\)에 대해서는, \\(\\widetilde u^0\\epsilon_F=\\epsilon_Gu\\)인 복합체 사상 (morphism of complexes) \\(\\widetilde u:I^\\bullet\\to J^\\bullet\\)를 택하여 \\(R^qT(u):=H^q(T(\\widetilde u))\\)로 정한다. 분해와 연장사상의 선택에 대한 독립성은 이 정의를 정당화하는 정리다.",
+      "condition": "T(I•)는 T(I⁰)에서 시작하며 T(F)를 항에 넣지 않는다.",
+      "type": "definition",
+      "english": "Right derived functor"
+    },
+    {
+      "id": "18-01",
+      "source": "18",
+      "stage": 3,
+      "title": "전역단면함자",
+      "question": "층과 층사상 (sheaf morphism)을 각각 어디로 보내는가?",
+      "answer": "X를 위상공간 (topological space)이라 하자. \\(\\operatorname{Sh}(X;\\mathbf{Ab})\\)는 X 위 아벨군 층 (sheaf of abelian groups)과 층사상 (sheaf morphism)의 범주, \\(\\mathbf{Ab}\\)는 아벨군 (abelian group)과 준동형 (homomorphism)의 범주다. 전역단면함자 (global section functor) \\(\\Gamma(X,-):\\operatorname{Sh}(X;\\mathbf{Ab})\\to\\mathbf{Ab}\\)는 대상 \\(\\mathcal F\\)를 \\(\\mathcal F(X)\\)로, 층사상 \\(f:\\mathcal F\\to\\mathcal G\\)를 그 X에서의 성분 \\(f_X:\\mathcal F(X)\\to\\mathcal G(X)\\)로 보낸다.",
+      "condition": "공간 X를 고정한 함자다.",
+      "type": "definition",
+      "english": "Global section functor"
+    },
+    {
+      "id": "18-02",
+      "source": "18",
+      "stage": 3,
+      "title": "층 코호몰로지",
+      "question": "무엇의 전역단면 (global section) 복합체로 정의하는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups)이라 하자. 층의 injective resolution \\(0\\to\\mathcal F\\to I^0\\xrightarrow{d^0}I^1\\to\\cdots\\)를 택한다. \\(D^r:=\\Gamma(X,d^r):I^r(X)\\to I^{r+1}(X)\\)로 놓고, \\(I^{-1}(X)=0\\), \\(D^{-1}:0\\to I^0(X)\\)으로 둔다. 각 정수 q≥0의 층 코호몰로지 (sheaf cohomology)는 \\[H^q(X,\\mathcal F):=\\frac{\\ker(D^q:I^q(X)\\to I^{q+1}(X))}{\\operatorname{im}(D^{q-1}:I^{q-1}(X)\\to I^q(X))}=R^q\\Gamma(X,\\mathcal F)\\]다. \\(R^q\\Gamma\\)는 전역단면함자 (global section functor)의 q차 오른쪽 유도함자 (right derived functor)를 뜻한다.",
+      "condition": "전역단면 (global section) 복합체는 Γ(X,I⁰)에서 시작한다.",
+      "type": "definition",
+      "english": "Sheaf cohomology"
+    },
+    {
+      "id": "19-01",
+      "source": "19",
+      "stage": 3,
+      "title": "Acyclic 층",
+      "question": "어느 공간에서 어느 차수들이 0인가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups)이라 하자. \\(H^q(X,\\mathcal F)\\)는 이 층의 q차 층 코호몰로지 (sheaf cohomology)이며 q는 정수다. 층 \\(\\mathcal F\\)가 X에서 acyclic이라는 것은 모든 \\(q>0\\)에 대해 \\(H^q(X,\\mathcal F)=0\\)이라는 뜻이다.",
+      "condition": "0차 소멸은 요구하지 않고 공간 X를 명시한다.",
+      "type": "definition",
+      "english": "Acyclic sheaf"
+    },
+    {
+      "id": "19-02",
+      "source": "19",
+      "stage": 3,
+      "title": "비순환 분해",
+      "question": "각 항이 어느 공간에서 어떤 성질을 갖는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups)이라 하자. X에서 acyclic인 층 L이란 모든 정수 q>0에 대해 \\(H^q(X,L)=0\\)인 층이다. X 위 층의 resolution \\(0\\to\\mathcal F\\to\\mathcal L^0\\to\\mathcal L^1\\to\\cdots\\)에서 모든 \\(p\\ge0\\)의 \\(\\mathcal L^p\\)가 X에서 acyclic인 것이다.",
+      "condition": "각 p에 대해 모든 q>0의 Hᑫ(X,Lᵖ)가 0이다.",
+      "type": "definition",
+      "english": "Acyclic resolution"
+    },
+    {
+      "id": "20-01",
+      "source": "20",
+      "stage": 4,
+      "title": "Čech 코사슬",
+      "question": "한 덮개의 p-코사슬은 무엇들의 곱인가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups), \\(\\mathfrak U=(U_i)_{i\\in I}\\)를 X의 열린덮개 (open cover)라 하자. 지표집합 I에 전순서를 고정한다. 정수 p≥0에 대해 \\(U_{i_0\\cdots i_p}:=\\bigcap_{a=0}^pU_{i_a}\\)로 놓고 \\[\\check C^p(\\mathfrak U,\\mathcal F):=\\prod_{i_0<\\cdots<i_p}\\mathcal F(U_{i_0\\cdots i_p})\\]로 정의한다. p-코사슬은 모든 증가 지표열에 대해 단면 (section) \\(c_{i_0\\cdots i_p}\\in\\mathcal F(U_{i_0\\cdots i_p})\\)를 하나씩 지정한 족이다. 덧셈은 성분별로 하며, 빈 교집합의 성분군은 \\(\\mathcal F(\\varnothing)=0\\)이다.",
+      "condition": "직합이 아니라 곱이며 지표는 증가 순서다.",
+      "type": "definition",
+      "english": "Čech cochain"
+    },
+    {
+      "id": "20-02",
+      "source": "20",
+      "stage": 4,
+      "title": "Čech 미분",
+      "question": "생략하는 지표의 부호와 제한은?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups), \\(\\mathfrak U=(U_i)_{i\\in I}\\)를 지표 I에 전순서가 주어진 열린덮개 (open cover)라 하자. \\(U_{i_0\\cdots i_r}:=\\bigcap_{b=0}^rU_{i_b}\\)로 쓴다. p≥0에 대해 \\(\\check C^p(\\mathfrak U,\\mathcal F)=\\prod_{i_0<\\cdots<i_p}\\mathcal F(U_{i_0\\cdots i_p})\\)의 원소를 \\(c=(c_{i_0\\cdots i_p})\\)라 하자. Čech 미분 \\(\\delta^p:\\check C^p(\\mathfrak U,\\mathcal F)\\to\\check C^{p+1}(\\mathfrak U,\\mathcal F)\\)는 모든 \\(i_0<\\cdots<i_{p+1}\\)에서 \\[(\\delta^pc)_{i_0\\cdots i_{p+1}}:=\\sum_{a=0}^{p+1}(-1)^a c_{i_0\\cdots\\widehat{i_a}\\cdots i_{p+1}}|_{U_{i_0\\cdots i_{p+1}}}\\]로 정의한다. 모자는 그 지표의 생략, 세로줄은 층의 제한사상 (restriction map)을 뜻한다. 음의 차수 코사슬군은 0이고 \\(\\delta^{-1}:0\\to\\check C^0\\)는 영준동형 (zero homomorphism)이다.",
+      "condition": "모든 항을 동일한 전체 교집합으로 제한한다.",
+      "type": "definition",
+      "english": "Čech differential / Coboundary operator"
+    },
+    {
+      "id": "21-01",
+      "source": "21",
+      "stage": 4,
+      "title": "한 덮개의 Čech 코호몰로지",
+      "question": "어느 복합체의 어떤 몫인가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups), \\(\\mathfrak U\\)를 X의 열린덮개 (open cover)라 하자. 이 덮개의 Čech 코사슬복합체 (cochain complex)를 \\((\\check C^\\bullet(\\mathfrak U,\\mathcal F),\\delta)\\)라 쓰며, \\(\\delta^r:\\check C^r\\to\\check C^{r+1}\\)는 교집합으로의 제한들을 교대부호로 합한 Čech 미분이다. 정수 p≥0에 대해 \\[\\check H^p(\\mathfrak U,\\mathcal F):=\\frac{\\ker(\\delta^p:\\check C^p\\to\\check C^{p+1})}{\\operatorname{im}(\\delta^{p-1}:\\check C^{p-1}\\to\\check C^p)}\\]로 정의한다. 모든 코사슬군은 같은 \\((\\mathfrak U,\\mathcal F)\\)에 대한 것이며 \\(\\check C^{-1}=0\\), \\(\\delta^{-1}=0\\)이다.",
+      "condition": "고정한 한 덮개에 대한 군이다.",
+      "type": "definition",
+      "english": "Čech cohomology of a cover"
+    },
+    {
+      "id": "21-02",
+      "source": "21",
+      "stage": 4,
+      "title": "전체 Čech 코호몰로지",
+      "question": "무엇을 따라 직극한을 취하는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups), p≥0을 정수라 하자. 열린덮개 (open cover) \\(\\mathfrak V\\)가 \\(\\mathfrak U\\)를 세분하면 층의 제한사상 (restriction map)들이 유도하는 사상을 \\(r_{\\mathfrak U\\mathfrak V}:\\check H^p(\\mathfrak U,\\mathcal F)\\to\\check H^p(\\mathfrak V,\\mathcal F)\\)라 쓴다. 모든 열린덮개와 이 사상들에 대한 직극한 \\[\\check H^p(X,\\mathcal F):=\\varinjlim_{\\mathfrak U}\\check H^p(\\mathfrak U,\\mathcal F)\\]를 전체 Čech 코호몰로지 (cohomology)라 한다. 구체적으로 쌍 \\((\\mathfrak U,\\alpha)\\), \\(\\alpha\\in\\check H^p(\\mathfrak U,\\mathcal F)\\)들의 동치류 (equivalence class)이며, \\((\\mathfrak U,\\alpha)\\sim(\\mathfrak V,\\beta)\\)는 어떤 공통 세분 \\(\\mathfrak W\\)에서 \\(r_{\\mathfrak U\\mathfrak W}(\\alpha)=r_{\\mathfrak V\\mathfrak W}(\\beta)\\)라는 뜻이다. 덧셈은 공통 세분으로 옮긴 두 원소를 더하여 정의한다.",
+      "condition": "세분하면 원래 덮개의 코호몰로지 (cohomology)에서 세분된 덮개의 것으로 간다.",
+      "type": "definition",
+      "english": "Čech cohomology of a space"
+    },
+    {
+      "id": "22-01",
+      "source": "22",
+      "stage": 4,
+      "title": "F-acyclic 덮개",
+      "question": "어떤 교집합의 어느 차수가 소멸하는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathcal F\\)를 X 위 아벨군 층 (sheaf of abelian groups), \\(\\mathfrak U=(U_i)_{i\\in I}\\)를 X의 열린덮개 (open cover)라 하자. 모든 정수 p≥0, 모든 유한 지표열 \\(i_0,\\ldots,i_p\\)에 대해 \\(W:=U_{i_0}\\cap\\cdots\\cap U_{i_p}\\ne\\varnothing\\)이면 모든 정수 q>0에서 \\[H^q(W,\\mathcal F|_W)=0\\]일 때 \\(\\mathfrak U\\)를 \\(\\mathcal F\\)-acyclic 덮개라 한다. \\(\\mathcal F|_W\\)는 W로의 제한층이며 Hᑫ는 층 코호몰로지 (sheaf cohomology)다. p=0은 W=Uᵢ인 경우다.",
+      "condition": "Uᵢ 하나인 교집합도 포함하며 계수층 F를 명시한다.",
+      "type": "definition",
+      "english": "F-acyclic cover"
+    },
+    {
+      "id": "23-01",
+      "source": "23",
+      "stage": 5,
+      "title": "사슬복합체",
+      "question": "각 차수의 자료와 경계의 합성 조건은?",
+      "answer": "아벨군 (abelian group)의 사슬복합체 (chain complex) \\((C_\\bullet,\\partial)\\)는 각 정수 \\(q\\in\\mathbb Z\\)에 대한 아벨군 \\(C_q\\)와 준동형 (homomorphism) \\(\\partial_q:C_q\\to C_{q-1}\\)의 족으로, 모든 정수 q에 대해 \\[\\partial_{q-1}\\circ\\partial_q=0:C_q\\longrightarrow C_{q-2}\\]을 만족한다. 우변의 0은 영준동형 (zero homomorphism)이다. 추가로 모든 q<0에서 \\(C_q=0\\)이면 비음수 차수에 집중되었다고 하며, 이때 \\(\\partial_0:C_0\\to0\\)은 영준동형이다.",
+      "condition": "경계는 차수를 하나 내린다. 음의 차수 항의 소멸은 추가 조건이다.",
+      "type": "definition",
+      "english": "Chain complex"
+    },
+    {
+      "id": "23-02",
+      "source": "23",
+      "stage": 5,
+      "title": "사이클",
+      "question": "q-cycle은 어떤 원소인가?",
+      "answer": "\\((C_\\bullet,\\partial)\\)를 아벨군 (abelian group)의 사슬복합체 (chain complex), q를 정수라 하자. 사슬복합체에서 \\(\\ker(\\partial_q:C_q\\to C_{q-1})\\)의 원소를 q-cycle이라 한다.",
+      "condition": "q차 경계가 0인 원소다.",
+      "type": "definition",
+      "english": "Cycle"
+    },
+    {
+      "id": "23-03",
+      "source": "23",
+      "stage": 5,
+      "title": "경계",
+      "question": "q-boundary는 어느 차수에서 오는가?",
+      "answer": "\\((C_\\bullet,\\partial)\\)를 아벨군 (abelian group)의 사슬복합체 (chain complex), q를 정수라 하자. 사슬복합체에서 \\(\\operatorname{im}(\\partial_{q+1}:C_{q+1}\\to C_q)\\)의 원소를 q-boundary라 한다.",
+      "condition": "q+1차에서 내려온 원소다.",
+      "type": "definition",
+      "english": "Boundary"
+    },
+    {
+      "id": "23-04",
+      "source": "23",
+      "stage": 5,
+      "title": "호몰로지",
+      "question": "q차 호몰로지 (homology)는 어떤 몫인가?",
+      "answer": "\\((C_\\bullet,\\partial)\\)를 아벨군 (abelian group)의 사슬복합체 (chain complex), q를 정수라 하자. q차 호몰로지 (homology)는 \\[H_q(C_\\bullet):=\\frac{\\ker(\\partial_q:C_q\\to C_{q-1})}{\\operatorname{im}(\\partial_{q+1}:C_{q+1}\\to C_q)}\\]다. \\(\\partial_q\\circ\\partial_{q+1}=0\\)이므로 분모는 분자의 부분군 (subgroup)이다. 두 cycle의 차가 boundary이면 같은 호몰로지 원소를 나타낸다.",
+      "condition": "분모의 경계는 q+1차에서 출발한다.",
+      "type": "definition",
+      "english": "Homology"
+    },
+    {
+      "id": "24-01",
+      "source": "24",
+      "stage": 5,
+      "title": "표준 단체",
+      "question": "Δᑫ의 좌표 조건은?",
+      "answer": "q를 0 이상의 정수라 하자. \\[\\Delta^q=\\{(t_0,\\ldots,t_q)\\in\\mathbb R^{q+1}:t_i\\ge0\\text{ for all }i,\\ \\sum_{i=0}^q t_i=1\\}.\\]",
+      "condition": "좌표는 q+1개이며 부등호는 ≥다.",
+      "type": "definition",
+      "english": "Standard simplex"
+    },
+    {
+      "id": "24-02",
+      "source": "24",
+      "stage": 5,
+      "title": "특이 단체",
+      "question": "어디에서 어디로 가는 어떤 사상인가?",
+      "answer": "q를 0 이상의 정수라 하자. \\(\\Delta^q\\)는 \\(t_i\\ge0\\), \\(\\sum_{i=0}^q t_i=1\\)을 만족하는 \\((t_0,\\ldots,t_q)\\in\\mathbb R^{q+1}\\)의 공간이며 부분공간 위상을 준다. 위상공간 (topological space) X의 특이 q-단체는 연속사상 \\(\\sigma:\\Delta^q\\to X\\)다.",
+      "condition": "X에서 단체로 가는 사상이 아니며 단사일 필요도 없다.",
+      "type": "definition",
+      "english": "Singular simplex"
+    },
+    {
+      "id": "24-03",
+      "source": "24",
+      "stage": 5,
+      "title": "특이 사슬군",
+      "question": "어떤 기저와 어떤 계수의 합인가?",
+      "answer": "X를 위상공간 (topological space), q를 0 이상의 정수라 하자. \\(\\Delta^q\\)는 표준 q-단체다. 아래의 \\(a_k\\)는 실수이고 N은 0 이상의 정수다. \\(C_q(X;\\mathbb R)\\)는 X의 모든 특이 q-단체 \\(\\sigma:\\Delta^q\\to X\\)를 기저로 하는 실수벡터공간이다. 원소는 \\(\\sum_{k=1}^N a_k\\sigma_k\\)인 유한 선형결합이다.",
+      "condition": "개별 사슬은 유한합이다.",
+      "type": "definition",
+      "english": "Singular chain group"
+    },
+    {
+      "id": "24-04",
+      "source": "24",
+      "stage": 5,
+      "title": "특이 경계",
+      "question": "각 면의 부호와 0차 경계는?",
+      "answer": "X를 위상공간 (topological space)이라 하자. \\(C_q(X;\\mathbb R)\\)는 연속사상 \\(\\sigma:\\Delta^q\\to X\\)들을 기저로 하는 실수벡터공간이고 \\(\\partial_q:C_q(X;\\mathbb R)\\to C_{q-1}(X;\\mathbb R)\\)를 정의한다. \\(C_{-1}(X;\\mathbb R)=0\\)으로 둔다. q>0에서 \\(\\epsilon_i:\\Delta^{q-1}\\to\\Delta^q\\)를 i번째 좌표에 0을 넣는 순서 보존 면 포함이라 할 때 \\[\\partial_q\\sigma=\\sum_{i=0}^q(-1)^i\\sigma\\circ\\epsilon_i\\]로 정의하고 선형으로 확장한다. \\(\\partial_0=0\\)이다.",
+      "condition": "i번째 꼭짓점의 반대 면에 제한한다.",
+      "type": "definition",
+      "english": "Singular boundary operator"
+    },
+    {
+      "id": "24-05",
+      "source": "24",
+      "stage": 5,
+      "title": "특이호몰로지",
+      "question": "실수 계수 특이호몰로지 (singular homology)는 어느 복합체의 호몰로지 (homology)인가?",
+      "answer": "위상공간 (topological space) X와 정수 \\(q\\ge0\\)에 대해, 실수 계수 특이 사슬복합체 (chain complex) \\((C_\\bullet(X;\\mathbb R),\\partial)\\)의 호몰로지 (homology)를 \\[H_q^{\\mathrm{sing}}(X;\\mathbb R):=\\ker\\partial_q/\\operatorname{im}\\partial_{q+1}\\]로 정의한다. \\(C_{-1}(X;\\mathbb R)=0\\), \\(\\partial_0=0\\)으로 둔다.",
+      "condition": "계수체 ℝ를 명시한 정의다. 0차의 분자는 C₀(X;ℝ) 전체다.",
+      "type": "definition",
+      "english": "Singular homology"
+    },
+    {
+      "id": "24-06",
+      "source": "24",
+      "stage": 5,
+      "title": "특이 코사슬",
+      "question": "어느 사슬군의 어떤 쌍대인가?",
+      "answer": "X를 위상공간 (topological space), q를 0 이상의 정수라 하자. \\(C_q(X;\\mathbb R)\\)는 표준 q-단체에서 X로 가는 연속사상들의 유한 실수 선형결합으로 이루어진 특이 사슬군이다. \\(C^q(X;\\mathbb R)=\\operatorname{Hom}_{\\mathbb R}(C_q(X;\\mathbb R),\\mathbb R)\\)다. 즉 특이 q-사슬에 실수를 주는 모든 실수 선형함수의 공간이다.",
+      "condition": "코사슬 자체에는 유한 지지 조건을 붙이지 않는다.",
+      "type": "definition",
+      "english": "Singular cochain"
+    },
+    {
+      "id": "24-07",
+      "source": "24",
+      "stage": 5,
+      "title": "특이 코사슬 미분",
+      "question": "경계와의 합성으로 어떻게 정의하는가?",
+      "answer": "X를 위상공간 (topological space), q≥0을 정수라 하자. \\(C_r(X;\\mathbb R)\\)를 실수 특이 사슬군, \\(\\partial_{r}:C_r\\to C_{r-1}\\)를 특이 경계라 하고 \\(C^r(X;\\mathbb R):=\\operatorname{Hom}_{\\mathbb R}(C_r(X;\\mathbb R),\\mathbb R)\\)로 둔다. 특이 코사슬 미분 \\(\\delta^q:C^q(X;\\mathbb R)\\to C^{q+1}(X;\\mathbb R)\\)는 \\[\\delta^q(c):=c\\circ\\partial_{q+1}\\]로 정의한다. 즉 모든 \\(z\\in C_{q+1}(X;\\mathbb R)\\)에 대해 \\((\\delta^qc)(z)=c(\\partial_{q+1}z)\\)다. 특히 z가 특이 (q+1)-단체 σ인 경우에도 이 식이 성립한다.",
+      "condition": "여기서 σ는 q+1차 특이 단체 (singular simplex)다.",
+      "type": "definition",
+      "english": "Singular coboundary operator"
+    },
+    {
+      "id": "24-08",
+      "source": "24",
+      "stage": 5,
+      "title": "특이코호몰로지",
+      "question": "어느 쌍대 복합체의 코호몰로지 (cohomology)인가?",
+      "answer": "X를 위상공간 (topological space), q≥0을 정수라 하자. 실수 특이 사슬복합체 (chain complex) \\((C_\\bullet(X;\\mathbb R),\\partial)\\)의 선형쌍대 \\(C^r(X;\\mathbb R):=\\operatorname{Hom}_{\\mathbb R}(C_r(X;\\mathbb R),\\mathbb R)\\)에 \\(\\delta^r(c):=c\\circ\\partial_{r+1}\\)를 준다. q차 실수 특이코호몰로지 (singular cohomology)는 \\[H^q_{\\mathrm{sing}}(X;\\mathbb R):=\\frac{\\ker(\\delta^q:C^q\\to C^{q+1})}{\\operatorname{im}(\\delta^{q-1}:C^{q-1}\\to C^q)}\\]다. 모든 코사슬군은 \\((X;\\mathbb R)\\)에 대한 것이며 \\(C^{-1}=0\\), \\(\\delta^{-1}=0\\)으로 둔다.",
+      "condition": "특이호몰로지 (singular homology)와 달리 위 첨자를 사용한다.",
+      "type": "definition",
+      "english": "Singular cohomology"
+    },
+    {
+      "id": "25-01",
+      "source": "25",
+      "stage": 5,
+      "title": "추상 단체복합체",
+      "question": "유한 부분집합들의 모임은 무엇에 닫혀 있는가?",
+      "answer": "꼭짓점 집합의 유한 부분집합들로 이루어진 모임 K로, \\(\\sigma\\in K\\)이고 \\(\\tau\\subset\\sigma\\)이면 \\(\\tau\\in K\\)다. 각 원소를 단체라 한다.",
+      "condition": "단체의 모든 부분집합도 단체여야 한다.",
+      "type": "definition",
+      "english": "Abstract simplicial complex"
+    },
+    {
+      "id": "25-02",
+      "source": "25",
+      "stage": 5,
+      "title": "단체 사슬복합체",
+      "question": "순서 있는 단체의 경계는?",
+      "answer": "K를 추상 단체복합체 (simplicial complex), q를 0 이상의 정수라 하자. 꼭짓점 순서는 K의 꼭짓점 집합 전체에 정한다. \\(C_{-1}(K;\\mathbb R)=0\\)으로 둔다. 꼭짓점에 전순서를 정하고 q+1개 꼭짓점의 단체 \\([v_0,\\ldots,v_q]\\), \\(v_0<\\cdots<v_q\\)를 기저로 하는 실수벡터공간 \\(C_q(K;\\mathbb R)\\)를 취한다. q>0에서 \\[\\partial[v_0,\\ldots,v_q]=\\sum_{i=0}^q(-1)^i[v_0,\\ldots,\\widehat v_i,\\ldots,v_q],\\]\\(\\partial_0=0\\)이며 경계를 선형 확장한다.",
+      "condition": "사슬은 기저 단체들의 유한 실수 선형결합이다.",
+      "type": "definition",
+      "english": "Simplicial chain complex"
+    },
+    {
+      "id": "25-03",
+      "source": "25",
+      "stage": 5,
+      "title": "단체호몰로지",
+      "question": "어느 복합체에서 핵을 상으로 나누는가?",
+      "answer": "K를 추상 단체복합체 (simplicial complex), q를 0 이상의 정수라 하자. \\(C_r(K;\\mathbb R)\\)는 순서 있는 r-단체들의 유한 실수 선형결합 공간이고, \\(\\partial_r:C_r\\to C_{r-1}\\)는 한 꼭짓점을 지우는 면들을 교대부호로 합한 단체 경계다. \\(C_{-1}=0\\), \\(\\partial_0=0\\)이다. \\(H_q(K;\\mathbb R)=H_q(C_\\bullet(K;\\mathbb R),\\partial)\\)로 정의하며, 단체 경계의 \\(\\ker\\partial_q/\\operatorname{im}\\partial_{q+1}\\)다.",
+      "condition": "주어진 단체복합체 (simplicial complex)의 실수 사슬복합체 (chain complex)를 쓴다.",
+      "type": "definition",
+      "english": "Simplicial homology"
+    },
+    {
+      "id": "25-04",
+      "source": "25",
+      "stage": 5,
+      "title": "단체코호몰로지",
+      "question": "선형쌍대 복합체는 어떻게 정하는가?",
+      "answer": "K를 추상 단체복합체 (simplicial complex), q를 0 이상의 정수라 하자. \\((C_\\bullet(K;\\mathbb R),\\partial)\\)는 K의 실수 단체 사슬복합체 (chain complex)이며 \\(C_{-1}=0\\), \\(\\partial_0=0\\)이다. 음의 차수 코사슬도 0으로 둔다. \\(C^q(K;\\mathbb R)=\\operatorname{Hom}_{\\mathbb R}(C_q(K;\\mathbb R),\\mathbb R)\\), \\(\\delta c=c\\circ\\partial_{q+1}\\)로 둔 코사슬복합체 (cochain complex)의 코호몰로지 (cohomology) \\(H^q(K;\\mathbb R)=\\ker\\delta^q/\\operatorname{im}\\delta^{q-1}\\)다.",
+      "condition": "쌍대 미분은 차수를 올린다.",
+      "type": "definition",
+      "english": "Simplicial cohomology"
+    },
+    {
+      "id": "25-05",
+      "source": "25",
+      "stage": 5,
+      "title": "덮개의 너브",
+      "question": "덮개의 어떤 지표집합을 단체로 넣는가?",
+      "answer": "X를 위상공간 (topological space), \\(\\mathfrak U=(U_i)_{i\\in I}\\)를 X의 열린덮개 (open cover)라 하자. 너브 \\(N(\\mathfrak U)\\)는 빈 단체와 다음 유한 지표집합들로 이루어진 추상 단체복합체 (simplicial complex)다. 비어 있지 않은 유한 \\(J\\subset I\\)에 대해 \\[J\\in N(\\mathfrak U)\\quad\\Longleftrightarrow\\quad\\bigcap_{i\\in J}U_i\\ne\\varnothing.\\]특히 꼭짓점은 Uᵢ≠∅인 지표 i다.",
+      "condition": "꼭짓점은 덮개의 지표다.",
+      "type": "definition",
+      "english": "Nerve of a cover"
+    },
+    {
+      "id": "25-06",
+      "source": "25",
+      "stage": 5,
+      "title": "수축 가능한 공간",
+      "question": "항등사상 (identity morphism)과 상수사상을 무엇으로 연결하는가?",
+      "answer": "공간 W에 어떤 \\(x_0\\in W\\)와 연속사상 \\(H:W\\times[0,1]\\to W\\)가 존재하여 모든 \\(x\\in W\\)에 대해 \\(H(x,0)=x\\), \\(H(x,1)=x_0\\)이면 W가 수축 가능하다.",
+      "condition": "H는 W 안에서 움직이는 연속사상이어야 한다.",
+      "type": "definition",
+      "english": "Contractible space"
+    },
+    {
+      "id": "25-07",
+      "source": "25",
+      "stage": 5,
+      "title": "좋은 덮개",
+      "question": "어떤 교집합들이 수축 가능해야 하는가?",
+      "answer": "X를 위상공간 (topological space)이라 하자. 열린덮개 (open cover)는 X 전체를 덮는 열린집합족을 뜻한다. 비어 있지 않은 모든 유한 교집합이 수축 가능한 열린덮개를 좋은 덮개라 한다.",
+      "condition": "덮개 원소 하나도 유한 교집합에 포함된다.",
+      "type": "definition",
+      "english": "Good cover"
+    },
+    {
+      "id": "26-01",
+      "source": "26",
+      "stage": 6,
+      "title": "환",
+      "question": "단위원을 가진 가환환 (commutative ring)의 연산 조건은?",
+      "answer": "단위원을 가진 가환환 (commutative ring)은 집합 R과 두 이항연산 \\(+,\\cdot:R\\times R\\to R\\)로 이루어진다. \\((R,+)\\)는 아벨군 (abelian group)이며, 모든 \\(a,b,c\\in R\\)에 대해 \\((ab)c=a(bc)\\), \\(ab=ba\\), \\(a(b+c)=ab+ac\\), \\((a+b)c=ac+bc\\)를 만족한다. 또한 어떤 \\(1_R\\in R\\)가 존재하여 모든 \\(a\\in R\\)에 대해 \\(1_Ra=a1_R=a\\)다.",
+      "condition": "가환성과 단위원의 존재를 포함한 정의다. 일반적인 비가환환의 정의와 범위를 구별한다.",
+      "type": "definition",
+      "english": "Ring (commutative, with identity)"
+    },
+    {
+      "id": "26-02",
+      "source": "26",
+      "stage": 6,
+      "title": "환준동형",
+      "question": "어떤 연산과 원소를 보존하는가?",
+      "answer": "R,S는 단위원을 가진 가환환 (commutative ring)이고 아래의 a,b는 R의 임의의 원소다. 환 사이의 함수 \\(f:R\\to S\\)로 모든 a,b에 대해 \\(f(a+b)=f(a)+f(b)\\), \\(f(ab)=f(a)f(b)\\), \\(f(1_R)=1_S\\)를 만족한다.",
+      "condition": "단위원 보존도 요구한다.",
+      "type": "definition",
+      "english": "Ring homomorphism"
+    },
+    {
+      "id": "26-03",
+      "source": "26",
+      "stage": 6,
+      "title": "환층",
+      "question": "단면 (section)과 제한에 어떤 대수 구조가 있는가?",
+      "answer": "X를 위상공간 (topological space)이라 하자. 아래의 U,V는 X의 열린집합 (open set)이며 환은 단위원을 가진 가환환 (commutative ring)을 뜻한다. 각 열린 U의 단면 (section)집합 \\(\\mathcal O(U)\\)가 환이고 모든 열린 포함 \\(V\\subset U\\)의 제한이 환준동형이며 층의 유일성·붙임 공리를 만족하는 층이다.",
+      "condition": "제한사상 (restriction map)은 단위원도 보존한다.",
+      "type": "definition",
+      "english": "Sheaf of rings"
+    },
+    {
+      "id": "27-01",
+      "source": "27",
+      "stage": 6,
+      "title": "정칙함수",
+      "question": "한 복소변수에서 어느 점들에서 미분 가능한가?",
+      "answer": "열린 \\(U\\subset\\mathbb C\\)의 함수 \\(f:U\\to\\mathbb C\\)가 모든 \\(z\\in U\\)에서 복소미분 가능하면 정칙이라 한다.",
+      "condition": "열린집합 (open set)의 모든 점에서 복소미분 가능해야 한다.",
+      "type": "definition",
+      "english": "Holomorphic function"
+    },
+    {
+      "id": "27-02",
+      "source": "27",
+      "stage": 6,
+      "title": "리만곡면",
+      "question": "복소 1차원 좌표계의 조건은?",
+      "answer": "Hausdorff이고 가산 열린 기저를 갖는 공간에, 공간을 덮는 열린집합 (open set)에서 \\(\\mathbb C\\)의 열린집합으로 가는 위상동형 좌표들이 주어지고 모든 겹침의 좌표변환이 정칙인 복소 1차원 다양체다.",
+      "condition": "여기서 복소곡선은 리만곡면 (Riemann surface)을 뜻한다.",
+      "type": "definition",
+      "english": "Riemann surface"
+    },
+    {
+      "id": "27-03",
+      "source": "27",
+      "stage": 6,
+      "title": "정칙함수층",
+      "question": "O(U)는 무엇이며 제한은?",
+      "answer": "리만곡면 (Riemann surface) X의 열린 U에 대해 \\(\\mathcal O_X(U)\\)는 U 위 정칙함수 (holomorphic function)들의 환이다. 정칙성은 복소좌표에서 검사하며 제한은 함수의 제한이다.",
+      "condition": "germ과 stalk는 근방에서의 실제 일치로 정의한다.",
+      "type": "definition",
+      "english": "Sheaf of holomorphic functions"
+    },
+    {
+      "id": "28-01",
+      "source": "28",
+      "stage": 6,
+      "title": "아이디얼",
+      "question": "덧셈과 환 원소의 곱에 어떤 조건이 있는가?",
+      "answer": "가환환 (commutative ring) R의 아이디얼 (ideal) J는 덧셈 부분군 (subgroup)으로, 모든 \\(r\\in R\\), \\(a\\in J\\)에 대해 \\(ra\\in J\\)를 만족한다.",
+      "condition": "J 안 원소끼리의 곱만 검사하는 것이 아니다.",
+      "type": "definition",
+      "english": "Ideal"
+    },
+    {
+      "id": "28-02",
+      "source": "28",
+      "stage": 6,
+      "title": "극대아이디얼",
+      "question": "어떤 포함관계에서 극대인가?",
+      "answer": "R을 단위원을 가진 가환환 (commutative ring)이라 하자. \\(\\mathfrak m\\subsetneq R\\)인 아이디얼 (ideal)로, \\(\\mathfrak m\\subset J\\subset R\\)인 모든 아이디얼 J가 \\(J=\\mathfrak m\\) 또는 \\(J=R\\)이면 극대아이디얼 (maximal ideal)이다.",
+      "condition": "진아이디얼이어야 한다.",
+      "type": "definition",
+      "english": "Maximal ideal"
+    },
+    {
+      "id": "28-03",
+      "source": "28",
+      "stage": 6,
+      "title": "국소환",
+      "question": "극대아이디얼 (maximal ideal)이 몇 개 존재하는가?",
+      "answer": "단위원을 가진 가환환 (commutative ring) R에 대한 정의다. 극대아이디얼 (maximal ideal)을 정확히 하나 갖는 환이다.",
+      "condition": "존재와 유일성 모두 필요하다.",
+      "type": "definition",
+      "english": "Local ring"
+    },
+    {
+      "id": "28-04",
+      "source": "28",
+      "stage": 6,
+      "title": "정칙함수의 줄기",
+      "question": "정칙함수 (holomorphic function) 줄기 (stalk)의 원소와 연산은?",
+      "answer": "X는 리만곡면 (Riemann surface)이고 x는 X의 고정한 점이다. 리만곡면 X에서 \\(\\mathcal O_{X,x}\\)는 x의 근방에서 정의된 정칙함수 (holomorphic function)들의 germ으로 이루어진 환이다. 두 함수는 x의 어떤 공통 열린 근방 (open neighborhood)에서 같을 때 같은 germ이며 연산은 공통 근방에서 더하고 곱해 정의한다.",
+      "condition": "함수값 하나로 germ을 식별하지 않는다.",
+      "type": "definition",
+      "english": "Stalk of the holomorphic function sheaf"
+    },
+    {
+      "id": "28-05",
+      "source": "28",
+      "stage": 6,
+      "title": "정칙 줄기의 극대아이디얼",
+      "question": "mₓ에는 어떤 germ들이 들어가는가?",
+      "answer": "X를 리만곡면 (Riemann surface), x∈X를 고정한 점이라 하자. \\(\\mathcal O_{X,x}\\)는 x 근방의 정칙함수 (holomorphic function)들의 germ으로 이루어진 환이다. U가 x의 열린 근방 (open neighborhood)이고 \\(f\\in\\mathcal O_X(U)\\)이면 그 germ을 \\([U,f]_x\\)라 쓴다. \\[\\mathfrak m_x:=\\{[U,f]_x\\in\\mathcal O_{X,x}:f(x)=0\\}\\]로 정의한다. x의 어떤 공통 근방에서 같은 함수들은 x에서 같은 값을 가지므로 이 조건은 대표 함수에 무관하다.",
+      "condition": "대표 함수의 x에서의 값이 0이라는 조건이다.",
+      "type": "definition",
+      "english": "Maximal ideal of the holomorphic local ring"
+    },
+    {
+      "id": "28-06",
+      "source": "28",
+      "stage": 6,
+      "title": "수렴급수환",
+      "question": "C{t}에 허용되는 급수는?",
+      "answer": "t를 한 변수라 하자. 수렴급수환 (ring of convergent power series) \\(\\mathbb C\\{t\\}\\)는 복소 계수 거듭제곱급수 \\(\\sum_{n\\ge0}a_nt^n\\) 중 어떤 r>0이 존재하여 모든 \\(z\\in\\mathbb C\\), |z|<r에 대해 \\(\\sum_{n\\ge0}a_nz^n\\)이 수렴하는 것들의 집합이다. 두 급수는 모든 계수가 같을 때 같은 원소다. 덧셈은 계수별이고, \\((\\sum a_nt^n)(\\sum b_nt^n)\\)의 n차 계수는 \\(\\sum_{i=0}^n a_i b_{n-i}\\)로 정의한다. 단위원은 상수급수 1이다.",
+      "condition": "급수마다 양의 수렴 반경이 존재해야 한다.",
+      "type": "definition",
+      "english": "Ring of convergent power series"
+    },
+    {
+      "id": "28-07",
+      "source": "28",
+      "stage": 6,
+      "title": "형식급수환",
+      "question": "C[[t]]에는 어떤 수렴 조건이 있는가?",
+      "answer": "t를 형식적 변수라 하자. \\(\\mathbb C[[t]]\\)의 원소는 복소수열 \\((a_n)_{n\\ge0}\\)이며 \\(\\sum_{n\\ge0}a_nt^n\\)으로 쓴다. \\(\\sum a_nt^n=\\sum b_nt^n\\)은 모든 n≥0에서 aₙ=bₙ라는 뜻이다. 덧셈의 n차 계수는 aₙ+bₙ, 곱셈의 n차 계수는 \\(\\sum_{i=0}^n a_i b_{n-i}\\)로 정의한다. 영원소는 모든 계수가 0인 급수, 단위원은 상수급수 1이다. 수렴 조건을 부과하지 않는다.",
+      "condition": "수렴 조건을 요구하지 않는다.",
+      "type": "definition",
+      "english": "Formal power series ring"
+    },
+    {
+      "id": "28-08",
+      "source": "28",
+      "stage": 6,
+      "title": "아이디얼의 거듭제곱",
+      "question": "mₓᵐ은 어떤 원소들로 생성되는가?",
+      "answer": "R을 단위원을 가진 가환환 (commutative ring), J⊂R을 아이디얼 (ideal), m≥1을 정수라 하자. \\[J^m:=\\left\\{\\sum_{k=1}^N a_{k,1}\\cdots a_{k,m}:N\\ge0,\\ a_{k,j}\\in J\\right\\}\\]로 정의한다. N=0인 합은 0이다. 이는 J의 원소 m개를 곱한 모든 곱으로 생성된 아이디얼이다. 특히 리만곡면 (Riemann surface)의 점 x에서 \\(R=\\mathcal O_{X,x}\\), \\(J=\\mathfrak m_x\\)로 두면 \\(\\mathfrak m_x^m\\)을 얻는다.",
+      "condition": "한 원소의 m제곱들만을 말하는 것이 아니다.",
+      "type": "definition",
+      "english": "Power of an ideal"
+    },
+    {
+      "id": "28-09",
+      "source": "28",
+      "stage": 6,
+      "title": "제트",
+      "question": "m−1차 jet는 어느 몫의 원소인가?",
+      "answer": "X를 리만곡면 (Riemann surface), x∈X를 고정한 점, m≥1을 정수라 하자. \\(\\mathcal O_{X,x}\\)는 x에서의 정칙함수 (holomorphic function) germ의 환이고 \\(\\mathfrak m_x\\)는 x에서 값이 0인 germ들의 아이디얼 (ideal)이다. 차수 m−1의 함수 jet는 몫환 (quotient ring) \\(\\mathcal O_{X,x}/\\mathfrak m_x^m\\)의 원소다. 즉 germ g의 jet는 잉여류 (coset) \\(g+\\mathfrak m_x^m\\)이며, 두 germ g,h는 \\(g-h\\in\\mathfrak m_x^m\\)일 때 같은 jet를 나타낸다. \\(\\mathfrak m_x^m\\)은 그 아이디얼의 원소 m개를 곱한 곱들의 유한합으로 이루어진다.",
+      "condition": "jet 차수는 m−1이고 아이디얼 (ideal) 지수는 m이다.",
+      "type": "definition",
+      "english": "Jet"
+    },
+    {
+      "id": "28-10",
+      "source": "28",
+      "stage": 6,
+      "title": "완비화",
+      "question": "어떤 호환조건을 가진 jet들의 역극한인가?",
+      "answer": "X를 리만곡면 (Riemann surface), x∈X를 고정한 점이라 하자. \\(R:=\\mathcal O_{X,x}\\)는 x에서의 정칙함수 (holomorphic function) germ의 환이고 \\(\\mathfrak m:=\\{g\\in R:g(x)=0\\}\\)이다. 정수 m≥1에 대해 \\(R_m:=R/\\mathfrak m^m\\)으로 놓고 \\[\\pi_m:R_{m+1}\\to R_m,\\qquad g+\\mathfrak m^{m+1}\\mapsto g+\\mathfrak m^m\\]으로 정의한다. \\(\\mathfrak m^{m+1}\\subset\\mathfrak m^m\\)이므로 이 사상은 대표원 (representative) 선택에 무관하다. \\(\\mathfrak m\\)-진 완비화 (completion)는 \\[\\widehat R:=\\left\\{(j_m)_{m\\ge1}\\in\\prod_{m\\ge1}R_m:\\pi_m(j_{m+1})=j_m\\text{ for every }m\\ge1\\right\\}\\]에 성분별 덧셈과 곱셈을 준 환이다. 이를 \\(\\varprojlim_{m\\ge1}R/\\mathfrak m^m\\)으로 쓴다.",
+      "condition": "서로 호환되는 열이며 수렴하는 함수라는 조건은 없다.",
+      "type": "definition",
+      "english": "Completion"
+    }
+  ],
+  "prerequisites": {
+    "10": [
+      "03",
+      "07",
+      "09"
+    ],
+    "11": [
+      "06",
+      "08"
+    ],
+    "12": [
+      "01",
+      "06",
+      "10"
+    ],
+    "13": [
+      "02"
+    ],
+    "14": [
+      "02",
+      "13"
+    ],
+    "15": [
+      "13",
+      "14"
+    ],
+    "16": [
+      "03",
+      "10",
+      "12",
+      "15"
+    ],
+    "17": [
+      "04",
+      "13",
+      "15",
+      "16"
+    ],
+    "18": [
+      "04",
+      "07",
+      "16",
+      "17"
+    ],
+    "19": [
+      "16",
+      "18"
+    ],
+    "20": [
+      "01",
+      "07",
+      "08"
+    ],
+    "21": [
+      "04",
+      "12",
+      "20"
+    ],
+    "22": [
+      "07",
+      "18",
+      "19",
+      "20"
+    ],
+    "23": [
+      "02",
+      "04"
+    ],
+    "24": [
+      "06",
+      "23"
+    ],
+    "25": [
+      "01",
+      "12",
+      "23",
+      "24"
+    ],
+    "26": [
+      "02",
+      "08"
+    ],
+    "27": [
+      "06",
+      "09",
+      "26"
+    ],
+    "28": [
+      "02",
+      "09",
+      "26",
+      "27"
+    ],
+    "01": [],
+    "02": [],
+    "03": [
+      "02"
+    ],
+    "04": [
+      "02",
+      "03"
+    ],
+    "05": [
+      "04"
+    ],
+    "06": [
+      "01",
+      "02",
+      "04"
+    ],
+    "07": [
+      "01",
+      "02"
+    ],
+    "08": [
+      "07"
+    ],
+    "09": [
+      "01",
+      "07"
+    ]
+  },
+  "theorems": [
+    [
+      "완전열을 잇는 정리",
+      "Snake lemma and Mayer–Vietoris sequence",
+      "1단계 연결 정리",
+      "아벨군의 가환도표에서 두 행이 짧은 완전열이고 세 수직사상이 \\(a:A'\\to A\\), \\(b:B'\\to B\\), \\(c:C'\\to C\\)이면, snake lemma는 연결 준동형을 포함하는 완전열 \\[0\\to\\ker a\\to\\ker b\\to\\ker c\\to\\operatorname{coker}a\\to\\operatorname{coker}b\\to\\operatorname{coker}c\\to0\\]을 준다. 코사슬복합체의 짧은 완전열은 코호몰로지의 긴 완전열을 유도한다. Mayer–Vietoris 완전열은 열린덮개에 관련된 복합체의 짧은 완전열에 이 사실을 적용하여 얻는다."
+    ],
+    [
+      "de Rham 층의 완전성과 fine",
+      "Poincaré lemma and fine resolution",
+      "2단계 연결 정리",
+      "M이 Hausdorff이고 제2가산인 매끄러운 다양체이면 실수 상수층과 미분형식층 사이의 열 \\[0\\to\\underline{\\mathbb R}\\to\\Omega_M^0\\xrightarrow d\\Omega_M^1\\xrightarrow d\\cdots\\]은 층의 완전열이다. 여기서 \\(\\Omega_M^q(U)=\\Omega^q(U)\\)이다. 양의 차수에서의 국소 완전성은 Poincaré lemma로, 차수 0에서는 미분이 0인 매끄러운 함수가 국소상수라는 사실로 주어진다. 매끄러운 단위분할을 이용하면 각 미분형식층은 fine이다."
+    ],
+    [
+      "층 코호몰로지와 acyclic 분해",
+      "Foundations and acyclic resolutions",
+      "3단계 연결 정리 및 정의 17·18",
+      "위상공간 X 위 아벨군 층의 범주는 아벨범주이고 충분한 injective 대상을 갖는다. 전역단면함자 \\(\\Gamma(X,-)\\)는 왼쪽 완전하다. Injective resolution으로 얻는 \\(H^q(X,\\mathcal F)\\)는 분해의 선택에 표준적인 동형으로 독립적이며 \\(H^0(X,\\mathcal F)=\\mathcal F(X)\\)이다. 완전열 \\(0\\to\\mathcal F\\to\\mathcal A^0\\to\\mathcal A^1\\to\\cdots\\)에서 모든 \\(\\mathcal A^p\\)가 \\(\\Gamma(X,-)\\)-acyclic이면 그 전역단면 복합체의 코호몰로지는 \\(H^q(X,\\mathcal F)\\)와 동형이다. Paracompact Hausdorff 공간의 fine 아벨군 층은 이 acyclicity를 만족한다."
+    ],
+    [
+      "Leray 비교정리",
+      "Leray comparison theorem",
+      "4단계 연결 정리",
+      "X 위 아벨군 층 \\(\\mathcal F\\)와 열린덮개 \\(\\mathfrak U=\\{U_i\\}_{i\\in I}\\)를 잡는다. 모든 비어 있지 않은 유한 교집합 \\(U_{i_0}\\cap\\cdots\\cap U_{i_p}\\)과 모든 \\(q>0\\)에 대해 \\(H^q(U_{i_0}\\cap\\cdots\\cap U_{i_p},\\mathcal F|_{U_{i_0}\\cap\\cdots\\cap U_{i_p}})=0\\)이면 모든 \\(p\\ge0\\)에서 \\[\\check H^p(\\mathfrak U,\\mathcal F)\\cong H^p(X,\\mathcal F).\\]이 acyclicity는 줄기가 UFD라는 조건으로 대체되지 않는다."
+    ],
+    [
+      "Nerve와 de Rham 비교",
+      "Nerve comparison and de Rham theorem",
+      "5단계 연결 정리",
+      "열린덮개의 모든 비어 있지 않은 유한 교집합이 연결되어 있으면, 실수 상수층의 Čech 코사슬복합체는 그 덮개의 nerve에 대한 실수 단체 코사슬복합체와 일치한다. Hausdorff 제2가산 매끄러운 다양체 M의 좋은 덮개에서는 각 교집합의 수축 가능성을 이용해 M의 코호몰로지를 nerve로 계산한다. de Rham 정리는 미분형식의 적분이 모든 \\(q\\ge0\\)에서 \\[H^q_{\\mathrm{dR}}(M)\\cong H^q_{\\mathrm{sing}}(M;\\mathbb R)\\]를 유도한다는 정리다."
+    ],
+    [
+      "정칙 싹·Taylor 급수·완비화",
+      "Holomorphic germs, Taylor series and completion",
+      "6단계 연결 정리 및 정의 28",
+      "리만곡면 X의 점 x에서 \\(t(x)=0\\)인 정칙 국소좌표 t를 고르면 \\(\\mathcal O_{X,x}\\cong\\mathbb C\\{t\\}\\)이고, 극대아이디얼 \\(\\mathfrak m_x\\)는 이 동형 아래 \\((t)\\)에 대응한다. 따라서 \\(\\mathfrak m_x\\)-진 완비화는 \\(\\mathbb C[[t]]\\)와 동형이다. 정칙 싹은 수렴 Taylor 급수로 결정되지만, 매끄러운 함수의 싹은 일반적으로 그 Taylor 급수만으로 결정되지 않는다. 여기서 급수 표현은 좌표의 선택에 의존한다."
+    ]
+  ]
+}
