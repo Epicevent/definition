@@ -1,1566 +1,1100 @@
 {
   "suppliedDefinitionBoxes": 25,
   "atlasDefinitions": 161,
-  "totalDefinitionExamples": 186,
-  "optionalConnectingExamples": 8,
-  "suppliedTheoremExamples": 1,
-  "attachmentSha256": "dfb31363800daddd4544c15bde33e0d493b5399428724d7ac9be7b06c5c1937b",
-  "atlasSha256": "9eeaba33481b9c2b99c08fc656c43917f642fa3d9b76cbe63d124a66fe771bb2",
+  "mergedIntoOriginal": 15,
+  "totalDefinitionBoxes": 171,
   "entries": [
     {
       "id": "S01",
       "title": "Topological Space",
-      "related": "01-01",
       "hasExample": true
     },
     {
       "id": "S02",
       "title": "Metric and Metric Topology",
-      "related": "01-01",
       "hasExample": true
     },
     {
       "id": "S03",
       "title": "Compactness",
-      "related": "12-03",
       "hasExample": true
     },
     {
       "id": "S04",
       "title": "Paracompactness",
-      "related": "12-03",
       "hasExample": true
     },
     {
       "id": "S05",
       "title": "Partition of unity",
-      "related": "12-05",
       "hasExample": true
     },
     {
       "id": "S06",
       "title": "Topological manifold",
-      "related": "06-04",
       "hasExample": true
     },
     {
       "id": "S07",
       "title": "Smooth manifold",
-      "related": "06-04",
       "hasExample": true
     },
     {
       "id": "S08",
       "title": "Riemannian manifold",
-      "related": "06-04",
       "hasExample": true
     },
     {
       "id": "S09",
       "title": "Riemannian metric",
-      "related": "06-06",
       "hasExample": true
     },
     {
       "id": "S10",
       "title": "Levi--Civita connection",
-      "related": "N29",
       "hasExample": true
     },
     {
       "id": "S11",
       "title": "Real tangent space and tangent bundle",
-      "related": "06-05",
       "hasExample": true
     },
     {
       "id": "S12",
       "title": "Complex manifold and complex structure",
-      "related": "B04",
       "hasExample": true
     },
     {
       "id": "S13",
       "title": "Tensor product",
-      "related": "B02",
       "hasExample": true
     },
     {
       "id": "S14",
       "title": "Complexified tangent bundle",
-      "related": "B07",
       "hasExample": true
     },
     {
       "id": "S15",
       "title": "Holomorphic tangent bundle",
-      "related": "B07",
       "hasExample": true
     },
     {
       "id": "S16",
       "title": "Chern connection",
-      "related": "N30",
       "hasExample": true
     },
     {
       "id": "S17",
       "title": "Symplectic form",
-      "related": "06-07",
       "hasExample": true
     },
     {
       "id": "S18",
       "title": "Compatibility, Hermitian metrics, and K\\\"ahler manifolds",
-      "related": "N28",
       "hasExample": true
     },
     {
       "id": "S19",
       "title": "Riemann curvature tensor",
-      "related": "B09",
       "hasExample": true
     },
     {
       "id": "S20",
       "title": "Ricci curvature tensor",
-      "related": "B09",
       "hasExample": true
     },
     {
       "id": "S21",
       "title": "Differential forms",
-      "related": "06-07",
       "hasExample": true
     },
     {
       "id": "S22",
       "title": "Exterior derivative and de Rham cohomology",
-      "related": "06-14",
       "hasExample": true
     },
     {
       "id": "S23",
       "title": "Forms of type $(p,q)$ and $d=\\partial+\\bar\\partial$",
-      "related": "B06",
       "hasExample": true
     },
     {
       "id": "S24",
       "title": "Ricci real (1,1)-form",
-      "related": "B11",
       "hasExample": true
     },
     {
       "id": "S25",
       "title": "First Chern class",
-      "related": "B12",
       "hasExample": true
     },
     {
       "id": "01-01",
-      "title": "위상공간",
+      "title": "Topological space",
       "hasExample": true,
-      "prerequisites": []
+      "sourceBox": 1
     },
     {
       "id": "01-03",
-      "title": "열린덮개",
+      "title": "Open cover",
       "hasExample": true,
-      "prerequisites": [
-        "01-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "01-02",
-      "title": "열린 근방",
+      "title": "Open neighborhood",
       "hasExample": true,
-      "prerequisites": [
-        "01-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-01",
-      "title": "연속사상",
+      "title": "Continuous map",
       "hasExample": true,
-      "prerequisites": [
-        "01-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-02",
-      "title": "Hausdorff 공간",
+      "title": "Hausdorff space",
       "hasExample": true,
-      "prerequisites": [
-        "01-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-03",
-      "title": "열린 기저",
+      "title": "Basis for a topology",
       "hasExample": true,
-      "prerequisites": [
-        "01-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "01-04",
-      "title": "닫힌집합",
+      "title": "Closed set",
       "hasExample": true,
-      "prerequisites": [
-        "01-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "01-05",
-      "title": "폐포",
+      "title": "Closure",
       "hasExample": true,
-      "prerequisites": [
-        "01-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "12-01",
-      "title": "국소유한 집합족",
+      "title": "Locally finite family",
       "hasExample": true,
-      "prerequisites": [
-        "01-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "12-02",
-      "title": "열린덮개의 세분",
+      "title": "Refinement of an open cover",
       "hasExample": true,
-      "prerequisites": [
-        "01-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "12-03",
-      "title": "Paracompact 공간",
+      "title": "Paracompact space",
       "hasExample": true,
-      "prerequisites": [
-        "12-01",
-        "12-02"
-      ]
+      "sourceBox": 4
     },
     {
       "id": "02-01",
-      "title": "아벨군",
+      "title": "Abelian group",
       "hasExample": true,
-      "prerequisites": []
+      "sourceBox": null
     },
     {
       "id": "26-01",
-      "title": "환",
+      "title": "Ring (commutative, with identity)",
       "hasExample": true,
-      "prerequisites": [
-        "02-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N01",
-      "title": "가군",
+      "title": "Module",
       "hasExample": true,
-      "prerequisites": [
-        "02-01",
-        "26-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-01",
-      "title": "아이디얼",
+      "title": "Ideal",
       "hasExample": true,
-      "prerequisites": [
-        "26-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "26-02",
-      "title": "환준동형",
+      "title": "Ring homomorphism",
       "hasExample": true,
-      "prerequisites": [
-        "26-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N02",
-      "title": "환의 국소화",
+      "title": "Localization of a ring",
       "hasExample": true,
-      "prerequisites": [
-        "28-01",
-        "26-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "02-02",
-      "title": "아벨군 준동형",
+      "title": "Homomorphism of abelian groups",
       "hasExample": true,
-      "prerequisites": [
-        "02-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-02",
-      "title": "극대아이디얼",
+      "title": "Maximal ideal",
       "hasExample": true,
-      "prerequisites": [
-        "28-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-03",
-      "title": "국소환",
+      "title": "Local ring",
       "hasExample": true,
-      "prerequisites": [
-        "28-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "13-01",
-      "title": "범주",
+      "title": "Category",
       "hasExample": true,
-      "prerequisites": []
+      "sourceBox": null
     },
     {
       "id": "13-02",
-      "title": "동형사상",
+      "title": "Isomorphism",
       "hasExample": true,
-      "prerequisites": [
-        "13-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "B01",
-      "title": "실수·복소 벡터공간",
+      "title": "Real and complex vector space",
       "hasExample": true,
-      "prerequisites": [
-        "02-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "B02",
-      "title": "쌍대·텐서곱·외대수",
+      "title": "Dual, tensor product and exterior power",
       "hasExample": true,
-      "prerequisites": [
-        "B01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "13-03",
-      "title": "공변함자",
+      "title": "Covariant functor",
       "hasExample": true,
-      "prerequisites": [
-        "13-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "14-02",
-      "title": "유한 직합",
+      "title": "Finite direct sum / Biproduct",
       "hasExample": true,
-      "prerequisites": [
-        "13-01",
-        "02-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "14-01",
-      "title": "영대상",
+      "title": "Zero object",
       "hasExample": true,
-      "prerequisites": [
-        "13-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "14-03",
-      "title": "범주론적 핵",
+      "title": "Categorical kernel",
       "hasExample": true,
-      "prerequisites": [
-        "14-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "14-04",
-      "title": "범주론적 여핵",
+      "title": "Categorical cokernel",
       "hasExample": true,
-      "prerequisites": [
-        "14-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "14-05",
-      "title": "범주론적 상",
+      "title": "Categorical image",
       "hasExample": true,
-      "prerequisites": [
-        "14-03",
-        "14-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "14-06",
-      "title": "범주론적 여상",
+      "title": "Coimage",
       "hasExample": true,
-      "prerequisites": [
-        "14-03",
-        "14-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "15-01",
-      "title": "단사상 — 범주론",
+      "title": "Monomorphism",
       "hasExample": true,
-      "prerequisites": [
-        "13-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "14-07",
-      "title": "아벨범주",
+      "title": "Abelian category",
       "hasExample": true,
-      "prerequisites": [
-        "14-02",
-        "14-03",
-        "14-04",
-        "14-05",
-        "14-06",
-        "15-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "02-03",
-      "title": "핵 — 아벨군",
+      "title": "Kernel of a homomorphism",
       "hasExample": true,
-      "prerequisites": [
-        "02-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "02-04",
-      "title": "상 — 아벨군",
+      "title": "Image of a homomorphism",
       "hasExample": true,
-      "prerequisites": [
-        "02-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "02-05",
-      "title": "몫군",
+      "title": "Quotient group",
       "hasExample": true,
-      "prerequisites": [
-        "02-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "B03",
-      "title": "Hermitian 내적",
+      "title": "Hermitian inner product",
       "hasExample": true,
-      "prerequisites": [
-        "B01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "02-06",
-      "title": "여핵 — 아벨군",
+      "title": "Cokernel of a homomorphism",
       "hasExample": true,
-      "prerequisites": [
-        "02-04",
-        "02-05"
-      ]
+      "sourceBox": null
     },
     {
       "id": "13-04",
-      "title": "반변함자",
+      "title": "Contravariant functor",
       "hasExample": true,
-      "prerequisites": [
-        "13-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "27-01",
-      "title": "정칙함수",
+      "title": "Holomorphic function",
       "hasExample": true,
-      "prerequisites": []
+      "sourceBox": null
     },
     {
       "id": "B04",
-      "title": "복소다양체",
+      "title": "Complex manifold",
       "hasExample": true,
-      "prerequisites": [
-        "27-01",
-        "06-01",
-        "06-02",
-        "06-03"
-      ]
+      "sourceBox": 12
     },
     {
       "id": "27-02",
-      "title": "리만곡면",
+      "title": "Riemann surface",
       "hasExample": true,
-      "prerequisites": [
-        "06-01",
-        "06-02",
-        "06-03",
-        "27-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-04",
-      "title": "매끄러운 다양체",
+      "title": "Smooth manifold",
       "hasExample": true,
-      "prerequisites": [
-        "06-01",
-        "06-02",
-        "06-03"
-      ]
+      "sourceBox": 7
     },
     {
       "id": "06-05",
-      "title": "접벡터와 접공간",
+      "title": "Tangent vector and tangent space",
       "hasExample": true,
-      "prerequisites": [
-        "06-04",
-        "B01"
-      ]
+      "sourceBox": 11
     },
     {
       "id": "B07",
-      "title": "정칙 접다발과 여접다발",
+      "title": "Holomorphic tangent and cotangent bundles",
       "hasExample": true,
-      "prerequisites": [
-        "B04",
-        "06-05",
-        "B02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N23",
-      "title": "복소사영공간",
+      "title": "Complex projective space",
       "hasExample": true,
-      "prerequisites": [
-        "B04",
-        "B01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-06",
-      "title": "여접공간",
+      "title": "Cotangent space",
       "hasExample": true,
-      "prerequisites": [
-        "06-05",
-        "B02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-07",
-      "title": "미분 q-형식",
+      "title": "Differential q-form",
       "hasExample": true,
-      "prerequisites": [
-        "06-06"
-      ]
+      "sourceBox": 21
     },
     {
       "id": "B05",
-      "title": "복소값 미분형식",
+      "title": "Complex-valued differential form",
       "hasExample": true,
-      "prerequisites": [
-        "06-07"
-      ]
+      "sourceBox": 21
     },
     {
       "id": "06-08",
-      "title": "좌표 1-형식",
+      "title": "Coordinate one-form",
       "hasExample": true,
-      "prerequisites": [
-        "06-07"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-09",
-      "title": "Wedge 곱",
+      "title": "Wedge product / Exterior product",
       "hasExample": true,
-      "prerequisites": [
-        "06-07"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-10",
-      "title": "외미분",
+      "title": "Exterior derivative",
       "hasExample": true,
-      "prerequisites": [
-        "06-08",
-        "06-09"
-      ]
+      "sourceBox": 22
     },
     {
       "id": "B06",
-      "title": "형식의 형식차수와 Dolbeault 연산자",
+      "title": "Bidegree and Dolbeault operators",
       "hasExample": true,
-      "prerequisites": [
-        "B04",
-        "B05",
-        "06-09",
-        "06-10"
-      ]
+      "sourceBox": 23
     },
     {
       "id": "06-11",
-      "title": "Closed 형식",
+      "title": "Closed differential form",
       "hasExample": true,
-      "prerequisites": [
-        "06-10"
-      ]
+      "sourceBox": 22
     },
     {
       "id": "06-12",
-      "title": "Exact 형식",
+      "title": "Exact differential form",
       "hasExample": true,
-      "prerequisites": [
-        "06-10"
-      ]
+      "sourceBox": 22
     },
     {
       "id": "06-13",
-      "title": "원시형식",
+      "title": "Primitive of a differential form",
       "hasExample": true,
-      "prerequisites": [
-        "06-12"
-      ]
+      "sourceBox": null
     },
     {
       "id": "07-01",
-      "title": "아벨군의 준층",
+      "title": "Presheaf of abelian groups",
       "hasExample": true,
-      "prerequisites": [
-        "01-03",
-        "02-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "08-01",
-      "title": "층",
+      "title": "Sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "07-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "26-03",
-      "title": "환층",
+      "title": "Sheaf of rings",
       "hasExample": true,
-      "prerequisites": [
-        "08-01",
-        "26-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "07-02",
-      "title": "단면",
+      "title": "Section",
       "hasExample": true,
-      "prerequisites": [
-        "07-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "09-01",
-      "title": "Germ — 싹",
+      "title": "Germ",
       "hasExample": true,
-      "prerequisites": [
-        "07-02",
-        "01-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "09-02",
-      "title": "Stalk — 줄기",
+      "title": "Stalk",
       "hasExample": true,
-      "prerequisites": [
-        "09-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N03",
-      "title": "환 달린 공간",
+      "title": "Ringed space",
       "hasExample": true,
-      "prerequisites": [
-        "26-03",
-        "09-02",
-        "28-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N04",
-      "title": "복소다양체의 정칙 구조층",
+      "title": "Holomorphic structure sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "B04",
-        "08-01",
-        "26-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "10-01",
-      "title": "층사상",
+      "title": "Morphism of sheaves",
       "hasExample": true,
-      "prerequisites": [
-        "08-01",
-        "02-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N05",
-      "title": "구조층의 가군층",
+      "title": "Sheaf of modules",
       "hasExample": true,
-      "prerequisites": [
-        "N01",
-        "N03",
-        "10-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "07-04",
-      "title": "제한층",
+      "title": "Restriction of a sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "07-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N06",
-      "title": "국소자유층",
+      "title": "Locally free sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "N05",
-        "07-04",
-        "13-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N07",
-      "title": "가역층",
+      "title": "Invertible sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "N06",
-        "B02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "07-03",
-      "title": "전역단면",
+      "title": "Global section",
       "hasExample": true,
-      "prerequisites": [
-        "07-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "10-02",
-      "title": "줄기사상",
+      "title": "Induced map on stalks",
       "hasExample": true,
-      "prerequisites": [
-        "10-01",
-        "09-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "10-03",
-      "title": "층의 완전열",
+      "title": "Exact sequence of sheaves",
       "hasExample": true,
-      "prerequisites": [
-        "10-02",
-        "03-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "10-04",
-      "title": "층의 단사",
+      "title": "Monomorphism of sheaves",
       "hasExample": true,
-      "prerequisites": [
-        "10-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "10-05",
-      "title": "층의 전사",
+      "title": "Epimorphism of sheaves",
       "hasExample": true,
-      "prerequisites": [
-        "10-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "11-01",
-      "title": "국소상수함수",
+      "title": "Locally constant function",
       "hasExample": true,
-      "prerequisites": [
-        "01-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "11-02",
-      "title": "상수층",
+      "title": "Constant sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "11-01",
-        "08-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "11-03",
-      "title": "미분형식층",
+      "title": "Sheaf of differential forms",
       "hasExample": true,
-      "prerequisites": [
-        "06-07",
-        "08-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "27-03",
-      "title": "정칙함수층",
+      "title": "Sheaf of holomorphic functions",
       "hasExample": true,
-      "prerequisites": [
-        "27-02",
-        "26-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-04",
-      "title": "정칙함수의 줄기",
+      "title": "Stalk of the holomorphic function sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "27-03",
-        "09-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-05",
-      "title": "정칙 줄기의 극대아이디얼",
+      "title": "Maximal ideal of the holomorphic local ring",
       "hasExample": true,
-      "prerequisites": [
-        "28-04",
-        "28-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-06",
-      "title": "수렴급수환",
+      "title": "Ring of convergent power series",
       "hasExample": true,
-      "prerequisites": [
-        "27-01",
-        "26-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-07",
-      "title": "형식급수환",
+      "title": "Formal power series ring",
       "hasExample": true,
-      "prerequisites": [
-        "26-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-08",
-      "title": "아이디얼의 거듭제곱",
+      "title": "Power of an ideal",
       "hasExample": true,
-      "prerequisites": [
-        "28-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-09",
-      "title": "제트",
+      "title": "Jet",
       "hasExample": true,
-      "prerequisites": [
-        "28-08",
-        "28-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "28-10",
-      "title": "완비화",
+      "title": "Completion",
       "hasExample": true,
-      "prerequisites": [
-        "28-08"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N08",
-      "title": "정칙 선다발과 국소자명화",
+      "title": "Holomorphic line bundle and local trivialization",
       "hasExample": true,
-      "prerequisites": [
-        "B04",
-        "B01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N09",
-      "title": "다발의 단면과 국소 틀",
+      "title": "Section and local frame",
       "hasExample": true,
-      "prerequisites": [
-        "N08",
-        "N04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N10",
-      "title": "전이함수와 성분의 변환",
+      "title": "Transition function",
       "hasExample": true,
-      "prerequisites": [
-        "N09"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N11",
-      "title": "선다발의 동형",
+      "title": "Isomorphism of line bundles",
       "hasExample": true,
-      "prerequisites": [
-        "N08"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N12",
-      "title": "쌍대 선다발",
+      "title": "Dual line bundle",
       "hasExample": true,
-      "prerequisites": [
-        "N08",
-        "B02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N13",
-      "title": "유리형 함수의 위수",
+      "title": "Order of a meromorphic function",
       "hasExample": true,
-      "prerequisites": [
-        "27-02",
-        "28-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N14",
-      "title": "곡선 위의 인자",
+      "title": "Divisor on a compact Riemann surface",
       "hasExample": true,
-      "prerequisites": [
-        "27-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N15",
-      "title": "주인자",
+      "title": "Principal divisor",
       "hasExample": true,
-      "prerequisites": [
-        "N13",
-        "N14"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N16",
-      "title": "인자의 선형동치",
+      "title": "Linear equivalence of divisors",
       "hasExample": true,
-      "prerequisites": [
-        "N14",
-        "N15"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N17",
-      "title": "인자의 차수",
+      "title": "Degree of a divisor",
       "hasExample": true,
-      "prerequisites": [
-        "N14"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N18",
-      "title": "인자에 대응하는 가역층",
+      "title": "The invertible sheaf O(D)",
       "hasExample": true,
-      "prerequisites": [
-        "N05",
-        "N07",
-        "N13",
-        "N14"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N19",
-      "title": "표준다발과 표준층",
+      "title": "Canonical bundle and canonical sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "B07",
-        "B02",
-        "N08",
-        "N10"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N20",
-      "title": "유리형 단면의 인자와 표준인자",
+      "title": "Divisor of a meromorphic section",
       "hasExample": true,
-      "prerequisites": [
-        "N10",
-        "N13",
-        "N14",
-        "N19"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N21",
-      "title": "사영직선의 O(n) 선다발",
+      "title": "The line bundle O(n) on the projective line",
       "hasExample": true,
-      "prerequisites": [
-        "N10",
-        "N23"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N28",
-      "title": "선다발의 Hermitian 계량",
+      "title": "Hermitian metric on a line bundle",
       "hasExample": true,
-      "prerequisites": [
-        "N08",
-        "N10",
-        "B03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N29",
-      "title": "복소 connection",
+      "title": "Complex connection",
       "hasExample": true,
-      "prerequisites": [
-        "N09",
-        "B05",
-        "06-10"
-      ]
+      "sourceBox": null
     },
     {
       "id": "B08",
-      "title": "정칙 선다발의 Dolbeault 연산자",
+      "title": "Dolbeault operator on a holomorphic line bundle",
       "hasExample": true,
-      "prerequisites": [
-        "N09",
-        "B06"
-      ]
+      "sourceBox": null
     },
     {
       "id": "B09",
-      "title": "선다발 연결의 곡률",
+      "title": "Curvature of a line bundle connection",
       "hasExample": true,
-      "prerequisites": [
-        "N29",
-        "06-09"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N30",
-      "title": "Chern connection과 곡률",
+      "title": "Chern connection and curvature",
       "hasExample": true,
-      "prerequisites": [
-        "N28",
-        "N29",
-        "B08",
-        "B09"
-      ]
+      "sourceBox": 16
     },
     {
       "id": "B10",
-      "title": "정준선다발의 Chern 곡률",
+      "title": "Chern curvature of the canonical line bundle",
       "hasExample": true,
-      "prerequisites": [
-        "N19",
-        "N30"
-      ]
+      "sourceBox": null
     },
     {
       "id": "B11",
-      "title": "첫째 Chern 형식",
+      "title": "First Chern form",
       "hasExample": true,
-      "prerequisites": [
-        "N30"
-      ]
+      "sourceBox": null
     },
     {
       "id": "B12",
-      "title": "실수 첫째 Chern 류",
+      "title": "Real first Chern class",
       "hasExample": true,
-      "prerequisites": [
-        "B11",
-        "06-14"
-      ]
+      "sourceBox": 25
     },
     {
       "id": "17-01",
-      "title": "가법함자",
+      "title": "Additive functor",
       "hasExample": true,
-      "prerequisites": [
-        "13-03",
-        "14-07"
-      ]
+      "sourceBox": null
     },
     {
       "id": "03-01",
-      "title": "한 자리에서의 완전성",
+      "title": "Exactness at a term",
       "hasExample": true,
-      "prerequisites": [
-        "02-03",
-        "02-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "03-02",
-      "title": "짧은 완전열",
+      "title": "Short exact sequence",
       "hasExample": true,
-      "prerequisites": [
-        "03-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "17-02",
-      "title": "왼쪽 완전함자",
+      "title": "Left exact functor",
       "hasExample": true,
-      "prerequisites": [
-        "17-01",
-        "03-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "04-01",
-      "title": "코사슬복합체",
+      "title": "Cochain complex",
       "hasExample": true,
-      "prerequisites": [
-        "02-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "16-01",
-      "title": "분해",
+      "title": "Resolution",
       "hasExample": true,
-      "prerequisites": [
-        "03-01",
-        "04-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "15-02",
-      "title": "Injective 대상",
+      "title": "Injective object",
       "hasExample": true,
-      "prerequisites": [
-        "15-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "16-02",
-      "title": "단사적 분해",
+      "title": "Injective resolution",
       "hasExample": true,
-      "prerequisites": [
-        "16-01",
-        "15-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "04-02",
-      "title": "코사이클",
+      "title": "Cocycle",
       "hasExample": true,
-      "prerequisites": [
-        "04-01",
-        "02-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "04-03",
-      "title": "코경계",
+      "title": "Coboundary",
       "hasExample": true,
-      "prerequisites": [
-        "04-01",
-        "02-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "04-04",
-      "title": "복합체의 코호몰로지",
+      "title": "Cohomology of a complex",
       "hasExample": true,
-      "prerequisites": [
-        "04-02",
-        "04-03",
-        "02-05"
-      ]
+      "sourceBox": null
     },
     {
       "id": "17-03",
-      "title": "오른쪽 유도함자",
+      "title": "Right derived functor",
       "hasExample": true,
-      "prerequisites": [
-        "17-02",
-        "16-02",
-        "04-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "04-05",
-      "title": "Acyclic 복합체",
+      "title": "Acyclic complex",
       "hasExample": true,
-      "prerequisites": [
-        "04-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "05-01",
-      "title": "복합체 사상",
+      "title": "Morphism of cochain complexes",
       "hasExample": true,
-      "prerequisites": [
-        "04-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "15-03",
-      "title": "충분한 단사 대상",
+      "title": "Enough injectives",
       "hasExample": true,
-      "prerequisites": [
-        "15-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "23-01",
-      "title": "사슬복합체",
+      "title": "Chain complex",
       "hasExample": true,
-      "prerequisites": [
-        "02-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "23-02",
-      "title": "사이클",
+      "title": "Cycle",
       "hasExample": true,
-      "prerequisites": [
-        "23-01",
-        "02-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "23-03",
-      "title": "경계",
+      "title": "Boundary",
       "hasExample": true,
-      "prerequisites": [
-        "23-01",
-        "02-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "23-04",
-      "title": "호몰로지",
+      "title": "Homology",
       "hasExample": true,
-      "prerequisites": [
-        "23-02",
-        "23-03",
-        "02-05"
-      ]
+      "sourceBox": null
     },
     {
       "id": "18-01",
-      "title": "전역단면함자",
+      "title": "Global section functor",
       "hasExample": true,
-      "prerequisites": [
-        "07-03",
-        "10-01",
-        "13-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "18-02",
-      "title": "층 코호몰로지",
+      "title": "Sheaf cohomology",
       "hasExample": true,
-      "prerequisites": [
-        "18-01",
-        "17-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N22",
-      "title": "층 코호몰로지의 차원과 Euler characteristic",
+      "title": "Cohomology dimension and Euler characteristic",
       "hasExample": true,
-      "prerequisites": [
-        "18-02",
-        "B01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "06-14",
-      "title": "de Rham 코호몰로지",
+      "title": "de Rham cohomology",
       "hasExample": true,
-      "prerequisites": [
-        "06-11",
-        "06-12",
-        "04-04"
-      ]
+      "sourceBox": 22
     },
     {
       "id": "12-04",
-      "title": "함수의 지지",
+      "title": "Support of a function",
       "hasExample": true,
-      "prerequisites": [
-        "01-05",
-        "06-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "12-05",
-      "title": "매끄러운 단위분할",
+      "title": "Smooth partition of unity",
       "hasExample": true,
-      "prerequisites": [
-        "12-04",
-        "12-01",
-        "01-03"
-      ]
+      "sourceBox": 5
     },
     {
       "id": "12-06",
-      "title": "층 자기 사상의 지지",
+      "title": "Support of a sheaf endomorphism",
       "hasExample": true,
-      "prerequisites": [
-        "10-01",
-        "09-02",
-        "01-05"
-      ]
+      "sourceBox": null
     },
     {
       "id": "12-07",
-      "title": "Fine 층",
+      "title": "Fine sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "12-06",
-        "12-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "16-03",
-      "title": "파인 분해",
+      "title": "Fine resolution",
       "hasExample": true,
-      "prerequisites": [
-        "16-01",
-        "12-07"
-      ]
+      "sourceBox": null
     },
     {
       "id": "19-01",
-      "title": "Acyclic 층",
+      "title": "Acyclic sheaf",
       "hasExample": true,
-      "prerequisites": [
-        "18-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "19-02",
-      "title": "비순환 분해",
+      "title": "Acyclic resolution",
       "hasExample": true,
-      "prerequisites": [
-        "19-01",
-        "16-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "20-01",
-      "title": "Čech 코사슬",
+      "title": "Čech cochain",
       "hasExample": true,
-      "prerequisites": [
-        "01-03",
-        "08-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "20-02",
-      "title": "Čech 미분",
+      "title": "Čech differential / Coboundary operator",
       "hasExample": true,
-      "prerequisites": [
-        "20-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "21-01",
-      "title": "한 덮개의 Čech 코호몰로지",
+      "title": "Čech cohomology of a cover",
       "hasExample": true,
-      "prerequisites": [
-        "20-02",
-        "04-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "21-02",
-      "title": "전체 Čech 코호몰로지",
+      "title": "Čech cohomology of a space",
       "hasExample": true,
-      "prerequisites": [
-        "21-01",
-        "12-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "22-01",
-      "title": "F-acyclic 덮개",
+      "title": "F-acyclic cover",
       "hasExample": true,
-      "prerequisites": [
-        "19-01",
-        "01-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "24-01",
-      "title": "표준 단체",
+      "title": "Standard simplex",
       "hasExample": true,
-      "prerequisites": [
-        "B01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "24-02",
-      "title": "특이 단체",
+      "title": "Singular simplex",
       "hasExample": true,
-      "prerequisites": [
-        "24-01",
-        "06-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "24-03",
-      "title": "특이 사슬군",
+      "title": "Singular chain group",
       "hasExample": true,
-      "prerequisites": [
-        "24-02",
-        "02-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "24-04",
-      "title": "특이 경계",
+      "title": "Singular boundary operator",
       "hasExample": true,
-      "prerequisites": [
-        "24-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "24-05",
-      "title": "특이호몰로지",
+      "title": "Singular homology",
       "hasExample": true,
-      "prerequisites": [
-        "24-04",
-        "23-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "24-06",
-      "title": "특이 코사슬",
+      "title": "Singular cochain",
       "hasExample": true,
-      "prerequisites": [
-        "24-03",
-        "02-02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "24-07",
-      "title": "특이 코사슬 미분",
+      "title": "Singular coboundary operator",
       "hasExample": true,
-      "prerequisites": [
-        "24-06",
-        "24-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "24-08",
-      "title": "특이코호몰로지",
+      "title": "Singular cohomology",
       "hasExample": true,
-      "prerequisites": [
-        "24-07",
-        "04-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "25-01",
-      "title": "추상 단체복합체",
+      "title": "Abstract simplicial complex",
       "hasExample": true,
-      "prerequisites": []
+      "sourceBox": null
     },
     {
       "id": "25-02",
-      "title": "단체 사슬복합체",
+      "title": "Simplicial chain complex",
       "hasExample": true,
-      "prerequisites": [
-        "25-01",
-        "23-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "25-03",
-      "title": "단체호몰로지",
+      "title": "Simplicial homology",
       "hasExample": true,
-      "prerequisites": [
-        "25-02",
-        "23-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "25-04",
-      "title": "단체코호몰로지",
+      "title": "Simplicial cohomology",
       "hasExample": true,
-      "prerequisites": [
-        "25-02",
-        "04-04"
-      ]
+      "sourceBox": null
     },
     {
       "id": "25-05",
-      "title": "덮개의 너브",
+      "title": "Nerve of a cover",
       "hasExample": true,
-      "prerequisites": [
-        "25-01",
-        "01-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "25-06",
-      "title": "수축 가능한 공간",
+      "title": "Contractible space",
       "hasExample": true,
-      "prerequisites": [
-        "06-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "25-07",
-      "title": "좋은 덮개",
+      "title": "Good cover",
       "hasExample": true,
-      "prerequisites": [
-        "25-06",
-        "01-03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N24",
-      "title": "사영 초곡면",
+      "title": "Projective hypersurface",
       "hasExample": true,
-      "prerequisites": [
-        "N23",
-        "26-01"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N25",
-      "title": "Segre 매장",
+      "title": "Segre embedding",
       "hasExample": true,
-      "prerequisites": [
-        "N23",
-        "B02"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N26",
-      "title": "유한차원 순수 양자상태",
+      "title": "Pure quantum state",
       "hasExample": true,
-      "prerequisites": [
-        "N23",
-        "B03"
-      ]
+      "sourceBox": null
     },
     {
       "id": "N27",
-      "title": "곱상태와 순수상태의 얽힘",
+      "title": "Product state and pure-state entanglement",
       "hasExample": true,
-      "prerequisites": [
-        "N25",
-        "N26",
-        "B02"
-      ]
+      "sourceBox": null
     }
-  ]
+  ],
+  "attachmentSha256": "dfb31363800daddd4544c15bde33e0d493b5399428724d7ac9be7b06c5c1937b"
 }
