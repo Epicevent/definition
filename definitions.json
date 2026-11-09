@@ -46,6 +46,11 @@
       "id": "I",
       "title": "후속 연구의 별도 가지",
       "english": "Further study branches"
+    },
+    {
+      "id": "J",
+      "title": "사영공간·등급환·인자·교차",
+      "english": "Projective space, graded rings, divisors and intersections"
     }
   ],
   "definitions": [
@@ -67,7 +72,8 @@
         "01-03",
         "01-04",
         "06-01",
-        "06-03"
+        "06-03",
+        "P03"
       ]
     },
     {
@@ -92,7 +98,8 @@
         "20-01",
         "22-01",
         "25-05",
-        "25-07"
+        "25-07",
+        "P05"
       ]
     },
     {
@@ -137,7 +144,8 @@
         "24-02",
         "25-06",
         "27-02",
-        "B04"
+        "B04",
+        "P26"
       ]
     },
     {
@@ -198,7 +206,8 @@
       ],
       "aliases": [],
       "usedBy": [
-        "01-05"
+        "01-05",
+        "P03"
       ]
     },
     {
@@ -218,7 +227,9 @@
       "aliases": [],
       "usedBy": [
         "12-04",
-        "12-06"
+        "12-06",
+        "P10",
+        "P13"
       ]
     },
     {
@@ -300,7 +311,9 @@
         "14-02",
         "24-03",
         "26-01",
-        "B01"
+        "B01",
+        "P11",
+        "P35"
       ]
     },
     {
@@ -324,7 +337,12 @@
         "26-02",
         "28-01",
         "28-06",
-        "28-07"
+        "28-07",
+        "P01",
+        "P02",
+        "P11",
+        "P14",
+        "P40"
       ]
     },
     {
@@ -347,7 +365,11 @@
       "aliases": [],
       "question": "가군의 대상·조건·사상은 무엇인가?",
       "usedBy": [
-        "N05"
+        "N05",
+        "P06",
+        "P14",
+        "P20",
+        "P37"
       ]
     },
     {
@@ -368,7 +390,11 @@
       "usedBy": [
         "N02",
         "28-02",
-        "28-08"
+        "28-08",
+        "P01",
+        "P02",
+        "P15",
+        "P28"
       ]
     },
     {
@@ -410,7 +436,12 @@
       ],
       "aliases": [],
       "question": "환의 국소화의 대상·조건·사상은 무엇인가?",
-      "usedBy": []
+      "usedBy": [
+        "P04",
+        "P06",
+        "P17",
+        "P20"
+      ]
     },
     {
       "id": "02-02",
@@ -474,7 +505,9 @@
       "aliases": [],
       "usedBy": [
         "N03",
-        "N13"
+        "N13",
+        "P04",
+        "P07"
       ]
     },
     {
@@ -832,7 +865,8 @@
       "aliases": [],
       "usedBy": [
         "N26",
-        "N28"
+        "N28",
+        "P26"
       ]
     },
     {
@@ -1023,7 +1057,8 @@
         "N21",
         "N24",
         "N25",
-        "N26"
+        "N26",
+        "P26"
       ]
     },
     {
@@ -1292,7 +1327,8 @@
       "usedBy": [
         "N03",
         "N04",
-        "27-03"
+        "27-03",
+        "P04"
       ]
     },
     {
@@ -1332,7 +1368,8 @@
       ],
       "aliases": [],
       "usedBy": [
-        "09-02"
+        "09-02",
+        "P08"
       ]
     },
     {
@@ -1354,7 +1391,8 @@
         "N03",
         "10-02",
         "12-06",
-        "28-04"
+        "28-04",
+        "P04"
       ]
     },
     {
@@ -1381,7 +1419,8 @@
       "aliases": [],
       "question": "환 달린 공간의 대상·조건·사상은 무엇인가?",
       "usedBy": [
-        "N05"
+        "N05",
+        "P05"
       ]
     },
     {
@@ -1458,7 +1497,9 @@
       "question": "구조층의 가군층의 대상·조건·사상은 무엇인가?",
       "usedBy": [
         "N06",
-        "N18"
+        "N18",
+        "P06",
+        "P09"
       ]
     },
     {
@@ -1477,7 +1518,8 @@
       ],
       "aliases": [],
       "usedBy": [
-        "N06"
+        "N06",
+        "P05"
       ]
     },
     {
@@ -1525,7 +1567,10 @@
       "aliases": [],
       "question": "가역층의 대상·조건·사상은 무엇인가?",
       "usedBy": [
-        "N18"
+        "N18",
+        "P22",
+        "P23",
+        "P29"
       ]
     },
     {
@@ -1544,7 +1589,8 @@
       ],
       "aliases": [],
       "usedBy": [
-        "18-01"
+        "18-01",
+        "P34"
       ]
     },
     {
@@ -3400,6 +3446,1041 @@
       "aliases": [],
       "question": "곱상태와 순수상태의 얽힘의 대상·조건·사상은 무엇인가?",
       "usedBy": []
+    },
+    {
+      "id": "P01",
+      "title": "소아이디얼",
+      "english": "Prime ideal",
+      "question": "환의 어떤 아이디얼이 스킴의 점이 되는가?",
+      "answer": "단위원을 가진 가환환 R의 진아이디얼 \\(\\mathfrak p\\subsetneq R\\)가 소아이디얼이라는 것은 모든 \\(a,b\\in R\\)에 대해 \\(ab\\in\\mathfrak p\\)이면 \\(a\\in\\mathfrak p\\) 또는 \\(b\\in\\mathfrak p\\)라는 뜻이다. 동치로 \\(R/\\mathfrak p\\)가 정역이다. 정역은 \\(1\\ne0\\)이고 영인자가 없는 가환환이다.",
+      "condition": "영환은 정역으로 세지 않는다. 극대아이디얼은 소아이디얼이지만 모든 소아이디얼이 극대인 것은 아니다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § A · PDF pp.4–10",
+      "aliases": [
+        "prime",
+        "정역"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "28-01",
+        "26-01"
+      ],
+      "usedBy": [
+        "P03",
+        "P07",
+        "P15",
+        "P31",
+        "P41"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "근기·영근기·축약환",
+      "english": "Radical, nilradical and reduced ring",
+      "question": "멱을 취해서 0이 되는 원소는 무엇을 바꾸는가?",
+      "answer": "아이디얼 I의 근기는 \\(\\sqrt I=\\{a\\in R:a^m\\in I\\text{인 }m\\ge1\\text{이 존재}\\}\\)이다. \\(\\sqrt{(0)}\\)를 영근기라 하고 그 원소를 멱영원이라 한다. \\(R_{\\mathrm{red}}=R/\\sqrt{(0)}\\)를 축약환이라 한다. R이 축약되었다는 것은 \\(\\sqrt{(0)}=0\\)이라는 뜻이다.",
+      "condition": "기약성과 축약성은 다른 조건이다. 이중수환은 기약 스펙트럼을 가지지만 축약되지 않는다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Discussion 1 · PDF pp.60–62",
+      "aliases": [
+        "nilpotent",
+        "nilradical",
+        "reduced",
+        "radical"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "28-01",
+        "26-01"
+      ],
+      "usedBy": [
+        "P10",
+        "P36"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "환의 스펙트럼과 Zariski 위상",
+      "english": "Spectrum and Zariski topology",
+      "question": "환에서 점과 닫힌집합을 어떻게 만드는가?",
+      "answer": "\\(\\operatorname{Spec}R\\)의 점은 R의 소아이디얼들이다. 아이디얼 I에 대해 \\(V(I)=\\{\\mathfrak p:I\\subseteq\\mathfrak p\\}\\)를 닫힌집합으로 삼아 Zariski 위상을 준다. \\(f\\in R\\)에 대한 주열린집합은 \\(D(f)=\\{\\mathfrak p:f\\notin\\mathfrak p\\}\\)이다. D(f)들은 열린 기저를 이룬다.",
+      "condition": "닫힌점은 극대아이디얼에 대응한다. 소아이디얼 전체를 점으로 사용하므로 닫힌점만의 공간과 구별한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § A / Discussion 1 · PDF pp.4–10,60–62",
+      "aliases": [
+        "Spec",
+        "스펙트럼",
+        "Zariski"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P01",
+        "01-01",
+        "01-04"
+      ],
+      "usedBy": [
+        "P04",
+        "P16",
+        "P40",
+        "P41"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "아핀 스킴과 대수적 구조층",
+      "english": "Affine scheme and algebraic structure sheaf",
+      "question": "Spec R의 주열린집합에는 어떤 함수환을 붙이는가?",
+      "answer": "\\(X=\\operatorname{Spec}R\\)의 대수적 구조층 \\(\\mathcal O_X\\)는 \\(\\mathcal O_X(D(f))\\cong R_f\\)이며 제한이 국소화에 대응하는 환층이다. \\((\\operatorname{Spec}R,\\mathcal O_X)\\)를 아핀 스킴이라 한다. 점 \\(x=\\mathfrak p\\)에서 \\(\\mathcal O_{X,x}\\cong R_{\\mathfrak p}\\)이고 유일한 극대아이디얼은 \\(\\mathfrak pR_{\\mathfrak p}\\)이다.",
+      "condition": "N04의 정칙함수층은 복소해석적 구조층이다. 이 항목은 대수적 정칙함수와 국소화를 사용한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § A · PDF pp.4–6",
+      "aliases": [
+        "affine scheme",
+        "아핀",
+        "대수적 정칙함수"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P03",
+        "N02",
+        "26-03",
+        "09-02",
+        "28-03"
+      ],
+      "usedBy": [
+        "P05",
+        "P06",
+        "P07",
+        "P17"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "스킴과 열린 아핀 덮개",
+      "english": "Scheme and affine open cover",
+      "question": "아핀 조각들을 어떤 범주에서 붙이는가?",
+      "answer": "스킴은 국소환 달린 공간 \\((X,\\mathcal O_X)\\)으로서 각 점이 아핀 스킴과 동형인 열린 근방을 갖는 것이다. 동형은 위상공간과 구조층을 함께 보존하는 국소환 달린 공간의 동형이다. 이러한 근방들로 이루어진 덮개를 열린 아핀 덮개라 한다. 국소환 달린 공간의 사상은 줄기에서 극대아이디얼의 역상이 극대아이디얼인 환준동형을 유도한다.",
+      "condition": "점집합만 붙이는 것으로 충분하지 않다. 구조층과 제한사상도 함께 붙인다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Proj / Discussion 2 · PDF pp.16,24–29,63–64",
+      "aliases": [
+        "scheme",
+        "스킴"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P04",
+        "N03",
+        "07-04",
+        "01-03"
+      ],
+      "usedBy": [
+        "P10",
+        "P17",
+        "P23",
+        "P28",
+        "P29",
+        "P36"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "아핀 가군의 층화",
+      "english": "Sheaf associated to a module on an affine scheme",
+      "question": "가군 M은 Spec R 위에서 어떤 층이 되는가?",
+      "answer": "R-가군 M에 대응하는 \\(X=\\operatorname{Spec}R\\) 위 가군층 \\(\\widetilde M\\)은 \\(\\widetilde M(D(f))=M_f=M\\otimes_RR_f\\)이고 제한사상은 국소화인 층이다. \\(x=\\mathfrak p\\)에서 줄기는 \\(\\widetilde M_x=M_{\\mathfrak p}=M\\otimes_RR_{\\mathfrak p}\\)이다. 여기서 가군 텐서곱은 두 입력에 가법이고 \\(b(rm,n)=b(m,rn)\\)인 R-균형 사상들이 유일한 R-선형사상으로 인수분해되는 보편 가군이다.",
+      "condition": "뒤의 Proj 층화에서는 등급가군의 국소화에서 차수 0 부분을 취한다는 차이가 있다. 가군 텐서곱은 실수·복소 벡터공간 텐서곱의 환 위 일반화이다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § A · PDF pp.2,11",
+      "aliases": [
+        "associated sheaf",
+        "module sheafification",
+        "아핀 층화"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P04",
+        "N01",
+        "N05",
+        "N02"
+      ],
+      "usedBy": [
+        "P09",
+        "P21"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "스킴 점의 잉여체",
+      "english": "Residue field of a scheme point",
+      "question": "한 점에서 함수값은 어느 체에 속하는가?",
+      "answer": "스킴 X의 점 x에서 \\(\\kappa(x)=\\mathcal O_{X,x}/\\mathfrak m_{X,x}\\)를 잉여체라 한다. \\(x=\\mathfrak p\\in\\operatorname{Spec}R\\)이면 \\[\\kappa(x)=R_{\\mathfrak p}/\\mathfrak pR_{\\mathfrak p}\\cong\\operatorname{Frac}(R/\\mathfrak p).\\]Frac은 정역의 분수체이다.",
+      "condition": "C 위 유한형 스킴의 닫힌점은 잉여체 C를 가지지만 일반점에서는 보통 함수체이다. 항상 바탕체라고 가정하지 않는다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § A · PDF p.7",
+      "aliases": [
+        "residue field",
+        "kappa"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P04",
+        "P01",
+        "28-03"
+      ],
+      "usedBy": [
+        "P08",
+        "P09",
+        "P10"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "싹의 점에서의 값과 평가사상",
+      "english": "Evaluation of a germ at a scheme point",
+      "question": "싹과 함수값을 어떻게 구별하는가?",
+      "answer": "싹 \\(g\\in\\mathcal O_{X,x}\\)의 값은 몫사상 \\(\\operatorname{ev}_x:\\mathcal O_{X,x}\\to\\kappa(x)\\)의 상이다. 아핀 점 \\(x=\\mathfrak p\\)에서 \\(g=a/s\\), \\(s\\notin\\mathfrak p\\)이면 \\(\\operatorname{ev}_{\\mathfrak p}(a/s)=\\bar a/\\bar s\\in\\operatorname{Frac}(R/\\mathfrak p)\\)이다. 전역함수의 평가는 \\(R\\to R_{\\mathfrak p}\\to\\kappa(\\mathfrak p)\\)이다.",
+      "condition": "값이 0인 싹들은 정확히 극대아이디얼이다. 값만 취하면 점 근처에서의 변화 정보는 사라진다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § A · PDF pp.5–10",
+      "aliases": [
+        "evaluation",
+        "함수값",
+        "평가"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P07",
+        "09-01"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P09",
+      "title": "가군층의 섬유와 단면 평가",
+      "english": "Fiber of a module sheaf and evaluation",
+      "question": "줄기와 섬유는 어떻게 다른가?",
+      "answer": "\\(\\mathcal O_X\\)-가군층 \\(\\mathcal F\\)의 x에서의 섬유는 \\[\\mathcal F(x)=\\mathcal F_x\\otimes_{\\mathcal O_{X,x}}\\kappa(x)\\cong\\mathcal F_x/\\mathfrak m_{X,x}\\mathcal F_x\\]인 \\(\\kappa(x)\\)-벡터공간이다. 단면을 싹으로 보낸 뒤 \\(s_x\\mapsto s_x\\otimes1\\)을 적용하여 값을 얻는다. 아핀에서 \\(\\mathcal F=\\widetilde M\\)이면 \\(\\mathcal F(x)\\cong M\\otimes_R\\kappa(x)\\)이다.",
+      "condition": "줄기는 국소환 위의 가군이고 섬유는 잉여체 위의 벡터공간이다. 임의의 가군층의 섬유차원이 일정할 필요는 없다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § A · PDF p.11",
+      "aliases": [
+        "fiber",
+        "fibre",
+        "stalk-to-fiber",
+        "섬유"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P06",
+        "P07",
+        "N05"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P10",
+      "title": "정스킴·일반점·함수체",
+      "english": "Integral scheme, generic point and function field",
+      "question": "한 점이 기약 공간 전체를 대표한다는 것은 무엇인가?",
+      "answer": "정스킴은 공집합이 아니고 축약되며 위상공간이 기약인 스킴이다. 기약은 공집합이 아니고 두 진닫힌집합의 합집합이 아니라는 뜻이다. 일반점은 \\(\\overline{\\{\\eta\\}}=X\\)인 점이다. 정스킴의 함수체는 \\(K(X)=\\mathcal O_{X,\\eta}=\\kappa(\\eta)\\)이다. 정역 R에 대해 Spec R는 정스킴이고 \\(\\eta=(0)\\), \\(K(X)=\\operatorname{Frac}R\\)이다.",
+      "condition": "일반점에서 값은 숫자 대입이 아니라 함수체의 원소이다. Spec C[x,y]의 일반점에서는 평가가 C(x,y)의 항등사상이다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § A / Divisors / Discussion 1 · PDF pp.10,45–48,60–62",
+      "aliases": [
+        "generic point",
+        "function field",
+        "integral scheme",
+        "기약"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P05",
+        "P02",
+        "P07",
+        "01-05"
+      ],
+      "usedBy": [
+        "P28",
+        "P30",
+        "P31",
+        "P41"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "체 위의 사영점과 동차좌표",
+      "english": "Projective points and homogeneous coordinates",
+      "question": "사영점에서 벡터의 크기를 잊으면 무엇이 남는가?",
+      "answer": "체 k에 대해 \\(\\mathbf P^n(k)\\)는 \\(k^{n+1}\\)의 1차원 선형부분공간들의 집합이다. 동치로 \\(\\mathbf P^n(k)=(k^{n+1}\\setminus\\{0\\})/k^\\times\\)이며 \\(\\lambda\\in k^\\times\\)이면 \\([x_0:\\cdots:x_n]=[\\lambda x_0:\\cdots:\\lambda x_n]\\)이다. k-벡터공간의 공리는 기존 B01의 스칼라체를 k로 바꾼 것이다.",
+      "condition": "이는 k-유리점의 설명이다. 사영 스킴의 점에는 닫힌점 이외의 일반점도 들어간다. N23은 복소해석적 CP^n을 다룬다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Projective points · PDF pp.13–16",
+      "aliases": [
+        "homogeneous coordinates",
+        "projective point",
+        "동차좌표"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "26-01",
+        "02-01"
+      ],
+      "usedBy": [
+        "P12",
+        "P18"
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "동차다항식",
+      "english": "Homogeneous polynomial",
+      "question": "어떤 방정식이 사영좌표의 대표 선택과 무관한가?",
+      "answer": "\\(k[X_0,\\ldots,X_n]\\)의 다항식 F가 차수 d의 동차다항식이라는 것은 F의 모든 영이 아닌 단항식이 총차수 d라는 뜻이다. 따라서 \\(F(\\lambda X_0,\\ldots,\\lambda X_n)=\\lambda^dF(X_0,\\ldots,X_n)\\)이다. F=0이라는 조건은 비영 스칼라배에 보존되어 사영점 위에 잘 정의된다.",
+      "condition": "유한체에서는 k-점에서의 스칼라배 식만으로 동차성을 정의하지 않는다. 서로 다른 차수를 섞은 X₀+X₁²=0은 일반적으로 사영 방정식이 아니다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Projective points · PDF p.17",
+      "aliases": [
+        "homogeneous form",
+        "동차형식"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P11"
+      ],
+      "usedBy": [
+        "P13",
+        "P39"
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "비음수 등급환과 무관 아이디얼",
+      "english": "Nonnegatively graded ring and irrelevant ideal",
+      "question": "다항식의 차수를 환의 구조로 어떻게 보존하는가?",
+      "answer": "비음수 등급환은 \\(S=\\bigoplus_{d\\ge0}S_d\\), \\(1\\in S_0\\), \\(S_aS_b\\subseteq S_{a+b}\\)인 가환환이다. \\(S_+=\\bigoplus_{d>0}S_d\\)를 무관 아이디얼이라 한다. S가 S₀-대수로서 S₁에 의해 생성되면 표준 등급환이라 한다. 표준 예는 \\(k[X_0,\\ldots,X_n]\\), \\(\\deg X_i=1\\)이다.",
+      "condition": "일반 등급환의 S₀가 체일 필요도, S가 차수 1에서 생성될 필요도 없다. Proj 정의는 일반 비음수 등급환에 적용한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Proj / Discussion 2 · PDF pp.19,63",
+      "aliases": [
+        "graded ring",
+        "irrelevant ideal",
+        "등급환",
+        "무관 아이디얼"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "26-01",
+        "N01"
+      ],
+      "usedBy": [
+        "P15",
+        "P16",
+        "P20"
+      ]
+    },
+    {
+      "id": "P15",
+      "title": "동차아이디얼과 동차소아이디얼",
+      "english": "Homogeneous ideal and homogeneous prime",
+      "question": "차수를 잊지 않는 아이디얼의 조건은 무엇인가?",
+      "answer": "등급환 S의 아이디얼 I가 동차라는 것은 \\(I=\\bigoplus_{d\\ge0}(I\\cap S_d)\\)라는 뜻이다. 동치로 I는 동차원소들에 의해 생성된다. 동차소아이디얼은 동차아이디얼이면서 환 S의 소아이디얼이다. S/I에도 자연스러운 등급이 생긴다.",
+      "condition": "동차소아이디얼의 조건에는 진아이디얼이라는 조건도 포함된다. 임의의 소아이디얼을 Proj의 점으로 넣지 않는다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Proj · PDF pp.20,22",
+      "aliases": [
+        "homogeneous ideal",
+        "homogeneous prime"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P14",
+        "P01",
+        "28-01"
+      ],
+      "usedBy": [
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P16",
+      "title": "Proj의 점과 Zariski 위상",
+      "english": "Points and topology of Proj",
+      "question": "Spec에서 어떤 점을 골라야 사영공간을 얻는가?",
+      "answer": "비음수 등급환 S에 대해 \\[\\operatorname{Proj}S=\\{\\mathfrak p\\subset S:\\mathfrak p\\text{는 동차소아이디얼},\\ S_+\\not\\subseteq\\mathfrak p\\}\\]이다. 동차아이디얼 I의 닫힌집합을 \\(V_+(I)=\\{\\mathfrak p:I\\subseteq\\mathfrak p\\}\\)로 정한다. 양의 차수 동차 f에 대해 \\(D_+(f)=\\{\\mathfrak p:f\\notin\\mathfrak p\\}\\)이며 이 표준 열린집합들은 열린 기저이다.",
+      "condition": "S₊를 포함하는 점들을 제외한다. Proj 전체를 단순히 닫힌점들의 스칼라 몫으로 정의하는 것은 아니다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Proj / Discussion 2 · PDF pp.21–23,63",
+      "aliases": [
+        "Proj",
+        "projective spectrum",
+        "표준 열린집합"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P14",
+        "P15",
+        "P03"
+      ],
+      "usedBy": [
+        "P17"
+      ]
+    },
+    {
+      "id": "P17",
+      "title": "차수 0 국소화와 Proj의 구조층",
+      "english": "Degree-zero localization and structure sheaf of Proj",
+      "question": "사영 정칙함수는 왜 분자와 분모의 차수가 같아야 하는가?",
+      "answer": "\\(f\\in S_d\\), d>0이면 국소화에서 \\(\\deg(a/f^r)=\\deg a-rd\\)로 둔다. \\(S_{(f)}=(S_f)_0=\\{a/f^r:a\\in S_{rd},r\\ge0\\}\\)는 차수 0 부분환이다. Proj의 구조층은 \\(D_+(f)\\cong\\operatorname{Spec}S_{(f)}\\), \\(\\mathcal O(D_+(f))=S_{(f)}\\)가 되도록 이 아핀 조각들을 붙인 것이다.",
+      "condition": "S_f 전체와 차수 0 부분 S_(f)를 구별한다. 다항식환에서 차수 0 조건은 공통 스칼라배에 불변인 표현을 고른다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Proj / Discussion 2 · PDF pp.24–28,63",
+      "aliases": [
+        "degree-zero localization",
+        "S_(f)",
+        "차수 영"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P16",
+        "N02",
+        "P04",
+        "P05"
+      ],
+      "usedBy": [
+        "P18",
+        "P21"
+      ]
+    },
+    {
+      "id": "P18",
+      "title": "체 위의 사영 스킴과 아핀 좌표계",
+      "english": "Projective space as a scheme and its affine charts",
+      "question": "사영공간을 아핀 스킴들로 어떻게 계산하는가?",
+      "answer": "\\(\\mathbf P^n_k=\\operatorname{Proj}k[X_0,\\ldots,X_n]\\), \\(\\deg X_i=1\\)로 정의한다. \\(U_i=D_+(X_i)\\)는 \\[U_i\\cong\\operatorname{Spec}k[X_0/X_i,\\ldots,\\widehat{X_i/X_i},\\ldots,X_n/X_i]\\cong\\mathbf A^n_k\\]이며 이 n+1개 열린집합이 사영공간을 덮는다. 겹침에서는 \\(X_\\ell/X_j=(X_\\ell/X_i)/(X_j/X_i)\\)이다.",
+      "condition": "n≥0이다. P¹의 두 좌표는 서로 역수이고 P²의 한 아핀 조각의 여집합은 무한원 직선 P¹이다. 이는 국소닫힌 조각의 분해이지 분리합 위상이 아니다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Projective points / Proj · PDF pp.14–16,22–27",
+      "aliases": [
+        "projective scheme",
+        "P^n",
+        "사영공간"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P17",
+        "P11"
+      ],
+      "usedBy": [
+        "P19",
+        "P22",
+        "P24",
+        "P38"
+      ]
+    },
+    {
+      "id": "P19",
+      "title": "사영 부분스킴과 동차좌표환",
+      "english": "Projective subscheme and homogeneous coordinate ring",
+      "question": "동차 방정식들은 어떤 부분스킴을 정하는가?",
+      "answer": "\\(S=k[X_0,\\ldots,X_n]\\)의 동차아이디얼 I에 대해 \\(Y=\\operatorname{Proj}(S/I)\\hookrightarrow\\mathbf P^n_k\\)는 닫힌 부분스킴이다. S/I를 이 방정식 표현의 동차좌표환이라 한다. \\(I=(F_1,\\ldots,F_r)\\)이면 Uᵢ에서 좌표환은 \\(k[X_j/X_i:j\\ne i]/(F_a/X_i^{\\deg F_a}:1\\le a\\le r)\\)이다.",
+      "condition": "아이디얼과 그 근기는 같은 점집합을 주어도 서로 다른 스킴을 줄 수 있다. 서로 다른 동차아이디얼이 같은 Proj를 줄 수도 있으므로 좌표환의 유일성을 주장하지 않는다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Proj / Discussion 2 · PDF pp.20,29,64",
+      "aliases": [
+        "homogeneous coordinate ring",
+        "projective subscheme",
+        "동차좌표환"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P15",
+        "P18"
+      ],
+      "usedBy": [
+        "P13",
+        "P25",
+        "P36",
+        "P39"
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "동차화와 사영폐포",
+      "english": "Homogenization and projective closure",
+      "question": "아핀 방정식에 무한원점을 어떻게 더하는가?",
+      "answer": "총차수 d의 \\(f\\in k[x_1,\\ldots,x_n]\\)에 대해 \\(f^h(X_0,\\ldots,X_n)=X_0^df(X_1/X_0,\\ldots,X_n/X_0)\\)를 동차화라 한다. 이는 차수 d의 동차식이며 \\(f^h(1,x_1,\\ldots,x_n)=f\\)이다. 아핀 초곡면 V(f)의 사영폐포는 이를 포함하는 가장 작은 닫힌 부분스킴이며 비상수 f에 대해 \\(V_+(f^h)\\)이다.",
+      "condition": "여러 방정식의 경우 임의의 생성원 목록만 각각 동차화하면 무한원에 불필요한 성분이 생길 수 있다. 일반 아이디얼의 폐포는 모든 원소의 동차화 또는 해당 좌표에 대한 포화를 사용한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Projective points · PDF pp.12,15,18",
+      "aliases": [
+        "homogenization",
+        "projective closure",
+        "무한원"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P12",
+        "P19",
+        "01-05"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P20",
+      "title": "등급가군과 등급 국소화",
+      "english": "Graded module and graded localization",
+      "question": "가군의 원소에도 스칼라배의 가중치를 어떻게 붙이는가?",
+      "answer": "등급환 S 위 등급가군은 \\(M=\\bigoplus_{r\\in\\mathbb Z}M_r\\)이며 \\(S_dM_r\\subseteq M_{d+r}\\)인 S-가군이다. 양의 차수 동차 f에 대해 \\(M_f\\)의 분수에 \\(\\deg(m/f^q)=\\deg m-q\\deg f\\)를 주고 \\(M_{(f)}=(M_f)_0\\)를 취한다. 이는 S_(f)-가군이다.",
+      "condition": "환은 비음수 등급이지만 가군의 차수는 음의 정수도 허용한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Graded modules · PDF p.31",
+      "aliases": [
+        "graded module",
+        "graded localization",
+        "등급가군"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P14",
+        "N01",
+        "N02"
+      ],
+      "usedBy": [
+        "P21"
+      ]
+    },
+    {
+      "id": "P21",
+      "title": "Proj 위 등급가군의 층화",
+      "english": "Sheafification of a graded module on Proj",
+      "question": "등급가군에서 사영 단면층을 어떻게 얻는가?",
+      "answer": "\\(X=\\operatorname{Proj}S\\)에서 등급가군 M의 층화 \\(\\widetilde M\\)은 각 표준 열린집합에서 \\[\\widetilde M|_{D_+(f)}\\cong\\widetilde{M_{(f)}}\\]가 되도록 붙인 가군층이다. 우변은 아핀 스킴 Spec S_(f) 위 가군의 층화이다. 따라서 \\(\\widetilde M(D_+(f))=M_{(f)}=(M_f)_0\\)이다.",
+      "condition": "Proj 층화는 0이 아닌 가군을 0인 층으로 보낼 수 있다. 무관 부분이 사라지는 예를 연결 정리에서 따로 확인한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Graded modules · PDF pp.32,36",
+      "aliases": [
+        "projective sheafification",
+        "graded sheafification"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P20",
+        "P17",
+        "P06"
+      ],
+      "usedBy": [
+        "P22"
+      ]
+    },
+    {
+      "id": "P22",
+      "title": "차수 이동과 뒤틀림층 O(d)",
+      "english": "Degree shift and twisting sheaf",
+      "question": "같은 가군의 차수 표기를 바꾸면 어떤 층이 달라지는가?",
+      "answer": "등급가군 M과 정수 d에 대해 \\(M(d)_r=M_{d+r}\\)로 차수 이동을 정의한다. \\(X=\\operatorname{Proj}S\\)의 뒤틀림층은 \\(\\mathcal O_X(d)=\\widetilde{S(d)}\\)이다. 표준 등급 다항식환으로 만든 사영공간 \\(\\mathbf P^n_k\\)에서는 모든 정수 d에 대해 \\(\\mathcal O(d)\\)가 가역층이다.",
+      "condition": "이동 관례는 M(d)_r=M_(d+r)이다. 비표준 등급환의 일반적인 Proj에서는 O(d)가 가역층이라는 보장이 없다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Graded modules / Discussion 3 · PDF pp.33–35,65–66",
+      "aliases": [
+        "twist",
+        "twisting sheaf",
+        "O(d)",
+        "뒤틀림층"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P21",
+        "P18",
+        "N07"
+      ],
+      "usedBy": [
+        "P24"
+      ]
+    },
+    {
+      "id": "P23",
+      "title": "대수적 선다발·국소 틀·전이함수",
+      "english": "Algebraic line bundle, local frame and transition functions",
+      "question": "스킴 위 선다발의 국소 자료는 무엇인가?",
+      "answer": "대수적 선다발은 rank 1의 국소자유 \\(\\mathcal O_X\\)-가군층, 즉 가역층 \\(\\mathcal L\\)로 다룬다. \\(\\mathcal L|_{U_i}=\\mathcal O_{U_i}e_i\\)인 생성원 eᵢ를 국소 틀이라 한다. \\(e_i=u_{ij}e_j\\)이면 \\(u_{ij}\\in\\mathcal O_X^\\times(U_i\\cap U_j)\\)이고 \\(u_{ij}u_{jk}=u_{ik}\\)이다. 단면 \\(s=f_ie_i=f_je_j\\)의 계수는 \\(f_j=u_{ij}f_i\\)이다.",
+      "condition": "기존 N10은 eⱼ=gᵢⱼeᵢ 관례이므로 uᵢⱼ=gᵢⱼ⁻¹이다. N08은 복소해석적 정칙 선다발, 이 항목은 대수적 대상이다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Graded modules / Divisors · PDF pp.33–39,49",
+      "aliases": [
+        "algebraic line bundle",
+        "local frame",
+        "대수적 선다발"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P05",
+        "N07"
+      ],
+      "usedBy": [
+        "P24",
+        "P25",
+        "P29",
+        "P30",
+        "P33",
+        "P34",
+        "P35"
+      ]
+    },
+    {
+      "id": "P24",
+      "title": "동어반복 선다발 O(−1)",
+      "english": "Tautological line bundle",
+      "question": "사영점이 나타내는 직선 자체를 섬유로 놓으면 무엇을 얻는가?",
+      "answer": "동어반복 선다발은 \\(\\mathcal O_{\\mathbf P^n}(-1)\\hookrightarrow\\mathcal O^{\\oplus(n+1)}\\)이다. k-유리점 [ℓ]에서 섬유는 \\(\\ell\\subset k^{n+1}\\)이다. 복소점 위 총공간은 \\(\\{([\\ell],v):v\\in\\ell\\}\\)이다. Uᵢ에서 \\(e_i([x])=(x_0/x_i,\\ldots,x_n/x_i)\\)가 국소 틀이며 \\(e_i=(x_j/x_i)e_j\\)이다.",
+      "condition": "직선을 섬유로 넣는 관례이므로 O(−1)이다. 뒤틀림층 O(−1)과 같은 전이법칙을 갖는다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Tautological bundle · PDF pp.37–38",
+      "aliases": [
+        "tautological bundle",
+        "tautological line",
+        "보편 선다발"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P18",
+        "P22",
+        "P23"
+      ],
+      "usedBy": [
+        "P25",
+        "P27"
+      ]
+    },
+    {
+      "id": "P25",
+      "title": "초평면 선다발 O(1)",
+      "english": "Hyperplane line bundle",
+      "question": "동차좌표는 왜 함수 대신 선다발의 단면인가?",
+      "answer": "\\(\\mathcal O(1)=\\mathcal O(-1)^\\vee\\)를 초평면 선다발이라 한다. 선형형식 \\(L\\in(k^{n+1})^\\vee\\)는 각 직선 ℓ에 \\(L|_\\ell\\in\\ell^\\vee\\)를 대응시켜 전역단면 sL을 준다. 그 영점 부분스킴은 \\(V_+(L)\\)이다. 동차좌표 Xᵢ 자체도 O(1)의 단면이다.",
+      "condition": "비영 선형형식을 써야 초평면을 얻는다. 복소해석화하면 쌍대 동어반복 정칙 선다발이 된다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Hyperplane bundle · PDF p.39",
+      "aliases": [
+        "hyperplane bundle",
+        "dual tautological",
+        "초평면"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P24",
+        "P19",
+        "P23"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P26",
+      "title": "Hopf 다발과 구면 몫",
+      "english": "Hopf bundle and sphere quotient",
+      "question": "복소직선 위 단위벡터들은 어떤 섬유를 이루는가?",
+      "answer": "\\(S^{2n+1}=\\{z\\in\\mathbb C^{n+1}:\\|z\\|=1\\}\\)에 \\(S^1=\\{\\lambda:|\\lambda|=1\\}\\)이 \\(z\\mapsto\\lambda z\\)로 자유롭게 작용한다. \\(q:S^{2n+1}\\to\\mathbf{CP}^n\\), \\(q(z)=[z]\\)를 Hopf 다발이라 한다. 섬유는 \\(\\{\\lambda z:\\lambda\\in S^1\\}\\)이고 \\(\\mathbf{CP}^n\\cong S^{2n+1}/S^1\\)이다. 각 비영좌표 조각에서 그 좌표를 양의 실수로 만드는 대표를 고르면 국소 단면을 얻어 U×S¹로 자명화된다.",
+      "condition": "이것이 주 S¹-다발의 국소자명화이다. 복소점의 해석적·위상적 공간에 관한 진술이며 스킴의 모든 점을 구면 몫으로 나타내는 주장이 아니다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Hopf · PDF pp.40–41",
+      "aliases": [
+        "Hopf fibration",
+        "circle bundle",
+        "Hopf",
+        "호프"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "N23",
+        "B03",
+        "06-01"
+      ],
+      "usedBy": [
+        "P27"
+      ]
+    },
+    {
+      "id": "P27",
+      "title": "Hopf 다발의 연관 선다발",
+      "english": "Associated line bundle of the Hopf bundle",
+      "question": "원다발에서 동어반복 선다발을 어떻게 되찾는가?",
+      "answer": "Hopf 다발의 연관 복소선다발을 \\[(S^{2n+1}\\times\\mathbb C)/\\sim,\\qquad(z,a)\\sim(\\lambda z,\\lambda^{-1}a),\\quad\\lambda\\in S^1\\]로 둔다. \\([z,a]\\mapsto([z],az)\\)는 이를 해석적 동어반복 선다발 O(−1)과 식별한다. 기저점은 [z]이고 az는 그 직선 안의 벡터이므로 대표 선택과 무관하다.",
+      "condition": "두 인자에 작용하는 부호를 함께 명시해야 한다. 단위벡터 부분다발로 제한하면 원래 Hopf 다발을 얻는다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Hopf · PDF pp.43–44",
+      "aliases": [
+        "associated bundle",
+        "연관 다발"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P26",
+        "P24"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P28",
+      "title": "Noether 스킴과 정상 스킴",
+      "english": "Noetherian scheme and normal scheme",
+      "question": "Weil 인자의 위수에는 어떤 국소 가정이 필요한가?",
+      "answer": "Noether 환은 모든 아이디얼이 유한 생성인 환이다. 국소 Noether 스킴은 Noether 환의 스펙트럼인 열린 조각들로 덮인다. 여기에 준콤팩트이면 Noether 스킴이다. 정상 스킴은 모든 국소환이 정역이고 자기 분수체 안에서 정수적으로 닫힌 스킴이다. A 위 정수적인 원소는 A 계수의 최고차항 계수 1인 다항식을 만족하는 원소이다.",
+      "condition": "준콤팩트는 모든 열린덮개에 유한 부분덮개가 있다는 뜻이다. 정 Noether 정상 스킴의 여차원 1 점에서 국소환은 이산부치환이다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Divisors · PDF pp.45–48",
+      "aliases": [
+        "Noetherian",
+        "normal",
+        "integrally closed",
+        "정상"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P05",
+        "P10",
+        "28-01"
+      ],
+      "usedBy": [
+        "P31"
+      ]
+    },
+    {
+      "id": "P29",
+      "title": "유효 Cartier 인자",
+      "english": "Effective Cartier divisor",
+      "question": "국소 방정식 하나라는 조건에 왜 영인자를 배제하는가?",
+      "answer": "닫힌 부분스킴 D⊂X가 유효 Cartier 인자라는 것은 아이디얼층 \\(\\mathcal I_D\\)가 가역층이라는 뜻이다. 동치로 각 점의 아핀 근방 \\(U=\\operatorname{Spec}A\\)에서 \\(D\\cap U=\\operatorname{Spec}(A/(f))\\)이며 f는 비영인자이다. 비영인자는 곱셈 \\(A\\xrightarrow{\\cdot f}A\\)이 단사인 원소이다.",
+      "condition": "국소 주아이디얼이라는 것만으로 충분하지 않다. 국소 Noether 상황에서 비어 있지 않은 지지는 순수 여차원 1이다. 단위인 방정식은 빈 인자를 나타낸다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Divisors · PDF p.46",
+      "aliases": [
+        "effective Cartier divisor",
+        "nonzerodivisor",
+        "유효인자"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P05",
+        "N07",
+        "P23"
+      ],
+      "usedBy": [
+        "P30",
+        "P34"
+      ]
+    },
+    {
+      "id": "P30",
+      "title": "Cartier 인자",
+      "english": "Cartier divisor",
+      "question": "국소 유리 방정식들이 같은 인자를 나타내려면 무엇이 필요한가?",
+      "answer": "정스킴 X의 Cartier 인자는 열린덮개 \\((U_i)\\)와 \\(f_i\\in K(X)^\\times\\)로서 \\(f_i/f_j\\in\\mathcal O_X^\\times(U_i\\cap U_j)\\)인 자료이다. 세분한 덮개에서 방정식의 비가 단위이면 같은 자료로 본다. 모든 fᵢ를 정칙 비영인자로 잡을 수 있으면 유효하다. 인자의 덧셈은 국소 방정식의 곱이다.",
+      "condition": "여기서는 정스킴의 함수체를 사용하는 정의로 범위를 정한다. 영함수는 K(X)×에 속하지 않으며 Cartier 자료로 사용할 수 없다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Divisors · PDF pp.45,47",
+      "aliases": [
+        "Cartier divisor",
+        "카르티에"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P10",
+        "P23",
+        "P29"
+      ],
+      "usedBy": [
+        "P32",
+        "P33"
+      ]
+    },
+    {
+      "id": "P31",
+      "title": "Weil 인자와 여차원 1 소멸위수",
+      "english": "Weil divisor and codimension-one order",
+      "question": "기약 부분다양체마다 정수 하나를 어떻게 붙이는가?",
+      "answer": "정 Noether 정상 스킴 X의 Weil 인자는 \\(D=\\sum_Z n_Z[Z]\\), nZ∈Z인 유한 형식합이며 Z는 기약 닫힌 여차원 1 부분집합이다. Z의 일반점 ξ에서 \\(\\mathcal O_{X,\\xi}\\)는 이산부치환이다. 극대아이디얼 생성원 π를 택하면 \\(f\\in K(X)^\\times\\)는 \\(f=u\\pi^m\\), u는 단위, m∈Z로 쓰이며 \\(\\operatorname{ord}_Z(f)=m\\)이다.",
+      "condition": "여차원 1은 아핀 조각에서 ξ의 소아이디얼 높이가 1이라는 뜻이다. 양의 위수는 영점, 음의 위수는 극이다. 정상 조건만으로 Cartier와 Weil이 모두 일치하지는 않는다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Divisors · PDF pp.45,48",
+      "aliases": [
+        "Weil divisor",
+        "order of vanishing",
+        "DVR",
+        "바일 인자"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P10",
+        "P28",
+        "P01"
+      ],
+      "usedBy": [
+        "P32"
+      ]
+    },
+    {
+      "id": "P32",
+      "title": "스킴의 주인자와 선형동치",
+      "english": "Principal divisor and linear equivalence on a scheme",
+      "question": "유리함수를 곱해 바뀌는 인자들은 어떻게 동치로 보는가?",
+      "answer": "정스킴의 \\(f\\in K(X)^\\times\\)는 하나의 전역 유리 방정식으로 Cartier 주인자 div(f)를 정한다. 정 Noether 정상 스킴에서는 대응하는 Weil 주인자가 \\(\\operatorname{div}(f)=\\sum_Z\\operatorname{ord}_Z(f)[Z]\\)이다. \\(D-E=\\operatorname{div}(f)\\)인 f가 존재하면 Cartier 인자 D,E는 선형동치이다.",
+      "condition": "N15·N16은 복소곡선의 유리형 함수와 인자이다. 이 항목은 스킴의 함수체와 여차원 1 부분집합을 사용한다. 영점의 부호는 양수이다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Divisors · PDF pp.45,47–48",
+      "aliases": [
+        "principal divisor",
+        "linear equivalence",
+        "주인자"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P30",
+        "P31"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P33",
+      "title": "Cartier 인자에 대응하는 가역층 O(D)",
+      "english": "Invertible sheaf associated to a Cartier divisor",
+      "question": "인자의 방정식에서 선다발을 어떻게 만드는가?",
+      "answer": "\\(D=\\{(U_i,f_i)\\}\\)에 대해 \\(\\mathcal O_X(D)|_{U_i}=f_i^{-1}\\mathcal O_{U_i}\\subset K(X)\\)로 정의한다. 즉 단면은 각 조각에서 g fᵢ가 정칙인 유리함수 g이다. 국소 생성원은 fᵢ⁻¹이고 방정식의 비가 단위이므로 가역층이 붙는다. 유효 D이면 \\(\\mathcal O_X(-D)=\\mathcal I_D\\)이다.",
+      "condition": "O(D)는 D의 위치에서 극을 허용하는 부호 관례이다. 방정식 fᵢ 자체는 아이디얼 O(−D)의 생성원이다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Divisors · PDF pp.46–50",
+      "aliases": [
+        "O(D)",
+        "divisor line bundle",
+        "인자의 가역층"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P30",
+        "P23"
+      ],
+      "usedBy": [
+        "P34",
+        "P35"
+      ]
+    },
+    {
+      "id": "P34",
+      "title": "선다발 단면의 영점 부분스킴",
+      "english": "Zero subscheme of a line-bundle section",
+      "question": "틀을 바꾸어도 단면의 영점이 같은 이유는 무엇인가?",
+      "answer": "\\(s\\in H^0(X,\\mathcal L)\\)를 국소 틀에서 \\(s=f_ie_i\\)로 쓴다. 아이디얼 (fᵢ)들은 전이함수가 단위이므로 붙어 영점 부분스킴 Z(s)를 정한다. 모든 fᵢ가 비영인자이면 s를 정칙 단면이라 하고 Z(s)는 유효 Cartier 인자이다. 이때 \\(\\mathcal L\\cong\\mathcal O_X(Z(s))\\)이며 정준단면 1의 국소 계수는 fᵢ이다.",
+      "condition": "여기서 정칙 단면은 국소 계수가 비영인자라는 뜻이다. 임의의 단면의 영점이 항상 Cartier 인자인 것은 아니며 영단면도 제외해야 한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Divisors · PDF pp.49–50",
+      "aliases": [
+        "zero divisor of a section",
+        "regular section",
+        "영점 부분스킴"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P23",
+        "P29",
+        "P33",
+        "07-03"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P35",
+      "title": "Picard 군",
+      "english": "Picard group",
+      "question": "선다발들의 동형류에는 어떤 군구조가 있는가?",
+      "answer": "\\(\\operatorname{Pic}(X)\\)은 스킴 X의 가역층 동형류들의 군이다. 연산은 \\([\\mathcal L]+[\\mathcal M]=[\\mathcal L\\otimes_{\\mathcal O_X}\\mathcal M]\\), 항등원은 \\([\\mathcal O_X]\\), 역원은 \\([\\mathcal L^\\vee]\\)이다. Cartier 인자 D는 \\([\\mathcal O_X(D)]\\)를 정하며 주인자는 자명한 가역층을 준다.",
+      "condition": "Pic(Pⁿ)=Z는 정의가 아니라 정리이다. n≥1과 생성원 O(1)을 연결 정리에 명시한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Divisors · PDF p.51",
+      "aliases": [
+        "Picard",
+        "Pic",
+        "피카르"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P23",
+        "P33",
+        "02-01"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P36",
+      "title": "스킴론적 교집합",
+      "english": "Scheme-theoretic intersection",
+      "question": "점뿐 아니라 접촉 정보도 어떻게 남기는가?",
+      "answer": "X의 닫힌 부분스킴 C,D의 스킴론적 교집합은 아이디얼층 \\(\\mathcal I_C+\\mathcal I_D\\)로 정의되는 부분스킴이다. 아핀 Spec A에서 C=Spec(A/I), D=Spec(A/J)이면 \\(C\\cap D=\\operatorname{Spec}(A/(I+J))\\)이다. 국소 방정식이 f,g이면 p에서 교집합 국소환은 \\(\\mathcal O_{X,p}/(f,g)\\)이다.",
+      "condition": "축약환으로 바꾸면 멱영원에 담긴 고차 접촉 정보가 사라질 수 있다. 점집합과 부분스킴을 구별한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Intersections · PDF p.52",
+      "aliases": [
+        "scheme-theoretic intersection",
+        "스킴 교집합"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P05",
+        "P02",
+        "P19"
+      ],
+      "usedBy": [
+        "P38"
+      ]
+    },
+    {
+      "id": "P37",
+      "title": "가군의 길이",
+      "english": "Length of a module",
+      "question": "국소 교집합의 두께는 무엇으로 세는가?",
+      "answer": "A-가군 M의 길이 \\(\\operatorname{length}_A M\\)는 \\(0=M_0\\subsetneq M_1\\subsetneq\\cdots\\subsetneq M_r=M\\)이고 각 몫 \\(M_i/M_{i-1}\\)가 단순가군인 유한 조성열이 존재할 때 r이다. 단순가군은 0이 아니며 진부분가군이 0뿐인 가군이다. 유한 길이는 조성열 선택에 무관하며 영가군의 길이는 0이다.",
+      "condition": "길이는 생성원 개수나 점 개수가 아니다. 잉여체 k인 유한차원 국소 k-대수의 길이는 k-차원과 같다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Intersections · PDF pp.52–55",
+      "aliases": [
+        "module length",
+        "composition series",
+        "length"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "N01"
+      ],
+      "usedBy": [
+        "P38"
+      ]
+    },
+    {
+      "id": "P38",
+      "title": "평면곡선의 국소 교차중복도",
+      "english": "Local intersection multiplicity of plane curves",
+      "question": "횡단과 접선을 한 점으로만 세지 않으려면 무엇을 계산하는가?",
+      "answer": "대수적으로 닫힌 체 k 위 \\(C,D\\subset\\mathbf P^2_k\\)가 공통 기약성분을 갖지 않는 곡선이라 하자. 교점 p에서 국소 방정식을 f,g라 하면 \\[I_p(C,D)=\\operatorname{length}_{\\mathcal O_{\\mathbf P^2,p}}\\bigl(\\mathcal O_{\\mathbf P^2,p}/(f,g)\\bigr)=\\dim_k\\bigl(\\mathcal O_{\\mathbf P^2,p}/(f,g)\\bigr).\\]좌표와 국소 방정식의 선택에 무관하다.",
+      "condition": "공통성분이 없어 교집합이 유한해야 한다. 대수적으로 닫힌 체의 닫힌점은 잉여체 k를 가지므로 마지막 차원 식을 쓴다. 일반 체에서는 잉여체 확장차수의 가중치를 구별한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Intersections · PDF pp.52–56",
+      "aliases": [
+        "intersection multiplicity",
+        "local intersection number",
+        "교차수",
+        "교차중복도"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P18",
+        "P36",
+        "P37"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P39",
+      "title": "사영평면 곡선의 차수",
+      "english": "Degree of a projective plane curve",
+      "question": "곡선의 차수와 방정식의 차수는 어떻게 연결되는가?",
+      "answer": "비영 양의 차수 동차식 \\(F\\in k[X,Y,Z]\\)의 평면곡선 \\(C=V_+(F)\\)의 차수를 \\(\\deg C=\\deg F\\)로 둔다. 여기서는 인수 중복도를 포함하는 초곡면 부분스킴을 사용한다. L이 선형이면 V₊(L²)는 차수 2의 이중직선이다. 축약 곡선의 차수는 중복인수를 제거한 식의 차수이다.",
+      "condition": "일반 직선과의 교차중복도 합이 차수라는 것은 Bézout의 결과이다. 서로 다른 d개의 횡단 교점을 얻으려면 축약성 등 적절한 조건이 필요하다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Intersections · PDF pp.56,59",
+      "aliases": [
+        "degree of a plane curve",
+        "degree",
+        "곡선 차수"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P12",
+        "P19"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P40",
+      "title": "멱등원과 열린닫힌 분해",
+      "english": "Idempotent and clopen decomposition",
+      "question": "어떤 환 원소가 스펙트럼의 분리를 드러내는가?",
+      "answer": "\\(e^2=e\\)를 만족하는 e∈R를 멱등원이라 한다. e≠0,1이면 비자명하다. 이때 \\(e(1-e)=0\\)이고 \\(\\operatorname{Spec}R=D(e)\\sqcup D(1-e)\\)는 두 열린닫힌집합으로의 분해이다. 열린닫힌집합은 열린집합이면서 닫힌집합이다.",
+      "condition": "멱등원이 0과 1뿐이라는 조건은 Spec R의 연결성과 동치이다. 기약성 판정과 구별한다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Discussion 1 · PDF pp.60–62",
+      "aliases": [
+        "idempotent",
+        "clopen",
+        "멱등원"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "26-01",
+        "P03"
+      ],
+      "usedBy": []
+    },
+    {
+      "id": "P41",
+      "title": "극소소아이디얼과 기약성분",
+      "english": "Minimal prime and irreducible component",
+      "question": "Spec R의 기약 조각들은 어떤 소아이디얼에 대응하는가?",
+      "answer": "소아이디얼 p가 극소소아이디얼이라는 것은 p에 포함된 소아이디얼 q가 항상 p와 같다는 뜻이다. 위상공간의 기약성분은 포함관계로 극대인 기약 닫힌집합이다. Spec R의 기약성분들은 극소소아이디얼 p에 대한 V(p)들이다.",
+      "condition": "극소는 소아이디얼들의 포함관계 안에서의 조건이다. 여러 기약성분이 만나면 전체 공간은 연결일 수 있다.",
+      "type": "definition",
+      "source": "대수기하 세미나 3 · § Discussion 1 · PDF pp.60–62",
+      "aliases": [
+        "minimal prime",
+        "irreducible component",
+        "기약성분"
+      ],
+      "refs": [],
+      "chapter": "J",
+      "deps": [
+        "P01",
+        "P03",
+        "P10"
+      ],
+      "usedBy": []
     }
   ],
   "theorems": [
@@ -3474,6 +4555,181 @@
         "N20",
         "N21"
       ]
+    },
+    {
+      "id": "PT01",
+      "title": "아핀 점의 싹·값·섬유 계산",
+      "english": "Germs, values and fibers at affine points",
+      "answer": "\\(X=\\operatorname{Spec}\\mathbb C[x,y]\\)의 닫힌점 \\(q=(x-a,y-b)\\)에서는 \\(\\mathcal O_{X,q}=\\mathbb C[x,y]_{(x-a,y-b)}\\), \\(\\kappa(q)=\\mathbb C\\), \\(\\operatorname{ev}_q(f/h)=f(a,b)/h(a,b)\\), h(a,b)≠0이다. 일반점 η=(0)에서는 국소환과 잉여체가 C(x,y)이고 평가가 항등이다. 자유가군 \\(R^{\\oplus r}\\)의 섬유는 \\(\\kappa(x)^r\\)이며 단면 평가는 성분별 평가이다.",
+      "deps": [
+        "P08",
+        "P09",
+        "P10"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.9–11"
+    },
+    {
+      "id": "PT02",
+      "title": "무한원점과 동차화의 두 예",
+      "english": "Homogenization and points at infinity",
+      "answer": "[X:Y:Z]에서 y=0과 y=1의 폐포는 Y=0과 Y−Z=0이며 [1:0:0]에서 만난다. 포물선 y=x²의 폐포는 YZ=X²이며 무한원점은 [0:1:0]이다. 서로 다른 문제의 두 무한원점을 구별한다.",
+      "deps": [
+        "P11",
+        "P13",
+        "P18"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.12,18,57–58"
+    },
+    {
+      "id": "PT03",
+      "title": "사영 표준 열린집합의 아핀 계산",
+      "english": "Affine calculations on projective standard opens",
+      "answer": "\\(D_+(F)\\cap D_+(G)=D_+(FG)\\)이다. deg F=d이고 Uᵢ=D₊(Xᵢ)에서 \\(F_i=F/X_i^d\\)이면 \\(D_+(F)\\cap U_i=D(F_i)\\)이다. U₀에서 tⱼ=Xⱼ/X₀로 쓰면 \\(U_0\\cap U_1=\\operatorname{Spec}k[t_1,t_1^{-1},t_2,\\ldots,t_n]\\), n≥1이다.",
+      "deps": [
+        "P17",
+        "P18"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.25–29"
+    },
+    {
+      "id": "PT04",
+      "title": "사영공간의 함수와 뒤틀림층의 전역단면",
+      "english": "Global functions and sections of twists",
+      "answer": "체 k, n≥1, \\(S=k[X_0,\\ldots,X_n]\\)에 대해 \\[\\Gamma(\\mathbf P^n_k,\\mathcal O)=k,\\qquad H^0(\\mathbf P^n_k,\\mathcal O(d))=\\begin{cases}S_d&d\\ge0,\\\\0&d<0.\\end{cases}\\]F∈S_d는 Uᵢ에서 F/Xᵢᵈ라는 계수를 가진 O(d)의 단면이다. 동차좌표환은 보통 함수환이 아니라 여러 뒤틀림의 단면들을 모은 등급환이다.",
+      "deps": [
+        "P18",
+        "P22",
+        "P23"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.30,35"
+    },
+    {
+      "id": "PT05",
+      "title": "Proj 층화는 무관 부분을 잊는다",
+      "english": "Projective sheafification forgets irrelevant torsion",
+      "answer": "\\(S=k[X_0,\\ldots,X_n]\\), \\(M=S/S_+\\)이면 M≠0이지만 Xᵢ가 M에 0으로 작용하면서 국소화에서는 가역이 되므로 \\(M_{X_i}=0\\)이다. Uᵢ들이 덮으므로 \\(\\widetilde M=0\\)이다. 등급가군 자체를 Proj 위 층과 일대일로 동일시할 수 없다는 예이다.",
+      "deps": [
+        "P21",
+        "P14"
+      ],
+      "source": "대수기하 세미나 3 · PDF p.36"
+    },
+    {
+      "id": "PT06",
+      "title": "O(d)의 국소 틀과 텐서곱",
+      "english": "Local frames and tensor products of twists",
+      "answer": "표준 사영공간의 Uᵢ에서 O(d)의 틀을 \\(e_i^{(d)}=X_i^d\\)로 쓰면 \\(e_i^{(d)}=(X_i/X_j)^d e_j^{(d)}\\)이다. 모든 정수 a,b에 대해 \\(e_i^{(a)}\\otimes e_i^{(b)}\\mapsto e_i^{(a+b)}\\)는 국소 동형이며 전이함수들의 곱도 일치하므로 \\(\\mathcal O(a)\\otimes\\mathcal O(b)\\cong\\mathcal O(a+b)\\)로 붙는다. 특히 쌍대는 O(−d)이다. 일반 등급환의 Proj에는 같은 동형을 무조건 적용하지 않는다.",
+      "deps": [
+        "P22",
+        "P23"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.34,65–66"
+    },
+    {
+      "id": "PT07",
+      "title": "고전 Hopf 사상과 CP¹의 구면",
+      "english": "Classical Hopf map and the sphere CP1",
+      "answer": "\\(S^3\\subset\\mathbb C^2\\), \\(S^2\\subset\\mathbb C\\times\\mathbb R\\)이면 \\[h(z_0,z_1)=(2z_0\\overline{z_1},\\ |z_0|^2-|z_1|^2).\\]\\(4|z_0|^2|z_1|^2+(|z_0|^2-|z_1|^2)^2=(|z_0|^2+|z_1|^2)^2=1\\)이므로 상이 S²에 놓인다. 공통 위상배에 불변이며 섬유가 S¹ 궤도이므로 \\(\\mathbf{CP}^1\\cong S^2\\)로 내려간다. 첫 성분의 켤레를 빠뜨리면 불변성이 깨진다.",
+      "deps": [
+        "P26",
+        "P27"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.41–43"
+    },
+    {
+      "id": "PT08",
+      "title": "단면에서 인자로, 동차식에서 초곡면으로",
+      "english": "From sections to divisors and hypersurfaces",
+      "answer": "선다발 L의 정칙 단면 s는 유효 Cartier 인자 D=Z(s)를 정하고 \\(L\\cong\\mathcal O_X(D)\\)이다. 표준 사영공간에서 비영 차수 d>0 동차식 F는 O(d)의 정칙 단면이며 \\[Z(s_F)=V_+(F),\\qquad\\mathcal O_{\\mathbf P^n}(V_+(F))\\cong\\mathcal O_{\\mathbf P^n}(d).\\]인수 중복도를 버리지 않는다.",
+      "deps": [
+        "P25",
+        "P34",
+        "P39"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.49–50"
+    },
+    {
+      "id": "PT09",
+      "title": "매끄러운 경우 Cartier와 Weil 인자의 일치",
+      "english": "Cartier and Weil divisors on a smooth variety",
+      "answer": "체 위 매끄러운 정다양체에서는 여차원 1 소멸위수를 취하는 사상이 Cartier 인자군과 Weil 인자군의 동형을 준다. 국소환이 정칙 국소환이고 국소 유일인수분해환이므로 Weil 인자는 국소 유리 방정식으로 표현된다. 정상이라는 조건만으로 모든 Weil 인자가 Cartier인 것은 아니다.",
+      "deps": [
+        "P30",
+        "P31",
+        "P32"
+      ],
+      "source": "대수기하 세미나 3 · PDF p.45"
+    },
+    {
+      "id": "PT10",
+      "title": "사영공간의 Picard 군",
+      "english": "Picard group of projective space",
+      "answer": "체 k와 n≥1에 대해 \\[\\mathbb Z\\xrightarrow{\\sim}\\operatorname{Pic}(\\mathbf P^n_k),\\qquad d\\longmapsto[\\mathcal O(d)]\\]는 군동형이다. O(1)이 생성원이며 모든 선다발은 유일한 정수 d의 O(d)와 동형이다. n=0이면 Spec k의 Picard 군은 0이다.",
+      "deps": [
+        "P35",
+        "P25",
+        "P22"
+      ],
+      "source": "대수기하 세미나 3 · PDF p.51"
+    },
+    {
+      "id": "PT11",
+      "title": "횡단 교차와 접선의 국소 길이",
+      "english": "Local lengths of a crossing and a tangency",
+      "answer": "p=(0,0)에서 V(x),V(y)의 교집합 국소환은 \\(k[x,y]_{(x,y)}/(x,y)\\cong k\\)이므로 중복도는 1이다. V(y),V(y−x²)는 \\[k[x,y]_{(x,y)}/(y,y-x^2)\\cong k[x]_{(x)}/(x^2)\\]이므로 기저 1,x를 가져 중복도 2이다. 점집합은 둘 다 한 점이지만 국소환은 다르다.",
+      "deps": [
+        "P36",
+        "P37",
+        "P38"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.54–55"
+    },
+    {
+      "id": "PT12",
+      "title": "평면곡선의 Bézout 정리",
+      "english": "Bezout theorem for plane curves",
+      "answer": "대수적으로 닫힌 체 k에서 \\(C=V_+(F),D=V_+(G)\\subset\\mathbf P^2_k\\)가 차수 m,n의 곡선이고 공통 기약성분이 없으면 \\[\\sum_{p\\in C\\cap D}I_p(C,D)=mn.\\]무한원점과 고차 접촉의 중복도를 모두 포함한다. 공통성분이 있을 때 이 유한 교점 공식은 적용하지 않는다.",
+      "deps": [
+        "P38",
+        "P39"
+      ],
+      "source": "대수기하 세미나 3 · PDF p.56"
+    },
+    {
+      "id": "PT13",
+      "title": "Bézout 수의 두 예와 직선 절단",
+      "english": "Examples of Bezout counts and cutting by a line",
+      "answer": "대수적으로 닫힌 체 k 위에서 Y=0과 Y−Z=0은 [1:0:0]에서 횡단하여 총 교차수 1이다. YZ−X²=0과 Y=0은 [0:0:1]에서만 만나며 중복도 2이다. 차수 d의 곡선 C와 그 성분이 아닌 직선 L에 대해 \\(\\sum_p I_p(C,L)=d\\)이다. 비축약 곡선은 일반 직선을 골라도 중복도가 남을 수 있으므로 항상 d개의 서로 다른 횡단점이라고 말하지 않는다.",
+      "deps": [
+        "P38",
+        "P39",
+        "P13"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.57–59"
+    },
+    {
+      "id": "PT14",
+      "title": "연결·기약·축약의 환 사전",
+      "english": "Ring criteria for connectedness, irreducibility and reducedness",
+      "answer": "Spec R가 연결일 필요충분조건은 멱등원이 0과 1뿐인 것이다. 기약일 필요충분조건은 \\(\\sqrt{(0)}\\)이 소아이디얼인 것이며 이는 R_red가 정역이라는 것과 같다. R이 정역이면 충분하지만 축약 조건 없이는 필요하지 않다. k×k는 비연결·가약·축약, k[x,y]/(xy)는 연결·가약·축약, k[ε]/(ε²)는 연결·기약·비축약인 스펙트럼을 갖는다.",
+      "deps": [
+        "P02",
+        "P40",
+        "P41"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.60–62"
+    },
+    {
+      "id": "PT15",
+      "title": "사영 이차곡선의 두 아핀 조각",
+      "english": "Two affine charts of a projective conic",
+      "answer": "\\(S=k[X,Y,Z]/(XY-Z^2)\\), 모든 변수의 차수 1로 놓는다. D₊(X)에서 t=Z/X, Y/X=t²이므로 S_(X)≅k[t]이다. D₊(Y)에서 u=Z/Y, X/Y=u²이므로 S_(Y)≅k[u]이다. 두 조각은 Proj S를 덮고 겹침에서 u=1/t이다. 따라서 이 곡선은 P¹_k와 동형이며 \\([a:b]\\mapsto[a^2:b^2:ab]\\)로 매개화된다.",
+      "deps": [
+        "P19",
+        "P17",
+        "P18"
+      ],
+      "source": "대수기하 세미나 3 · PDF pp.63–64"
     }
   ],
   "topologicalOrder": [
@@ -3637,12 +4893,77 @@
     "28-10",
     "B10",
     "B11",
-    "B12"
+    "B12",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12",
+    "P14",
+    "P15",
+    "P16",
+    "P17",
+    "P18",
+    "P19",
+    "P13",
+    "P20",
+    "P21",
+    "P22",
+    "P23",
+    "P24",
+    "P25",
+    "P26",
+    "P27",
+    "P28",
+    "P29",
+    "P30",
+    "P31",
+    "P32",
+    "P33",
+    "P34",
+    "P35",
+    "P36",
+    "P37",
+    "P38",
+    "P39",
+    "P40",
+    "P41"
   ],
   "goals": [
     [
+      "P22",
+      "세미나 III · O(d)의 구성"
+    ],
+    [
+      "P18",
+      "세미나 III · Proj로 만드는 사영공간"
+    ],
+    [
+      "P09",
+      "세미나 III · 싹·함수값·가군층의 섬유"
+    ],
+    [
+      "P27",
+      "세미나 III · 동어반복 선다발과 Hopf 다발"
+    ],
+    [
+      "P35",
+      "세미나 III · 인자와 Picard 군"
+    ],
+    [
+      "P38",
+      "세미나 III · 사영공간의 국소 교차중복도"
+    ],
+    [
       "B10",
-      "이번 발표 · 정준선다발의 Chern 곡률"
+      "정준선다발의 Chern 곡률"
     ],
     [
       "N30",
@@ -3665,6 +4986,70 @@
       "Čech 코호몰로지"
     ]
   ],
+  "defaultGoal": "P22",
   "source": "복소해석_층_선다발_통합정의집_데이터.json",
-  "notes": "원본 정의 149개 본문 보존. B01–B12는 체계화 보충. 직접 선행은 정의의 주된 구성에 필요한 항목, 원래 refs는 관련 참조로 별도 보존. 집합·함수·실수·복소수와 기초 미적분은 배경으로 전제."
+  "seminar": {
+    "source": "대수기하 세미나 III · From Affine Local Data to Projective Space · Jaewon Yoo · 첨부 PDF 68쪽",
+    "definitionIds": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14",
+      "P15",
+      "P16",
+      "P17",
+      "P18",
+      "P19",
+      "P20",
+      "P21",
+      "P22",
+      "P23",
+      "P24",
+      "P25",
+      "P26",
+      "P27",
+      "P28",
+      "P29",
+      "P30",
+      "P31",
+      "P32",
+      "P33",
+      "P34",
+      "P35",
+      "P36",
+      "P37",
+      "P38",
+      "P39",
+      "P40",
+      "P41"
+    ],
+    "theoremIds": [
+      "PT01",
+      "PT02",
+      "PT03",
+      "PT04",
+      "PT05",
+      "PT06",
+      "PT07",
+      "PT08",
+      "PT09",
+      "PT10",
+      "PT11",
+      "PT12",
+      "PT13",
+      "PT14",
+      "PT15"
+    ]
+  },
+  "notes": "원본 정의 149개 본문과 기존 B01–B12 보충을 보존. P 태그는 대수기하 세미나 III의 정의와 필요한 배경 보충. 직접 선행은 정의의 주된 구성에 필요한 항목, 원래 refs는 관련 참조로 별도 보존. 집합·함수·실수·복소수와 기초 미적분은 배경으로 전제."
 }

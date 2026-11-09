@@ -79,4 +79,9 @@ const extraTheorems=[
  {id:'T09',title:'계량 독립성과 곡률 적분',english:'Metric independence and degree',answer:String.raw`두 Hermitian 계량이 \(h'=e^\psi h\)로 연결되면 ψ는 전역 매끄러운 실함수이며 \(F_{h'}-F_h=d(\partial\psi)\)이다. 따라서 첫째 Chern 형식의 차이는 실수 완전형식이다. 연결된 콤팩트 리만곡면에서 선다발 L의 영이 아닌 유리형 단면 s를 택하면 \(\frac{i}{2\pi}\int_XF_{L,h}=\sum_p\operatorname{ord}_p(s)\). 첫째 등식은 국소 공식으로, 적분 등식은 영점·극을 제거한 영역에서 Stokes 정리로 확인한다.`,deps:['B11','06-12','N20','N17']},
  {id:'T10',title:'P¹ 발표의 세 표현',english:'Three descriptions on the projective line',answer:String.raw`\(w=1/z\)에서 \(dw=-z^{-2}dz\)이고 \(\operatorname{div}(dz)=-2[\infty]\)이다. 따라서 \(K_{\mathbf P^1}\simeq\mathcal O(-2)\)이며 \(\frac{i}{2\pi}\int_{\mathbf P^1}F_{K,h}=-2\). 전이함수의 winding, 인자의 차수, 곡률 적분을 연결하는 계산 결과이며 세 용어의 정의를 동일시하지 않는다.`,deps:['B10','B11','N20','N21']}
 ];
-module.exports={chapters,graph,definitions,extraTheorems};
+const seminar=require('./projective-seminar-model.cjs');
+chapters.push(seminar.chapter);
+Object.assign(graph,seminar.graph);
+definitions.push(...seminar.definitions);
+extraTheorems.push(...seminar.theorems);
+module.exports={chapters,graph,definitions,extraTheorems,seminar};

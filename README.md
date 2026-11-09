@@ -2,7 +2,19 @@
 
 [정의 탐색 페이지](https://epicevent.github.io/definition/) · [계산 공부: study metric](https://epicevent.github.io/study-metric/)
 
-기존 통합 정의 149개와 보충 정의 12개를 분야별로 분류하고, 고정 태그와 직접 선행·후속 정의로 연결한 학습 도구입니다. 기본 목표는 정준선다발의 Chern 곡률입니다.
+수학 정의를 분야별로 분류하고, 고정 태그와 직접 선행·후속 정의로 연결한 학습 도구입니다. 기존 통합 정의 149개와 보충 정의 12개에 대수기하 세미나 III의 사영공간 자료를 추가했습니다. 첫 방문에는 세미나 III의 O(d) 구성을 목표로 열며, 이전 학습 상태가 있으면 그대로 이어집니다.
+
+## 대수기하 세미나 III
+
+From Affine Local Data to Projective Space (68쪽)를 바탕으로 다음 내용을 추가했습니다. 원문 PDF 쪽수와 필요한 가정을 각 카드에 표시하고, 정리·계산은 정의와 나누어 수록했습니다.
+
+- 아핀 점의 국소환·잉여체·평가와 층의 섬유
+- 동차좌표·동차화·등급환·Proj와 등급가군의 층화
+- O(d), tautological 선다발, Hopf 다발
+- Weil·Cartier 인자, Picard 군, 국소 교차중복도와 Bézout 정리
+- 멱등원·기약성, 사영 이차곡선과 twist의 텐서곱 계산
+
+상단의 학습 목표 링크 또는 J 분류에서 시작합니다. 기존 복소사영공간과 새 대수적 사영스킴의 정의를 구별합니다. 기존 CP¹·S² 예시집의 PDF·TeX·ZIP은 기존 내용을 담은 별도 자료입니다.
 
 ## 사용
 
@@ -21,6 +33,7 @@ Node.js로 npm run build를 실행합니다. npm install은 필요 없습니다.
 
 - data/source-definitions.json: 기존 149개 정의의 본문
 - tools/definition-atlas-model.cjs: 분류·선행 연결·보충 정의
+- tools/projective-seminar-model.cjs: 세미나 III의 정의·선행 연결·정리·출처
 - tools/definition-atlas-app.js: 검색·회상·저장 동작
 - tools/definition-atlas.css: 화면 스타일
 - tools/build-definition-atlas.cjs: HTML·Markdown·데이터 생성
